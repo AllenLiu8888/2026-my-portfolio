@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, Github } from "lucide-react"
 
+import { Link } from "@/i18n/navigation"
 import { pickLocale, type CaseStudyMeta, type Locale } from "@/lib/case-studies"
 
 interface Props {
@@ -49,7 +49,7 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
           transition={{ duration: 0.4 }}
         >
           <Link
-            href={`/${locale === "en" ? "" : locale + "/"}#projects`}
+            href="/#projects"
             className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors mb-8"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -129,7 +129,7 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
           {meta.github && meta.github.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {meta.github.map((link) => (
-                <Link
+                <a
                   key={link.href}
                   href={link.href}
                   target="_blank"
@@ -138,7 +138,7 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
                 >
                   <Github className="h-4 w-4" />
                   {link.label}
-                </Link>
+                </a>
               ))}
             </div>
           )}

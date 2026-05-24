@@ -54,10 +54,10 @@ export async function generateMetadata({
     },
     robots: { index: true, follow: true },
     alternates: {
-      canonical: locale === 'en' ? 'https://liuyikai.com' : `https://liuyikai.com/${locale}`,
+      canonical: locale === 'zh' ? 'https://liuyikai.com' : `https://liuyikai.com/${locale}`,
       languages: {
-        en: 'https://liuyikai.com',
-        zh: 'https://liuyikai.com/zh',
+        zh: 'https://liuyikai.com',
+        en: 'https://liuyikai.com/en',
       },
     },
   }

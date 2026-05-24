@@ -1,8 +1,18 @@
+import chemicalTradeDashboard from "./chemical-trade-dashboard"
+import frontierModelBenchmark from "./frontier-model-benchmark"
 import memoryFutureSimulator from "./memory-future-simulator"
+import openclawAgentStack from "./openclaw-agent-stack"
+import smartLibraryThermal from "./smart-library-thermal"
+import xpengTianjinDouyin from "./xpeng-tianjin-douyin"
 import type { CaseStudyRegistry } from "@/lib/case-studies"
 
 export const caseStudies: CaseStudyRegistry = {
+  [chemicalTradeDashboard.meta.slug]: chemicalTradeDashboard,
+  [smartLibraryThermal.meta.slug]: smartLibraryThermal,
   [memoryFutureSimulator.meta.slug]: memoryFutureSimulator,
+  [openclawAgentStack.meta.slug]: openclawAgentStack,
+  [frontierModelBenchmark.meta.slug]: frontierModelBenchmark,
+  [xpengTianjinDouyin.meta.slug]: xpengTianjinDouyin,
 }
 
 export const KNOWN_SLUGS = [

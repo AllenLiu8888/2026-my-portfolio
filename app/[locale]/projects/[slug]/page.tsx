@@ -6,6 +6,7 @@ import type { Metadata } from "next"
 import { CaseStudyHero } from "@/components/case-study/CaseStudyHero"
 import { CaseStudyTOC } from "@/components/case-study/CaseStudyTOC"
 import { ComingSoon } from "@/components/case-study/ComingSoon"
+import { Link as IntlLink } from "@/i18n/navigation"
 import { FloatingNav } from "@/components/floating-nav"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { caseStudies, KNOWN_SLUGS } from "@/data/case-studies"
@@ -101,14 +102,20 @@ function CaseStudyPage({
       />
       <Content locale={locale} />
       <div className="container max-w-5xl py-16 text-center">
-        <a
-          href={`/${locale === "en" ? "" : locale + "/"}#projects`}
-          className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors"
-        >
-          ← {t("backBottom")}
-        </a>
+        <BackHome locale={locale} label={t("backBottom")} />
       </div>
     </>
+  )
+}
+
+function BackHome({ locale, label }: { locale: Locale; label: string }) {
+  return (
+    <IntlLink
+      href="/#projects"
+      className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors"
+    >
+      ← {label}
+    </IntlLink>
   )
 }
 

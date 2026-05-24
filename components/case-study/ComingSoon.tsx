@@ -1,9 +1,9 @@
 "use client"
 
-import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, Hammer } from "lucide-react"
 
+import { Link } from "@/i18n/navigation"
 import { Button } from "@/components/ui/button"
 import type { Locale } from "@/lib/case-studies"
 
@@ -34,7 +34,7 @@ export function ComingSoon({ locale, title, description, labels }: Props) {
           transition={{ duration: 0.4 }}
         >
           <Link
-            href={`/${locale === "en" ? "" : locale + "/"}#projects`}
+            href="/#projects"
             className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors mb-12"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
@@ -71,14 +71,14 @@ export function ComingSoon({ locale, title, description, labels }: Props) {
                 className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
                 asChild
               >
-                <Link href={`/${locale === "en" ? "" : locale + "/"}#contact`}>{labels.contactCta}</Link>
+                <Link href="/#contact">{labels.contactCta}</Link>
               </Button>
               <Button
                 variant="outline"
                 className="border-zinc-700 hover:border-purple-500/50 text-zinc-300"
                 asChild
               >
-                <Link href={`/${locale === "en" ? "" : locale + "/"}#projects`}>
+                <Link href="/#projects">
                   {labels.back}
                 </Link>
               </Button>

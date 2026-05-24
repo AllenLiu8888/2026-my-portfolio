@@ -38,7 +38,7 @@ export function ENStub({ slug, summary, label }: Props) {
           className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
           asChild
         >
-          <Link href={`/zh/projects/${slug}`}>
+          <Link href={`/projects/${slug}`}>
             {label.cta}
             <ArrowRight className="h-4 w-4 ml-2" />
           </Link>
