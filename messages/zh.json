@@ -172,8 +172,8 @@
     "copyright": "© {year} 刘一开 Yikai Liu · 保留所有权利。"
   },
   "caseStudy": {
-    "back": "← 返回作品列表",
-    "backBottom": "← 返回所有作品",
+    "back": "返回作品列表",
+    "backBottom": "返回所有作品",
     "overview": "项目概览",
     "type": "类型",
     "period": "周期",

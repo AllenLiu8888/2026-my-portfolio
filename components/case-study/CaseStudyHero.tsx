@@ -4,8 +4,6 @@ import Link from "next/link"
 import { motion } from "framer-motion"
 import { ArrowLeft, Github } from "lucide-react"
 
-import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
 import { pickLocale, type CaseStudyMeta, type Locale } from "@/lib/case-studies"
 
 interface Props {
@@ -29,6 +27,12 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
     meta.overview[key] ? pickLocale(meta.overview[key]!, locale) : ""
 
   const roles = pickLocale(meta.roles, locale)
+
+  // Split bilingual title on " · " so EN / ZH render on two lines
+  const fullTitle = pickLocale(meta.title, locale)
+  const titleParts = fullTitle.split(" · ")
+  const primaryTitle = titleParts[0]
+  const secondaryTitle = titleParts.slice(1).join(" · ")
 
   return (
     <section className="relative pt-32 pb-20 overflow-hidden">
@@ -54,13 +58,24 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
         </motion.div>
 
         <motion.h1
-          className="text-4xl md:text-6xl font-bold tracking-tight mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400"
+          className="text-4xl md:text-6xl font-bold tracking-tight mb-3 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          {pickLocale(meta.title, locale)}
+          {primaryTitle}
         </motion.h1>
+
+        {secondaryTitle && (
+          <motion.h2
+            className="text-2xl md:text-3xl font-medium text-zinc-400 mb-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.15 }}
+          >
+            {secondaryTitle}
+          </motion.h2>
+        )}
 
         <motion.p
           className="text-xl text-zinc-300 leading-relaxed max-w-3xl mb-12"
@@ -101,13 +116,12 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
             <div className="text-xs uppercase tracking-wider text-zinc-500 mb-2">{labels.myRole}</div>
             <div className="flex flex-wrap gap-2">
               {roles.map((role) => (
-                <Badge
+                <span
                   key={role}
-                  variant="secondary"
-                  className="bg-gradient-to-r from-purple-500/20 to-pink-500/20 border border-purple-500/30 text-zinc-200"
+                  className="inline-flex items-center rounded-full px-3 py-1 text-xs font-medium border border-purple-500/40 bg-zinc-900/70 text-white"
                 >
                   {role}
-                </Badge>
+                </span>
               ))}
             </div>
           </div>
@@ -115,18 +129,16 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
           {meta.github && meta.github.length > 0 && (
             <div className="flex flex-wrap gap-2">
               {meta.github.map((link) => (
-                <Button
+                <Link
                   key={link.href}
-                  variant="outline"
-                  size="sm"
-                  className="border-zinc-700 hover:border-purple-500/50 text-zinc-300 hover:text-white"
-                  asChild
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-medium border border-zinc-700 bg-zinc-900/70 text-zinc-300 hover:text-white hover:border-purple-500/50 hover:bg-zinc-800/80 transition-colors"
                 >
-                  <Link href={link.href} target="_blank" rel="noopener noreferrer">
-                    <Github className="h-4 w-4 mr-2" />
-                    {link.label}
-                  </Link>
-                </Button>
+                  <Github className="h-4 w-4" />
+                  {link.label}
+                </Link>
               ))}
             </div>
           )}

@@ -20,6 +20,7 @@ export type CaseStudyMeta = {
   roles: Bilingual<string[]>
   github?: Array<{ label: string; href: string }>
   video?: string
+  toc?: Array<{ id: string; num: string; label: Bilingual }>
 }
 
 export type CaseStudyEntry = {

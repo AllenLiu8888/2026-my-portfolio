@@ -55,6 +55,15 @@ export const meta: CaseStudyEntry["meta"] = {
     { label: "Frontend Repo", href: "https://github.com/AllenLiu8888/nazala-frontend" },
     { label: "Backend Repo", href: "https://github.com/MingzhiLiu/nazala_backend" },
   ],
+  toc: [
+    { id: "why", num: "一", label: { en: "Why · Background", zh: "Why · 背景与用户" } },
+    { id: "what", num: "二", label: { en: "What · Product Design", zh: "What · 产品设计" } },
+    { id: "iteration", num: "三", label: { en: "Iteration · 3 Sprints", zh: "迭代过程" } },
+    { id: "how", num: "四", label: { en: "How · My Work", zh: "How · 我的工作" } },
+    { id: "impact", num: "五", label: { en: "Impact · Exhibition", zh: "展览与效果" } },
+    { id: "tech", num: "六", label: { en: "Tech Highlights", zh: "技术亮点" } },
+    { id: "reflection", num: "七", label: { en: "Reflection", zh: "反思与收获" } },
+  ],
 }
 
 function Content({ locale }: { locale: Locale }) {
@@ -77,7 +86,7 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <CaseStudySection num="一、" title="项目背景 & 目标用户（Why）">
+      <CaseStudySection id="why" num="一、" title="项目背景 & 目标用户（Why）">
         <SubHeading label="问题">真实存在的伦理真空</SubHeading>
         <Paragraph>
           随着脑机接口和神经科学的发展，记忆操控技术正逐步从科幻走向现实——在未来，记忆可以被存储、编辑、交易甚至删除。然而，社会对其伦理边界缺乏深入讨论。传统教育方式多为单向传输，难以让公众深度参与思考。
@@ -106,7 +115,7 @@ function Content({ locale }: { locale: Locale }) {
         <Paragraph>互动科技展览、高校课堂教学辅助、线下社交聚会。</Paragraph>
       </CaseStudySection>
 
-      <CaseStudySection num="二、" title="产品设计（What）">
+      <CaseStudySection id="what" num="二、" title="产品设计（What）">
         <SubHeading>系统架构</SubHeading>
         <Paragraph>系统由四个核心组件构成一个三端的结构：</Paragraph>
         <Callout variant="insight">
@@ -172,7 +181,7 @@ AI 端：LLM + RAG 运行在服务器端`}
         <ImagePlaceholder caption="结局叙事生成大屏" />
       </CaseStudySection>
 
-      <CaseStudySection num="三、" title="迭代过程——从概念验证到展览交付">
+      <CaseStudySection id="iteration" num="三、" title="迭代过程——从概念验证到展览交付">
         <SubHeading label="Sprint 1">框架搭建 → 基础功能（第 4-7 周）</SubHeading>
         <Paragraph>
           <strong>目标：</strong>验证技术可行性，搭建前后端框架，实现基础交互流程。
@@ -279,7 +288,7 @@ AI 端：LLM + RAG 运行在服务器端`}
         />
       </CaseStudySection>
 
-      <CaseStudySection num="四、" title="我的工作（How）">
+      <CaseStudySection id="how" num="四、" title="我的工作（How）">
         <SubHeading label="项目管理">Project Manager</SubHeading>
         <Paragraph>作为 6 人团队的 PM，我负责项目从立项到交付的全流程管理：</Paragraph>
         <BulletList
@@ -332,7 +341,7 @@ AI 端：LLM + RAG 运行在服务器端`}
         />
       </CaseStudySection>
 
-      <CaseStudySection num="五、" title="展览与效果">
+      <CaseStudySection id="impact" num="五、" title="展览与效果">
         <SubHeading>展览数据</SubHeading>
         <Paragraph>项目于 2025 年 10 月在 UQ 校内展览中进行了全天公开展示：</Paragraph>
         <DataTable
@@ -378,7 +387,7 @@ AI 端：LLM + RAG 运行在服务器端`}
         </Quote>
       </CaseStudySection>
 
-      <CaseStudySection num="六、" title="技术亮点">
+      <CaseStudySection id="tech" num="六、" title="技术亮点">
         <DataTable
           headers={["技术点", "实现方式", "解决的问题"]}
           rows={[
@@ -406,7 +415,7 @@ AI 端：LLM + RAG 运行在服务器端`}
         />
       </CaseStudySection>
 
-      <CaseStudySection num="七、" title="反思与收获">
+      <CaseStudySection id="reflection" num="七、" title="反思与收获">
         <SubHeading>做得好的地方</SubHeading>
         <BulletList
           items={[

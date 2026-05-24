@@ -172,8 +172,8 @@
     "copyright": "© {year} Yikai Liu (刘一开). All rights reserved."
   },
   "caseStudy": {
-    "back": "← Back to projects",
-    "backBottom": "← Back to all projects",
+    "back": "Back to projects",
+    "backBottom": "Back to all projects",
     "overview": "Project Overview",
     "type": "Type",
     "period": "Period",

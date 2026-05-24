@@ -4,16 +4,18 @@ import { motion } from "framer-motion"
 import type { ReactNode } from "react"
 
 interface Props {
+  id?: string
   num?: string
   title: string
   children: ReactNode
   className?: string
 }
 
-export function CaseStudySection({ num, title, children, className = "" }: Props) {
+export function CaseStudySection({ id, num, title, children, className = "" }: Props) {
   return (
     <motion.section
-      className={`relative py-12 md:py-16 ${className}`}
+      id={id}
+      className={`relative py-12 md:py-16 scroll-mt-24 ${className}`}
       initial={{ opacity: 0, y: 30 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5 }}
@@ -21,11 +23,7 @@ export function CaseStudySection({ num, title, children, className = "" }: Props
     >
       <div className="container max-w-5xl">
         <div className="flex items-baseline gap-3 mb-8 pb-4 border-b border-zinc-800">
-          {num && (
-            <span className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
-              {num}
-            </span>
-          )}
+          {num && <span className="text-2xl md:text-3xl font-bold text-white">{num}</span>}
           <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
         </div>
         <div className="prose-cs">{children}</div>

@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server"
 import type { Metadata } from "next"
 
 import { CaseStudyHero } from "@/components/case-study/CaseStudyHero"
+import { CaseStudyTOC } from "@/components/case-study/CaseStudyTOC"
 import { ComingSoon } from "@/components/case-study/ComingSoon"
 import { FloatingNav } from "@/components/floating-nav"
 import { ScrollProgress } from "@/components/scroll-progress"
@@ -82,6 +83,7 @@ function CaseStudyPage({
 
   return (
     <>
+      {entry.meta.toc && <CaseStudyTOC toc={entry.meta.toc} locale={locale} />}
       <CaseStudyHero
         meta={entry.meta}
         locale={locale}
@@ -103,7 +105,7 @@ function CaseStudyPage({
           href={`/${locale === "en" ? "" : locale + "/"}#projects`}
           className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors"
         >
-          {t("backBottom")}
+          ← {t("backBottom")}
         </a>
       </div>
     </>
