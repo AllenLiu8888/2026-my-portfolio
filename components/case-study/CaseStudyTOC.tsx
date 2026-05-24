@@ -53,17 +53,17 @@ export function CaseStudyTOC({ toc, locale }: Props) {
   return (
     <motion.nav
       className="hidden 2xl:block fixed top-32 z-30 max-h-[calc(100vh-10rem)] overflow-y-auto"
-      style={{ left: "max(1rem, calc(50% - 32rem - 14rem))" }}
+      style={{ left: "max(1rem, calc(50% - 32rem - 15.5rem))" }}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}
       aria-label="Table of contents"
     >
-      <div className="relative w-52 rounded-xl bg-zinc-900/70 backdrop-blur-md border border-zinc-800 p-3 shadow-lg">
-        <div className="text-[10px] uppercase tracking-widest text-zinc-500 px-2 pb-2 border-b border-zinc-800">
+      <div className="relative w-56 rounded-xl bg-zinc-900/70 backdrop-blur-md border border-zinc-800 p-4 shadow-lg">
+        <div className="text-[11px] uppercase tracking-widest text-zinc-500 px-2 pb-3 border-b border-zinc-800">
           {locale === "zh" ? "目录" : "Contents"}
         </div>
-        <ul className="mt-2 space-y-0.5">
+        <ul className="mt-3 space-y-1">
           {toc.map((s) => {
             const isActive = activeId === s.id
             return (
@@ -71,14 +71,14 @@ export function CaseStudyTOC({ toc, locale }: Props) {
                 <a
                   href={`#${s.id}`}
                   onClick={(e) => handleClick(e, s.id)}
-                  className={`group flex items-baseline gap-2 px-2 py-1.5 rounded-md text-sm transition-colors ${
+                  className={`group flex items-baseline gap-2.5 px-2.5 py-2 rounded-md text-[15px] transition-colors ${
                     isActive
                       ? "bg-gradient-to-r from-purple-500/20 to-pink-500/15 text-white"
                       : "text-zinc-500 hover:text-zinc-200 hover:bg-zinc-800/50"
                   }`}
                 >
                   <span
-                    className={`text-[10px] font-bold tabular-nums ${
+                    className={`text-xs font-bold tabular-nums ${
                       isActive ? "text-purple-300" : "text-zinc-600 group-hover:text-zinc-400"
                     }`}
                   >

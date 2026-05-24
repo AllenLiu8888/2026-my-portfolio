@@ -329,8 +329,8 @@ function PortfolioContent() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("nav.brandFirst")}</span>
-              <span className="text-white">{t("nav.brandSecond")}</span>
+              <span className="text-white">{t("nav.brandFirst")}</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("nav.brandSecond")}</span>
             </Link>
             <p className="text-sm text-zinc-500 mt-2">
               {t("footer.copyright", { year: new Date().getFullYear() })} {t("footer.tagline")}

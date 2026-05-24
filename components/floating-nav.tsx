@@ -51,8 +51,8 @@ export function FloatingNav() {
           {isMobile ? (
             <div className="relative flex items-center justify-between gap-3">
               <Link href="/" className="font-bold text-lg">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("brandFirst")}</span>
-                <span className="text-white">{t("brandSecond")}</span>
+                <span className="text-white">{t("brandFirst")}</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("brandSecond")}</span>
               </Link>
               <div className="flex items-center gap-1">
                 <LocaleSwitcher />
@@ -69,8 +69,8 @@ export function FloatingNav() {
           ) : (
             <div className="relative flex items-center gap-1">
               <Link href="/" className="font-bold text-lg mr-4">
-                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("brandFirst")}</span>
-                <span className="text-white">{t("brandSecond")}</span>
+                <span className="text-white">{t("brandFirst")}</span>
+                <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("brandSecond")}</span>
               </Link>
               {navItems.map((item) => (
                 <Link

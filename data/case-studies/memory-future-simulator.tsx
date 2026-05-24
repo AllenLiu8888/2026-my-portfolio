@@ -52,8 +52,7 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: ["队长 Team Leader", "产品经理 Product Manager", "项目经理 Project Manager", "前端负责人 Frontend dev", "UX 设计师 UX Designer"],
   },
   github: [
-    { label: "Frontend Repo", href: "https://github.com/AllenLiu8888/nazala-frontend" },
-    { label: "Backend Repo", href: "https://github.com/MingzhiLiu/nazala_backend" },
+    { label: "Github Repo", href: "https://github.com/AllenLiu8888/nazala-frontend" },
   ],
   toc: [
     { id: "why", num: "一", label: { en: "Why · Background", zh: "Why · 背景与用户" } },
