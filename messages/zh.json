@@ -66,13 +66,9 @@
     "subtitle": "0→1 产品 · HCI 毕设 · AI 基建",
     "details": "案例研究",
     "code": "代码",
+    "showMore": "显示更多",
+    "showLess": "收起",
     "items": [
-      {
-        "slug": "chemical-trade-dashboard",
-        "title": "化工销售区域数据管理系统",
-        "description": "独立 PM + 全栈开发（React / Node.js / PostgreSQL）。化工贸易企业，主营纯碱 / 尿素 / 小苏打，覆盖 5 销区 31 省市。7 天从用户调研→架构→上线。给管理层第一次提供全国销售统一可视化视图——热力地图省份下钻 + 客户管理后台 + Excel 批量导入校验。",
-        "tags": ["PM + 全栈", "0→1 / 7 天", "React / Node / PostgreSQL", "已部署"]
-      },
       {
         "slug": "smart-library-thermal",
         "title": "图书馆智能温度感知系统",
@@ -96,6 +92,18 @@
         "title": "五大模型横评 Dashboard",
         "description": "对 Claude / GPT / Gemini / MiniMax / DeepSeek 做编程、中文推理、Agent 调度、长文本、多模态、单次成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。公开 Notion 看板。",
         "tags": ["模型评测", "决策框架", "LLMOps"]
+      },
+      {
+        "slug": "digital-sales-map",
+        "title": "Digital Sales Map · 数字销售地图",
+        "description": "TBD — 等待 Yikai 补充项目详情（项目背景 / 角色 / 技术栈 / 成果数据）。",
+        "tags": ["TBD"]
+      },
+      {
+        "slug": "chemical-trade-dashboard",
+        "title": "化工销售区域数据管理系统",
+        "description": "独立 PM + 全栈开发（React / Node.js / PostgreSQL）。化工贸易企业，主营纯碱 / 尿素 / 小苏打，覆盖 5 销区 31 省市。7 天从用户调研→架构→上线。给管理层第一次提供全国销售统一可视化视图——热力地图省份下钻 + 客户管理后台 + Excel 批量导入校验。",
+        "tags": ["PM + 全栈", "0→1 / 7 天", "React / Node / PostgreSQL", "已部署"]
       },
       {
         "slug": "xpeng-tianjin-douyin",

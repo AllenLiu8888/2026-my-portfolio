@@ -3,6 +3,7 @@ import {
   Callout,
   CaseImage,
   CaseStudySection,
+  CaseVideo,
   DataTable,
   Paragraph,
   Quote,
@@ -68,23 +69,39 @@ export const meta: CaseStudyEntry["meta"] = {
 function Content({ locale }: { locale: Locale }) {
   if (locale === "en") {
     return (
-      <CaseStudySection title="English summary">
-        <ENStub
-          slug={SLUG}
-          summary="A capstone team-led installation that turns memory-ethics from a lecture into a lived experience. Players scan a QR code to join a 5-year virtual society, face LLM-generated events with RAG-backed worldbuilding, vote on choices, and watch their decisions reshape four social attributes in real time. I led a 6-person team across PM, frontend, and UX; we shipped a deployable installation and earned a Distinction (6/7) with an 'Exceeds Expectations' team review."
-          label={{
-            badge: "Translation in progress",
-            body: "I'm currently writing the full English case study. The Chinese version below is the canonical write-up — over 5,000 words covering the brief, three Sprints of iteration, two rounds of user testing, the LLM/RAG architecture, exhibition outcomes, and reflections.",
-            cta: "Read the full Chinese version",
-            back: "Back to projects",
-          }}
-        />
-      </CaseStudySection>
+      <>
+        <div className="container max-w-5xl pt-4">
+          <CaseVideo
+            src="/case-studies/memory-future-simulator/demo.mp4"
+            poster="/case-studies/memory-future-simulator/03-event-narrative.png"
+            caption="Demo video — produced and edited by Yikai"
+          />
+        </div>
+        <CaseStudySection title="English summary">
+          <ENStub
+            slug={SLUG}
+            summary="A capstone team-led installation that turns memory-ethics from a lecture into a lived experience. Players scan a QR code to join a 5-year virtual society, face LLM-generated events with RAG-backed worldbuilding, vote on choices, and watch their decisions reshape four social attributes in real time. I led a 6-person team across PM, frontend, and UX; we shipped a deployable installation and earned a Distinction (6/7) with an 'Exceeds Expectations' team review."
+            label={{
+              badge: "Translation in progress",
+              body: "I'm currently writing the full English case study. The Chinese version below is the canonical write-up — over 5,000 words covering the brief, three Sprints of iteration, two rounds of user testing, the LLM/RAG architecture, exhibition outcomes, and reflections.",
+              cta: "Read the full Chinese version",
+              back: "Back to projects",
+            }}
+          />
+        </CaseStudySection>
+      </>
     )
   }
 
   return (
     <>
+      <div className="container max-w-5xl pt-4">
+        <CaseVideo
+          src="/case-studies/memory-future-simulator/demo.mp4"
+          poster="/case-studies/memory-future-simulator/03-event-narrative.png"
+          caption="项目演示视频 · 拍摄 + 剪辑：刘一开"
+        />
+      </div>
       <CaseStudySection id="why" num="一、" title="项目背景 & 目标用户（Why）">
         <SubHeading label="问题">真实存在的伦理真空</SubHeading>
         <Paragraph>
@@ -169,11 +186,12 @@ AI 端：LLM + RAG 运行在服务器端`}
             "玩家可以分享和讨论彼此的人格结果，进一步激发反思",
           ]}
         />
-        <CaseImage src="/case-studies/memory-future-simulator/05-mbti-result.png" caption="MBTI 风格人格结果界面" size="phone" />
-
         <SubHeading label="05">历史时间线回顾</SubHeading>
         <Paragraph>手机端提供可展开 / 折叠的时间线组件，回顾每一轮的事件、选择和世界状态变化。</Paragraph>
-        <CaseImage src="/case-studies/memory-future-simulator/06-timeline-review.png" caption="时间线回顾组件" size="phone" />
+        <TwoCol>
+          <CaseImage src="/case-studies/memory-future-simulator/05-mbti-result.png" caption="MBTI 风格人格结果界面" />
+          <CaseImage src="/case-studies/memory-future-simulator/06-timeline-review.png" caption="时间线回顾组件" />
+        </TwoCol>
 
         <SubHeading label="06">结局生成</SubHeading>
         <Paragraph>AI 根据 10 轮的全局数据，生成一段关于这个世界最终走向的叙事总结，在大屏上展示。</Paragraph>

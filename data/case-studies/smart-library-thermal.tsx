@@ -222,11 +222,11 @@ function Content({ locale }: { locale: Locale }) {
             </span>,
           ]}
         />
-        <CaseImage src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png" caption="Prototype 3 硬件部分" />
         <TwoCol>
+          <CaseImage src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png" caption="Prototype 3 硬件部分" />
           <CaseImage src="/case-studies/smart-library-thermal/09-prototype3-final.png" caption="Prototype 3 大屏界面" />
-          <CaseImage src="/case-studies/smart-library-thermal/08-prototype3-detail-b.png" caption="Prototype 3 移动端界面" size="phone" />
         </TwoCol>
+        <CaseImage src="/case-studies/smart-library-thermal/08-prototype3-detail-b.png" caption="Prototype 3 移动端界面" size="phone" />
       </CaseStudySection>
 
       <CaseStudySection id="what" num="三、" title="产品设计（What）">
@@ -269,8 +269,6 @@ function Content({ locale }: { locale: Locale }) {
       </CaseStudySection>
 
       <CaseStudySection id="work" num="四、" title="我的工作">
-        <CaseImage src="/case-studies/smart-library-thermal/01-cover.jpg" caption="6 人团队合照" />
-
         <SubHeading label="Team Leader & PM">跨领域协调与项目管理</SubHeading>
         <Paragraph>作为 6 人团队的负责人，主导项目从调研到交付的全流程：</Paragraph>
         <BulletList
@@ -319,6 +317,8 @@ function Content({ locale }: { locale: Locale }) {
             </span>,
           ]}
         />
+
+        <CaseImage src="/case-studies/smart-library-thermal/01-cover.jpg" caption="6 人团队合照" />
       </CaseStudySection>
 
       <CaseStudySection id="tech" num="五、" title="技术亮点">

@@ -4,7 +4,7 @@ import { useTranslations } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 
 import { Button } from "@/components/ui/button"
-import { ProjectCard } from "@/components/project-card"
+import { ProjectsGrid } from "@/components/projects-grid"
 import { SkillBadge } from "@/components/skill-badge"
 import { Timeline } from "@/components/timeline"
 import { ContactForm } from "@/components/contact-form"
@@ -225,20 +225,14 @@ function PortfolioContent() {
         <div className="container relative z-10">
           <SectionHeading title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            {projects.map((p) => (
-              <ProjectCard
-                key={p.slug}
-                slug={p.slug}
-                title={p.title}
-                description={p.description}
-                tags={p.tags}
-                image="/placeholder.svg?height=400&width=600"
-                detailsLabel={t("projects.details")}
-                codeLabel={t("projects.code")}
-              />
-            ))}
-          </div>
+          <ProjectsGrid
+            projects={projects}
+            defaultVisible={6}
+            detailsLabel={t("projects.details")}
+            codeLabel={t("projects.code")}
+            showMoreLabel={t("projects.showMore")}
+            showLessLabel={t("projects.showLess")}
+          />
         </div>
       </section>
 

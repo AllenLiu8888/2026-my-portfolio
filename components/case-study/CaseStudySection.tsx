@@ -103,6 +103,34 @@ export function ImagePlaceholder({ caption, ratio = "video" }: { caption?: strin
   )
 }
 
+export function CaseVideo({
+  src,
+  poster,
+  caption,
+}: {
+  src: string
+  poster?: string
+  caption?: string
+}) {
+  return (
+    <figure className="my-6">
+      <div className="relative rounded-xl border border-zinc-800 overflow-hidden bg-black">
+        <video
+          src={src}
+          poster={poster}
+          controls
+          preload="metadata"
+          playsInline
+          className="w-full h-auto block"
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-xs text-zinc-500 text-center">{caption}</figcaption>
+      )}
+    </figure>
+  )
+}
+
 export function CaseImage({
   src,
   alt,

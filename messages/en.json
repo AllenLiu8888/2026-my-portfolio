@@ -66,13 +66,9 @@
     "subtitle": "0→1 product builds · HCI capstones · AI infrastructure",
     "details": "Case Study",
     "code": "Code",
+    "showMore": "Show more",
+    "showLess": "Show less",
     "items": [
-      {
-        "slug": "chemical-trade-dashboard",
-        "title": "Chemical-Trade Sales Dashboard",
-        "description": "Solo PM + full-stack build (React / Node.js / PostgreSQL) for a chemical trading company covering 5 sales zones and 31 provinces. 7-day sprint from user research → architecture → deployment. Gave management its first unified national sales view with heatmap drill-down, customer CRM, and Excel-import data validation.",
-        "tags": ["PM + Full-Stack", "0→1 in 7 days", "React / Node / PostgreSQL", "Deployed"]
-      },
       {
         "slug": "smart-library-thermal",
         "title": "Smart Library Thermal-Perception System",
@@ -96,6 +92,18 @@
         "title": "Frontier-Model Benchmark Dashboard",
         "description": "Hands-on comparison of Claude / GPT / Gemini / MiniMax / DeepSeek across coding, Chinese reasoning, agent orchestration, long context, multimodal, and cost-per-task. Not a leaderboard — one real usage story per model, mapped back to actual product decisions I've made. Public Notion dashboard.",
         "tags": ["Model Eval", "Decision Frameworks", "LLMOps"]
+      },
+      {
+        "slug": "digital-sales-map",
+        "title": "Digital Sales Map",
+        "description": "TBD — awaiting Yikai's project brief (context / role / stack / outcomes).",
+        "tags": ["TBD"]
+      },
+      {
+        "slug": "chemical-trade-dashboard",
+        "title": "Chemical-Trade Sales Dashboard",
+        "description": "Solo PM + full-stack build (React / Node.js / PostgreSQL) for a chemical trading company covering 5 sales zones and 31 provinces. 7-day sprint from user research → architecture → deployment. Gave management its first unified national sales view with heatmap drill-down, customer CRM, and Excel-import data validation.",
+        "tags": ["PM + Full-Stack", "0→1 in 7 days", "React / Node / PostgreSQL", "Deployed"]
       },
       {
         "slug": "xpeng-tianjin-douyin",

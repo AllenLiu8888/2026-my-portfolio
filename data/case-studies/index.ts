@@ -16,11 +16,12 @@ export const caseStudies: CaseStudyRegistry = {
 }
 
 export const KNOWN_SLUGS = [
-  "chemical-trade-dashboard",
   "smart-library-thermal",
   "memory-future-simulator",
   "openclaw-agent-stack",
   "frontier-model-benchmark",
+  "digital-sales-map",
+  "chemical-trade-dashboard",
   "xpeng-tianjin-douyin",
 ] as const
 
