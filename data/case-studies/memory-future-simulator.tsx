@@ -1,9 +1,9 @@
 import {
   BulletList,
   Callout,
+  CaseImage,
   CaseStudySection,
   DataTable,
-  ImagePlaceholder,
   Paragraph,
   Quote,
   SubHeading,
@@ -135,8 +135,8 @@ AI 端：LLM + RAG 运行在服务器端`}
           ]}
         />
         <TwoCol>
-          <ImagePlaceholder caption="扫码入场界面（手机端）" />
-          <ImagePlaceholder caption="等待匹配大屏" />
+          <CaseImage src="/case-studies/memory-future-simulator/01-scan-join-1.png" caption="扫码入场界面（手机端）" />
+          <CaseImage src="/case-studies/memory-future-simulator/02-scan-join-2.png" caption="等待匹配大屏" />
         </TwoCol>
 
         <SubHeading label="02">事件生成 & 集体决策（核心循环）</SubHeading>
@@ -149,8 +149,8 @@ AI 端：LLM + RAG 运行在服务器端`}
           ]}
         />
         <TwoCol>
-          <ImagePlaceholder caption="事件叙事大屏" />
-          <ImagePlaceholder caption="手机端选项卡片" />
+          <CaseImage src="/case-studies/memory-future-simulator/03-event-narrative.png" caption="事件叙事大屏" />
+          <CaseImage src="/case-studies/memory-future-simulator/04-mobile-options.png" caption="手机端选项卡片" />
         </TwoCol>
 
         <SubHeading label="03">社会属性可视化</SubHeading>
@@ -169,15 +169,15 @@ AI 端：LLM + RAG 运行在服务器端`}
             "玩家可以分享和讨论彼此的人格结果，进一步激发反思",
           ]}
         />
-        <ImagePlaceholder caption="MBTI 风格人格结果界面" />
+        <CaseImage src="/case-studies/memory-future-simulator/05-mbti-result.png" caption="MBTI 风格人格结果界面" />
 
         <SubHeading label="05">历史时间线回顾</SubHeading>
         <Paragraph>手机端提供可展开 / 折叠的时间线组件，回顾每一轮的事件、选择和世界状态变化。</Paragraph>
-        <ImagePlaceholder caption="时间线回顾组件" />
+        <CaseImage src="/case-studies/memory-future-simulator/06-timeline-review.png" caption="时间线回顾组件" />
 
         <SubHeading label="06">结局生成</SubHeading>
         <Paragraph>AI 根据 10 轮的全局数据，生成一段关于这个世界最终走向的叙事总结，在大屏上展示。</Paragraph>
-        <ImagePlaceholder caption="结局叙事生成大屏" />
+        <CaseImage src="/case-studies/memory-future-simulator/07-ending.png" caption="结局叙事生成大屏" />
       </CaseStudySection>
 
       <CaseStudySection id="iteration" num="三、" title="迭代过程——从概念验证到展览交付">
@@ -384,6 +384,8 @@ AI 端：LLM + RAG 运行在服务器端`}
         <Quote source="个人 PM 评价">
           As project manager, knows what self and other members are doing.
         </Quote>
+
+        <CaseImage src="/case-studies/memory-future-simulator/08-exhibition.jpg" caption="UQ 校内展览全天公开展出现场" />
       </CaseStudySection>
 
       <CaseStudySection id="tech" num="六、" title="技术亮点">

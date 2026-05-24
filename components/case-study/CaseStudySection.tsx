@@ -103,6 +103,35 @@ export function ImagePlaceholder({ caption, ratio = "video" }: { caption?: strin
   )
 }
 
+export function CaseImage({
+  src,
+  alt,
+  caption,
+  contain,
+}: {
+  src: string
+  alt?: string
+  caption?: string
+  contain?: boolean
+}) {
+  return (
+    <figure className="my-4">
+      <div className="relative rounded-xl border border-zinc-800 overflow-hidden bg-zinc-950/60">
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src={src}
+          alt={alt || caption || ""}
+          loading="lazy"
+          className={`w-full h-auto ${contain ? "object-contain" : "object-cover"}`}
+        />
+      </div>
+      {caption && (
+        <figcaption className="mt-2 text-xs text-zinc-500 text-center">{caption}</figcaption>
+      )}
+    </figure>
+  )
+}
+
 export function DataTable({
   headers,
   rows,
