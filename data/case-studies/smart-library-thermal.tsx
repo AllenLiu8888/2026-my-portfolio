@@ -80,8 +80,6 @@ function Content({ locale }: { locale: Locale }) {
   return (
     <>
       <CaseStudySection id="why" num="一、" title="项目背景 & 目标用户（Why）">
-        <CaseImage src="/case-studies/smart-library-thermal/01-cover.jpg" caption="Temperature · 系统部署效果图" />
-
         <SubHeading label="问题">看不见的「热微气候」</SubHeading>
         <Paragraph>
           图书馆开放式学习空间存在明显的「热微气候」——同一楼层不同区域温差显著，有些角落过冷，有些位置闷热。学生花费大量时间反复换座试错，却无法在入馆时快速判断哪个区域更舒适。更重要的是，传统空调系统采用单一温控设定，无法满足不同人群的差异化需求（研究表明，温度对不同性别的认知表现影响存在差异）。
@@ -150,10 +148,7 @@ function Content({ locale }: { locale: Locale }) {
         <Paragraph>
           <strong>发现的问题：</strong>LED 颜色在明亮环境中不易辨认；按钮功能语义不清晰。
         </Paragraph>
-        <TwoCol>
-          <CaseImage src="/case-studies/smart-library-thermal/04-prototype1-hardware.jpg" caption="Prototype 1 硬件探针" />
-          <CaseImage src="/case-studies/smart-library-thermal/05-prototype1-figma.png" caption="Prototype 1 Figma 初版界面" />
-        </TwoCol>
+        <CaseImage src="/case-studies/smart-library-thermal/04-prototype1-hardware.jpg" caption="Prototype 1 硬件探针" />
 
         <SubHeading label="Prototype 2">完整系统实现 & 正式用户测试</SubHeading>
         <Paragraph>目标是实现可运行的完整系统。</Paragraph>
@@ -189,6 +184,8 @@ function Content({ locale }: { locale: Locale }) {
             </span>,
           ]}
         />
+        <CaseImage src="/case-studies/smart-library-thermal/05-prototype1-figma.png" caption="Prototype 2 界面（大屏 + 移动端）" />
+
         <Paragraph>
           <strong>测试发现的 8 个核心问题：</strong>
         </Paragraph>
@@ -205,7 +202,7 @@ function Content({ locale }: { locale: Locale }) {
             ["8", "移动端与大屏数据不同步", "技术测试"],
           ]}
         />
-        <CaseImage src="/case-studies/smart-library-thermal/06-prototype2-system.png" caption="Prototype 2 完整系统部署" />
+        <CaseImage src="/case-studies/smart-library-thermal/06-prototype2-system.png" caption="Prototype 2 用户测试结果" />
 
         <SubHeading label="Prototype 3">针对性迭代 & 最终交付</SubHeading>
         <Paragraph>基于用户测试结果，对影响最大的问题进行定向修复：</Paragraph>
@@ -225,11 +222,11 @@ function Content({ locale }: { locale: Locale }) {
             </span>,
           ]}
         />
+        <CaseImage src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png" caption="Prototype 3 硬件部分" />
         <TwoCol>
-          <CaseImage src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png" caption="Prototype 3 大屏界面" />
-          <CaseImage src="/case-studies/smart-library-thermal/08-prototype3-detail-b.png" caption="Prototype 3 移动端界面" />
+          <CaseImage src="/case-studies/smart-library-thermal/09-prototype3-final.png" caption="Prototype 3 大屏界面" />
+          <CaseImage src="/case-studies/smart-library-thermal/08-prototype3-detail-b.png" caption="Prototype 3 移动端界面" size="phone" />
         </TwoCol>
-        <CaseImage src="/case-studies/smart-library-thermal/09-prototype3-final.png" caption="最终硬件 + 软件部署" />
       </CaseStudySection>
 
       <CaseStudySection id="what" num="三、" title="产品设计（What）">
@@ -272,6 +269,8 @@ function Content({ locale }: { locale: Locale }) {
       </CaseStudySection>
 
       <CaseStudySection id="work" num="四、" title="我的工作">
+        <CaseImage src="/case-studies/smart-library-thermal/01-cover.jpg" caption="6 人团队合照" />
+
         <SubHeading label="Team Leader & PM">跨领域协调与项目管理</SubHeading>
         <Paragraph>作为 6 人团队的负责人，主导项目从调研到交付的全流程：</Paragraph>
         <BulletList

@@ -108,14 +108,18 @@ export function CaseImage({
   alt,
   caption,
   contain,
+  size = "full",
 }: {
   src: string
   alt?: string
   caption?: string
   contain?: boolean
+  size?: "full" | "md" | "phone"
 }) {
+  const wrapClass =
+    size === "phone" ? "max-w-[280px] mx-auto" : size === "md" ? "max-w-md mx-auto" : ""
   return (
-    <figure className="my-4">
+    <figure className={`my-4 ${wrapClass}`}>
       <div className="relative rounded-xl border border-zinc-800 overflow-hidden bg-zinc-950/60">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img

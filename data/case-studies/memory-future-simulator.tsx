@@ -169,11 +169,11 @@ AI 端：LLM + RAG 运行在服务器端`}
             "玩家可以分享和讨论彼此的人格结果，进一步激发反思",
           ]}
         />
-        <CaseImage src="/case-studies/memory-future-simulator/05-mbti-result.png" caption="MBTI 风格人格结果界面" />
+        <CaseImage src="/case-studies/memory-future-simulator/05-mbti-result.png" caption="MBTI 风格人格结果界面" size="phone" />
 
         <SubHeading label="05">历史时间线回顾</SubHeading>
         <Paragraph>手机端提供可展开 / 折叠的时间线组件，回顾每一轮的事件、选择和世界状态变化。</Paragraph>
-        <CaseImage src="/case-studies/memory-future-simulator/06-timeline-review.png" caption="时间线回顾组件" />
+        <CaseImage src="/case-studies/memory-future-simulator/06-timeline-review.png" caption="时间线回顾组件" size="phone" />
 
         <SubHeading label="06">结局生成</SubHeading>
         <Paragraph>AI 根据 10 轮的全局数据，生成一段关于这个世界最终走向的叙事总结，在大屏上展示。</Paragraph>
