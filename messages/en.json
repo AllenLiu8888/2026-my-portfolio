@@ -95,9 +95,9 @@
       },
       {
         "slug": "digital-sales-map",
-        "title": "Digital Sales Map",
-        "description": "TBD — awaiting Yikai's project brief (context / role / stack / outcomes).",
-        "tags": ["TBD"]
+        "title": "Digital Sales Map · Chemical Sales Platform",
+        "description": "7-day solo end-to-end build for a chemical-trading client — research → React/Node full-stack → Aliyun ECS deployment. A Vibe-Coding practice: PM-owned business understanding + spec + QC, AI accelerated the code. National map drill-down, customer CRM, Excel batch import. Live and in pilot use.",
+        "tags": ["PM + Full-Stack", "Vibe Coding", "0→1 in 7 days", "Live"]
       },
       {
         "slug": "chemical-trade-dashboard",

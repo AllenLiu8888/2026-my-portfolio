@@ -95,9 +95,9 @@
       },
       {
         "slug": "digital-sales-map",
-        "title": "Digital Sales Map · 数字销售地图",
-        "description": "TBD — 等待 Yikai 补充项目详情（项目背景 / 角色 / 技术栈 / 成果数据）。",
-        "tags": ["TBD"]
+        "title": "Digital Sales Map · 化工销售数据管理系统",
+        "description": "7 天独立完成需求调研→React/Node 全栈→阿里云部署的化工企业销售管理平台。AI 辅助开发（Vibe Coding）实践——PM 主导业务理解 + 需求定义 + 质量控制，AI 加速编码。覆盖 5 销区 31 省市，客户内部试点中。",
+        "tags": ["PM + 全栈", "Vibe Coding", "0→1 / 7 天", "已上线"]
       },
       {
         "slug": "chemical-trade-dashboard",

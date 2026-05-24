@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { ArrowLeft, Github } from "lucide-react"
+import { ArrowLeft, ExternalLink, Github } from "lucide-react"
 
 import { Link } from "@/i18n/navigation"
 import { pickLocale, type CaseStudyMeta, type Locale } from "@/lib/case-studies"
@@ -126,9 +126,20 @@ export function CaseStudyHero({ meta, locale, labels }: Props) {
             </div>
           </div>
 
-          {meta.github && meta.github.length > 0 && (
+          {(meta.liveDemo || (meta.github && meta.github.length > 0)) && (
             <div className="flex flex-wrap gap-2">
-              {meta.github.map((link) => (
+              {meta.liveDemo && (
+                <a
+                  href={meta.liveDemo.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-md px-3 py-2 text-xs font-medium border border-purple-500/50 bg-gradient-to-r from-purple-500/20 to-pink-500/15 text-white hover:from-purple-500/30 hover:to-pink-500/25 hover:border-purple-400 transition-colors"
+                >
+                  <ExternalLink className="h-4 w-4" />
+                  {meta.liveDemo.label}
+                </a>
+              )}
+              {meta.github?.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
