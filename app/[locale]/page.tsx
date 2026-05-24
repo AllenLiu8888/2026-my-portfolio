@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Github, Heart, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 
@@ -187,8 +187,8 @@ function PortfolioContent() {
               <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/placeholder.svg?height=600&width=600"
-                  alt="Allen Liu"
+                  src="/profile.png"
+                  alt="Yikai Liu (Allen) — illustrated portrait"
                   className="w-full h-full object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
@@ -254,6 +254,12 @@ function PortfolioContent() {
             defaultVisible={12}
             showMoreLabel={t("skills.showMore")}
             showLessLabel={t("skills.showLess")}
+            tiers={t.raw("skills.tiers") as {
+              expert: { label: string; range: string }
+              proficient: { label: string; range: string }
+              working: { label: string; range: string }
+              learning: { label: string; range: string }
+            }}
           />
         </div>
       </section>
@@ -320,7 +326,6 @@ function PortfolioContent() {
                   icon={MessageCircle}
                   label={t("contact.labels.wechat")}
                   value={t("contact.values.wechat")}
-                  note={t("contact.values.wechatNote")}
                 />
                 <ContactRow
                   icon={Phone}
@@ -332,7 +337,16 @@ function PortfolioContent() {
                   icon={Phone}
                   label={t("contact.labels.phoneAU")}
                   value={t("contact.values.phoneAU")}
+                  href={`tel:${t("contact.values.phoneAU").replace(/\s/g, "")}`}
                 />
+              </div>
+
+              <div className="mt-auto pt-8 border-t border-zinc-800">
+                <h4 className="text-lg font-medium mb-3">{t("contact.responseTitle")}</h4>
+                <div className="flex items-center gap-2 text-zinc-300">
+                  <div className="w-2 h-2 rounded-full bg-purple-400"></div>
+                  <span className="text-sm">{t("contact.responseText")}</span>
+                </div>
               </div>
             </GlassmorphicCard>
 
@@ -352,18 +366,13 @@ function PortfolioContent() {
                   value={t("contact.values.github")}
                   href={`https://${t("contact.values.github")}`}
                 />
-                <ContactRow
-                  icon={Heart}
-                  label={t("contact.labels.xiaohongshu")}
-                  value={t("contact.values.xiaohongshu")}
-                />
               </div>
 
-              <div className="mt-8 pt-8 border-t border-zinc-800">
-                <h4 className="text-lg font-medium mb-4">{t("contact.statusTitle")}</h4>
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>{t("contact.statusText")}</span>
+              <div className="mt-auto pt-8 border-t border-zinc-800">
+                <h4 className="text-lg font-medium mb-3">{t("contact.statusTitle")}</h4>
+                <div className="flex items-center gap-2 text-zinc-300">
+                  <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                  <span className="text-sm">{t("contact.statusText")}</span>
                 </div>
               </div>
             </GlassmorphicCard>

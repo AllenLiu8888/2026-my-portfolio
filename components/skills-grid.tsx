@@ -6,10 +6,16 @@ import { ChevronDown, ChevronUp } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
 import { SkillBadge } from "@/components/skill-badge"
+import { SkillsLegend } from "@/components/skills-legend"
 
 interface Skill {
   name: string
   level: number
+}
+
+interface TierMeta {
+  label: string
+  range: string
 }
 
 interface Props {
@@ -17,6 +23,12 @@ interface Props {
   defaultVisible?: number
   showMoreLabel: string
   showLessLabel: string
+  tiers: {
+    expert: TierMeta
+    proficient: TierMeta
+    working: TierMeta
+    learning: TierMeta
+  }
 }
 
 export function SkillsGrid({
@@ -24,6 +36,7 @@ export function SkillsGrid({
   defaultVisible = 12,
   showMoreLabel,
   showLessLabel,
+  tiers,
 }: Props) {
   const [expanded, setExpanded] = useState(false)
   const visible = expanded ? skills : skills.slice(0, defaultVisible)
@@ -31,7 +44,9 @@ export function SkillsGrid({
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
+      <SkillsLegend tiers={tiers} />
+
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-10">
         {visible.map((skill) => (
           <SkillBadge key={skill.name} name={skill.name} level={skill.level} />
         ))}
