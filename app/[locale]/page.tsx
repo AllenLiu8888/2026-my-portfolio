@@ -61,8 +61,8 @@ function PortfolioContent() {
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="block">{t("hero.greeting")}</span>
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+              <span className="block mb-3 md:mb-4">{t("hero.greeting")}</span>
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
                 {t("hero.name")}
               </span>
             </h1>
