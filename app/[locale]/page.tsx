@@ -1,5 +1,7 @@
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { useTranslations } from "next-intl"
+import { setRequestLocale } from "next-intl/server"
 
 import { Button } from "@/components/ui/button"
 import { ProjectCard } from "@/components/project-card"
@@ -13,7 +15,30 @@ import { ScrollProgress } from "@/components/scroll-progress"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
-export default function Portfolio() {
+type Skill = { name: string; level: number }
+type Project = {
+  title: string
+  description: string
+  tags: string[]
+  demoUrl: string
+  repoUrl: string
+}
+
+export default async function Portfolio({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}) {
+  const { locale } = await params
+  setRequestLocale(locale)
+  return <PortfolioContent />
+}
+
+function PortfolioContent() {
+  const t = useTranslations()
+  const skills = t.raw("skills.items") as Skill[]
+  const projects = t.raw("projects.items") as Project[]
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-hidden">
       <MouseFollower />
@@ -32,25 +57,23 @@ export default function Portfolio() {
           <div className="space-y-6">
             <div className="inline-block">
               <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-4 mt-4">
-                <span className="relative z-10">AI Product Manager · UQ HCI · Ex-XPENG</span>
+                <span className="relative z-10">{t("hero.eyebrow")}</span>
                 <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
               </div>
             </div>
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight">
-              <span className="block">Hi, I&apos;m</span>
+              <span className="block">{t("hero.greeting")}</span>
               <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-                Allen Liu
+                {t("hero.name")}
               </span>
             </h1>
-            <p className="text-xl text-zinc-400 max-w-[600px]">
-              I build AI-native products with multi-agent workflows, frontier-model evaluation,
-              and an HCI-trained mindset for shipping things people actually use.
-            </p>
+            <p className="text-xl text-zinc-400 max-w-[600px]">{t("hero.tagline")}</p>
             <div className="flex flex-wrap gap-4 pt-4">
               <Link href="#projects">
                 <Button className="relative overflow-hidden group bg-gradient-to-r from-purple-500 to-pink-500 border-0">
                   <span className="relative z-10 flex items-center">
-                    View Projects <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+                    {t("hero.viewProjects")}{" "}
+                    <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </span>
                   <span className="absolute inset-0 bg-gradient-to-r from-pink-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                 </Button>
@@ -60,7 +83,7 @@ export default function Portfolio() {
                   variant="outline"
                   className="border-zinc-700 text-pink-500 hover:text-pink-700 hover:border-zinc-500"
                 >
-                  Contact Me
+                  {t("hero.contactMe")}
                 </Button>
               </Link>
             </div>
@@ -117,12 +140,13 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="About Me" subtitle="From XPENG marketing to AI builder" />
+          <SectionHeading title={t("about.title")} subtitle={t("about.subtitle")} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <div className="relative">
               <div className="absolute -inset-4 rounded-xl bg-gradient-to-r from-purple-500/20 to-pink-500/20 blur-xl opacity-70"></div>
               <div className="relative aspect-square rounded-xl overflow-hidden border border-zinc-800">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="/placeholder.svg?height=600&width=600"
                   alt="Allen Liu"
@@ -132,7 +156,7 @@ export default function Portfolio() {
                 <div className="absolute bottom-0 left-0 w-full p-6">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-sm font-medium">Open to AI PM roles · 2026 Cohort</span>
+                    <span className="text-sm font-medium">{t("about.status")}</span>
                   </div>
                 </div>
               </div>
@@ -140,42 +164,33 @@ export default function Portfolio() {
 
             <div className="space-y-6">
               <GlassmorphicCard>
-                <p className="text-lg text-zinc-300">
-                  I&apos;m a 2026 AI Product Manager candidate with a Master&apos;s in
-                  Human-Computer Interaction from the University of Queensland. Before grad school,
-                  I led North China marketing operations at XPENG Motors for two years.
-                </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  Today I run a one-person AI studio out of Hohhot — shipping production agents on
-                  Coze and Dify, benchmarking five frontier models head-to-head, and turning the
-                  chaos of solo work into a three-tier multi-agent system I use every day.
-                </p>
-                <p className="text-lg text-zinc-300 mt-4">
-                  My core belief: the best AI PMs are also AI builders. Every project on this site
-                  was scoped, prototyped, shipped, and dog-fooded by me.
-                </p>
+                <p className="text-lg text-zinc-300">{t("about.bio1")}</p>
+                <p className="text-lg text-zinc-300 mt-4">{t("about.bio2")}</p>
+                <p className="text-lg text-zinc-300 mt-4">{t("about.bio3")}</p>
 
                 <div className="grid grid-cols-2 gap-4 mt-8">
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Name</div>
-                    <div className="font-medium">Allen Liu (Yikai Liu)</div>
+                    <div className="text-sm text-zinc-500">{t("about.labels.name")}</div>
+                    <div className="font-medium">{t("about.values.name")}</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Email</div>
-                    <div className="font-medium">lyk0434237299@gmail.com</div>
+                    <div className="text-sm text-zinc-500">{t("about.labels.email")}</div>
+                    <div className="font-medium">{t("about.values.email")}</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Location</div>
-                    <div className="font-medium">Hohhot, China</div>
+                    <div className="text-sm text-zinc-500">{t("about.labels.location")}</div>
+                    <div className="font-medium">{t("about.values.location")}</div>
                   </div>
                   <div className="space-y-1">
-                    <div className="text-sm text-zinc-500">Availability</div>
-                    <div className="font-medium text-green-500">Open to AI PM roles</div>
+                    <div className="text-sm text-zinc-500">{t("about.labels.availability")}</div>
+                    <div className="font-medium text-green-500">{t("about.values.availability")}</div>
                   </div>
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">Download Resume (PDF)</Button>
+                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
+                    {t("about.downloadResume")}
+                  </Button>
                 </div>
               </GlassmorphicCard>
             </div>
@@ -191,21 +206,12 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Stack & Capabilities" subtitle="What I build with — daily" />
+          <SectionHeading title={t("skills.title")} subtitle={t("skills.subtitle")} />
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            <SkillBadge name="Claude (Opus / Sonnet)" level={95} />
-            <SkillBadge name="GPT-5" level={90} />
-            <SkillBadge name="Gemini 2.5" level={85} />
-            <SkillBadge name="MiniMax M2" level={85} />
-            <SkillBadge name="Coze" level={90} />
-            <SkillBadge name="Dify" level={85} />
-            <SkillBadge name="Claude Code / Cursor" level={95} />
-            <SkillBadge name="Multi-Agent Design" level={90} />
-            <SkillBadge name="Prompt Engineering" level={95} />
-            <SkillBadge name="Product Strategy" level={85} />
-            <SkillBadge name="User Research (HCI)" level={90} />
-            <SkillBadge name="Next.js / TypeScript" level={75} />
+            {skills.map((skill) => (
+              <SkillBadge key={skill.name} name={skill.name} level={skill.level} />
+            ))}
           </div>
         </div>
       </section>
@@ -218,57 +224,20 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Featured Projects" subtitle="AI builds + HCI research" />
+          <SectionHeading title={t("projects.title")} subtitle={t("projects.subtitle")} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
-            <ProjectCard
-              title="Coze · Job Topic Inspiration Bot"
-              description="A three-agent Coze workflow that turns a target role into a full content package — topic ideas, post outlines, and cover copy — for AI-PM job seekers."
-              tags={["Coze", "Multi-Agent", "LLMOps", "Content Ops"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
-            <ProjectCard
-              title="Dify · AI Resume Optimizer"
-              description="Upload a resume PDF and paste a JD — the workflow parses both, scores the fit across five dimensions, and drafts a tailored cover letter in under 30s."
-              tags={["Dify", "Workflow", "RAG", "Resume Tech"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
-            <ProjectCard
-              title="Five-Model Benchmark Dashboard"
-              description="A public Notion dashboard comparing Claude / GPT / Gemini / MiniMax / DeepSeek across six dimensions, with cost-per-task and one real story per model."
-              tags={["Model Eval", "Notion", "Analytics"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
-            <ProjectCard
-              title="Nova · Three-Tier Agent System"
-              description="My personal AI ops: a Minimax-powered secretary (Nova) that triages tasks, a HealthBot that runs my training plan, and Claude Code that handles strategy and code."
-              tags={["Multi-Agent", "Architecture", "Personal AI"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
-            <ProjectCard
-              title="Smart Library Thermal-Perception System"
-              description="UQ HCI capstone (HD 7/7). An IoT system that learns each reader's thermal comfort profile and auto-adjusts zone HVAC — paired with a mobile companion app."
-              tags={["HCI", "IoT", "Mixed Methods", "Capstone"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
-            <ProjectCard
-              title="Memory Future Simulator"
-              description="Team lead, 6-person Sprint. A speculative-design web simulator exploring how AI-generated future memories would reshape decision-making today."
-              tags={["Design Research", "Team Lead", "Speculative"]}
-              image="/placeholder.svg?height=400&width=600"
-              demoUrl="#"
-              repoUrl="#"
-            />
+            {projects.map((p) => (
+              <ProjectCard
+                key={p.title}
+                title={p.title}
+                description={p.description}
+                tags={p.tags}
+                image="/placeholder.svg?height=400&width=600"
+                demoUrl={p.demoUrl}
+                repoUrl={p.repoUrl}
+              />
+            ))}
           </div>
         </div>
       </section>
@@ -281,7 +250,7 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Experience" subtitle="From XPENG to one-person AI studio" />
+          <SectionHeading title={t("experience.title")} subtitle={t("experience.subtitle")} />
 
           <div className="mt-16">
             <Timeline />
@@ -297,18 +266,18 @@ export default function Portfolio() {
         </div>
 
         <div className="container relative z-10">
-          <SectionHeading title="Get In Touch" subtitle="Hiring, collab, or just curious — say hi" />
+          <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
             <GlassmorphicCard>
-              <h3 className="text-2xl font-bold mb-6">Contact Information</h3>
+              <h3 className="text-2xl font-bold mb-6">{t("contact.infoTitle")}</h3>
               <div className="space-y-6">
                 <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
                     <Mail className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">Email</div>
+                    <div className="text-sm text-zinc-500">{t("contact.labels.email")}</div>
                     <div className="font-medium">lyk0434237299@gmail.com</div>
                   </div>
                 </div>
@@ -317,7 +286,7 @@ export default function Portfolio() {
                     <Linkedin className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">LinkedIn</div>
+                    <div className="text-sm text-zinc-500">{t("contact.labels.linkedin")}</div>
                     <div className="font-medium">linkedin.com/in/yikailiu</div>
                   </div>
                 </div>
@@ -326,17 +295,17 @@ export default function Portfolio() {
                     <Github className="h-5 w-5 text-purple-400" />
                   </div>
                   <div>
-                    <div className="text-sm text-zinc-500">GitHub</div>
+                    <div className="text-sm text-zinc-500">{t("contact.labels.github")}</div>
                     <div className="font-medium">github.com/AllenLiu8888</div>
                   </div>
                 </div>
               </div>
 
               <div className="mt-8 pt-8 border-t border-zinc-800">
-                <h4 className="text-lg font-medium mb-4">Current Status</h4>
+                <h4 className="text-lg font-medium mb-4">{t("contact.statusTitle")}</h4>
                 <div className="flex items-center gap-2">
                   <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                  <span>Actively interviewing for 2026 AI PM roles</span>
+                  <span>{t("contact.statusText")}</span>
                 </div>
               </div>
             </GlassmorphicCard>
@@ -355,7 +324,7 @@ export default function Portfolio() {
               <span className="text-white">Liu</span>
             </Link>
             <p className="text-sm text-zinc-500 mt-2">
-              © {new Date().getFullYear()} Allen Liu (Yikai Liu). Built with Next.js, Tailwind &amp; Claude Code.
+              {t("footer.copyright", { year: new Date().getFullYear() })} {t("footer.tagline")}
             </p>
           </div>
           <div className="flex gap-4">

@@ -1,0 +1,169 @@
+{
+  "meta": {
+    "title": "刘一开 Allen Liu · AI 产品经理",
+    "description": "AI 产品经理 · 昆士兰大学 HCI 硕士 · 前小鹏汽车 · 在 Coze、Dify、Claude 上搭建多智能体工作流。"
+  },
+  "nav": {
+    "about": "关于",
+    "skills": "技能",
+    "projects": "作品",
+    "experience": "经历",
+    "contact": "联系",
+    "resume": "简历",
+    "switchLocale": "EN"
+  },
+  "hero": {
+    "eyebrow": "AI 产品经理 · UQ HCI 硕士 · 前小鹏汽车",
+    "greeting": "你好，我是",
+    "name": "刘一开",
+    "tagline": "我搭建 AI 原生产品：多智能体工作流、前沿模型评测、以及来自 HCI 训练的产品直觉——把「能用」做到「真的有人用」。",
+    "viewProjects": "查看作品",
+    "contactMe": "联系我"
+  },
+  "about": {
+    "title": "关于我",
+    "subtitle": "从小鹏市场到 AI builder",
+    "status": "开放 AI PM 机会 · 2026 届",
+    "bio1": "我是 2026 届 AI 产品经理候选人，澳大利亚昆士兰大学 HCI 硕士。读研之前，我在小鹏汽车做了两年华北市场运营负责人。",
+    "bio2": "现在我在呼和浩特运营一家一人 AI 工作室——在 Coze 和 Dify 上交付生产级 Agent，对 Claude / GPT / Gemini / MiniMax / DeepSeek 做横评，把一人创业的混乱组织成一套每天都在用的三层多智能体系统。",
+    "bio3": "我相信：最好的 AI 产品经理也是 AI builder。这里的每一个项目，都是我亲手从需求到上线、再自己用起来的。",
+    "labels": {
+      "name": "姓名",
+      "email": "邮箱",
+      "location": "所在地",
+      "availability": "状态"
+    },
+    "values": {
+      "name": "刘一开 (Allen Liu)",
+      "email": "lyk0434237299@gmail.com",
+      "location": "中国 · 呼和浩特",
+      "availability": "开放 AI PM 机会"
+    },
+    "downloadResume": "下载简历 (PDF)"
+  },
+  "skills": {
+    "title": "技术栈 & 能力",
+    "subtitle": "我每天在用的工具",
+    "items": [
+      { "name": "Claude (Opus / Sonnet)", "level": 95 },
+      { "name": "GPT-5", "level": 90 },
+      { "name": "Gemini 2.5", "level": 85 },
+      { "name": "MiniMax M2", "level": 85 },
+      { "name": "Coze 扣子", "level": 90 },
+      { "name": "Dify", "level": 85 },
+      { "name": "Claude Code / Cursor", "level": 95 },
+      { "name": "多智能体架构", "level": 90 },
+      { "name": "Prompt 工程", "level": 95 },
+      { "name": "产品策略", "level": 85 },
+      { "name": "用户研究 (HCI)", "level": 90 },
+      { "name": "Next.js / TypeScript", "level": 75 }
+    ]
+  },
+  "projects": {
+    "title": "精选作品",
+    "subtitle": "AI 实操 + HCI 研究",
+    "items": [
+      {
+        "title": "Coze · 求职选题灵感机",
+        "description": "三智能体 Coze 工作流：输入目标岗位，自动产出选题、大纲、封面文案，给 AI PM 求职者打包内容物料。",
+        "tags": ["Coze", "多智能体", "LLMOps", "内容运营"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
+        "title": "Dify · AI 简历优化器",
+        "description": "上传简历 PDF + 粘贴 JD，工作流解析两边、五维评分匹配度，30 秒内生成定制 Cover Letter。",
+        "tags": ["Dify", "Workflow", "RAG", "Resume Tech"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
+        "title": "五大模型横评 Dashboard",
+        "description": "公开 Notion 看板，对 Claude / GPT / Gemini / MiniMax / DeepSeek 做 6 维对比，附单次任务成本和每个模型一个真实使用故事。",
+        "tags": ["模型评测", "Notion", "数据分析"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
+        "title": "Nova · 三层 Agent 架构",
+        "description": "我的个人 AI 工作流：Minimax 驱动的秘书 Nova 接发指令，HealthBot 跑健身计划，Claude Code 处理战略和代码。",
+        "tags": ["多智能体", "架构", "个人 AI"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
+        "title": "图书馆智能温度感知系统",
+        "description": "UQ HCI 毕设（High Distinction 7/7）。IoT 系统学习每位读者的温度舒适画像，分区自动调节 HVAC，配套移动 App。",
+        "tags": ["HCI", "IoT", "混合方法", "毕设"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      },
+      {
+        "title": "记忆未来模拟器",
+        "description": "组长 + 6 人 Sprint 团队。一个推测设计 Web 模拟器，探索「AI 生成的未来记忆」如何重塑当下的决策。",
+        "tags": ["设计研究", "团队领导", "推测设计"],
+        "demoUrl": "#",
+        "repoUrl": "#"
+      }
+    ]
+  },
+  "experience": {
+    "title": "经历",
+    "subtitle": "从小鹏汽车到一人 AI 工作室",
+    "items": [
+      {
+        "title": "AI 产品经理（独立）",
+        "company": "一人 AI 工作室 · 呼和浩特",
+        "period": "2026.03 — 至今",
+        "description": "在 Coze、Dify、Claude Code 上搭建生产级多智能体系统。交付 AI 原生工具，对前沿模型做横评，在小红书和知乎分享 AI PM 的实操心得。"
+      },
+      {
+        "title": "人机交互硕士",
+        "company": "澳大利亚昆士兰大学 · 布里斯班",
+        "period": "2024.06 — 2026.02",
+        "description": "主攻混合方法 UX 研究、设计系统、新兴交互范式。毕业设计「智能图书馆温度感知系统」拿到 7/7 High Distinction。"
+      },
+      {
+        "title": "华北市场运营负责人",
+        "company": "小鹏汽车 · 北京",
+        "period": "2022.07 — 2024.05",
+        "description": "负责华北最大新能源汽车市场的区域运营。端到端策划营销活动、管理本地代理、推动 12 城试驾转化提升 30%。"
+      },
+      {
+        "title": "计算机科学学士",
+        "company": "内蒙古大学 · 呼和浩特",
+        "period": "2017.09 — 2021.06",
+        "description": "一等荣誉。算法、分布式系统、HCI 基础。活跃于创业大赛和校园设计社。"
+      }
+    ]
+  },
+  "contact": {
+    "title": "联系我",
+    "subtitle": "招聘、合作、或者只是好奇——欢迎打招呼",
+    "infoTitle": "联系方式",
+    "labels": {
+      "email": "邮箱",
+      "linkedin": "领英",
+      "github": "GitHub"
+    },
+    "statusTitle": "当前状态",
+    "statusText": "正在面试 2026 届 AI PM 岗位",
+    "form": {
+      "name": "姓名",
+      "email": "邮箱",
+      "subject": "主题",
+      "message": "消息",
+      "send": "发送",
+      "sending": "发送中...",
+      "success": "已发送 —— 24 小时内回复。",
+      "namePlaceholder": "你的名字",
+      "emailPlaceholder": "you@example.com",
+      "subjectPlaceholder": "想聊什么？",
+      "messagePlaceholder": "告诉我岗位 / 项目 / 问题..."
+    }
+  },
+  "footer": {
+    "tagline": "用 Next.js + Tailwind + Claude Code 搭建。",
+    "copyright": "© {year} 刘一开 Allen Liu · 保留所有权利。"
+  }
+}

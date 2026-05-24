@@ -1,41 +1,21 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { useTranslations } from "next-intl"
+
 import { useMobile } from "@/hooks/use-mobile"
 
-const experiences = [
-  {
-    title: "Indie AI Product Manager",
-    company: "One-Person AI Studio · Hohhot",
-    period: "2026.03 — Present",
-    description:
-      "Building production multi-agent systems on Coze, Dify, and Claude Code. Shipping AI-native tools, benchmarking frontier models, and writing about the AI PM craft on Xiaohongshu / Zhihu.",
-  },
-  {
-    title: "Master of Human-Computer Interaction",
-    company: "The University of Queensland · Brisbane",
-    period: "2024.06 — 2026.02",
-    description:
-      "Specialized in mixed-method UX research, design systems, and emerging interaction paradigms. Capstone — an IoT thermal-perception system for smart libraries — received a 7/7 High Distinction.",
-  },
-  {
-    title: "North China Marketing Operations Lead",
-    company: "XPENG Motors · Beijing",
-    period: "2022.07 — 2024.05",
-    description:
-      "Owned regional marketing operations for the largest EV market in North China. Ran campaigns end-to-end, managed local agencies, and drove a 30% lift in test-drive conversion across 12 cities.",
-  },
-  {
-    title: "B.S. in Computer Science",
-    company: "Inner Mongolia University · Hohhot",
-    period: "2017.09 — 2021.06",
-    description:
-      "First-class honours. Foundations in algorithms, distributed systems, and HCI. Active in entrepreneurship competitions and the campus design society.",
-  },
-]
+type Experience = {
+  title: string
+  company: string
+  period: string
+  description: string
+}
 
 export function Timeline() {
   const isMobile = useMobile()
+  const t = useTranslations()
+  const experiences = t.raw("experience.items") as Experience[]
 
   return (
     <div
