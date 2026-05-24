@@ -17,11 +17,10 @@ import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
 type Skill = { name: string; level: number }
 type Project = {
+  slug: string
   title: string
   description: string
   tags: string[]
-  demoUrl: string
-  repoUrl: string
 }
 
 export default async function Portfolio({
@@ -229,13 +228,14 @@ function PortfolioContent() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-16">
             {projects.map((p) => (
               <ProjectCard
-                key={p.title}
+                key={p.slug}
+                slug={p.slug}
                 title={p.title}
                 description={p.description}
                 tags={p.tags}
                 image="/placeholder.svg?height=400&width=600"
-                demoUrl={p.demoUrl}
-                repoUrl={p.repoUrl}
+                detailsLabel={t("projects.details")}
+                codeLabel={t("projects.code")}
               />
             ))}
           </div>

@@ -64,48 +64,44 @@
   "projects": {
     "title": "Featured Projects",
     "subtitle": "0→1 product builds · HCI capstones · AI infrastructure",
+    "details": "Case Study",
+    "code": "Code",
     "items": [
       {
+        "slug": "chemical-trade-dashboard",
         "title": "Chemical-Trade Sales Dashboard",
         "description": "Solo PM + full-stack build (React / Node.js / PostgreSQL) for a chemical trading company covering 5 sales zones and 31 provinces. 7-day sprint from user research → architecture → deployment. Gave management its first unified national sales view with heatmap drill-down, customer CRM, and Excel-import data validation.",
-        "tags": ["PM + Full-Stack", "0→1 in 7 days", "React / Node / PostgreSQL", "Deployed"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["PM + Full-Stack", "0→1 in 7 days", "React / Node / PostgreSQL", "Deployed"]
       },
       {
+        "slug": "smart-library-thermal",
         "title": "Smart Library Thermal-Perception System",
         "description": "UQ DECO7285 capstone, team lead of 6, HD 7/7 (max grade). React + ESP32 sensor mesh + cloud backend. Key product call: after Contextual Inquiry revealed the library couldn't change room temperature, I redefined the button from a 'control tool' into a 'perception recorder' — flipping the entire product narrative.",
-        "tags": ["Team Lead", "HCI", "IoT / ESP32", "HD 7/7"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["Team Lead", "HCI", "IoT / ESP32", "HD 7/7"]
       },
       {
+        "slug": "memory-future-simulator",
         "title": "Memory Future Simulator",
         "description": "UQ DECO3801/7381, 12 weeks, team lead of 6, Distinction 6/7. React + Vite + Tailwind. Pivoted the brief from a 'static educational tool' into a multiplayer collaborative narrative simulator — scan to join the same virtual world, vote together, watch your decisions reshape society in real time. 3 Sprints in Jira, 2 rounds Think-Aloud testing, shown at the UQ campus exhibition.",
-        "tags": ["Team Lead", "Speculative Design", "Jira / 3 Sprints", "Exhibited"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["Team Lead", "Speculative Design", "Jira / 3 Sprints", "Exhibited"]
       },
       {
+        "slug": "openclaw-agent-stack",
         "title": "OpenClaw · Three-Tier Agent Stack",
         "description": "My personal AI ops, daily-driven: 104 self-configured OpenClaw Skills across 7 domains (data, social monitoring, automation, etc.), with Nova as a Minimax-powered secretary triaging tasks, HealthBot running my training plan, and Claude Code handling strategy + code. The clearest proof of moving from AI 'tool user' to 'tool-chain builder'.",
-        "tags": ["104 Skills", "Multi-Agent", "Personal AI", "Daily-Driven"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["104 Skills", "Multi-Agent", "Personal AI", "Daily-Driven"]
       },
       {
+        "slug": "frontier-model-benchmark",
         "title": "Frontier-Model Benchmark Dashboard",
         "description": "Hands-on comparison of Claude / GPT / Gemini / MiniMax / DeepSeek across coding, Chinese reasoning, agent orchestration, long context, multimodal, and cost-per-task. Not a leaderboard — one real usage story per model, mapped back to actual product decisions I've made. Public Notion dashboard.",
-        "tags": ["Model Eval", "Decision Frameworks", "LLMOps"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["Model Eval", "Decision Frameworks", "LLMOps"]
       },
       {
+        "slug": "xpeng-tianjin-douyin",
         "title": "XPENG · Tianjin Airport Store Douyin Matrix",
         "description": "Lead-gen content strategy for XPENG North China Zone 2. Solo script + shoot + edit. +13,000 precision followers in 2 months for the Tianjin Airport showroom. Concurrent with brand-IP playbooks I co-ran: 'Pengyou Club', 'Sunset Café', 'Weekend Arts' — all aimed at upper-funnel lead generation.",
-        "tags": ["Content Ops", "Growth +13K/2mo", "Brand IP", "XPENG"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["Content Ops", "Growth +13K/2mo", "Brand IP", "XPENG"]
       }
     ]
   },
@@ -174,5 +170,24 @@
   "footer": {
     "tagline": "Built with Next.js, Tailwind & Claude Code.",
     "copyright": "© {year} Yikai Liu (刘一开). All rights reserved."
+  },
+  "caseStudy": {
+    "back": "← Back to projects",
+    "backBottom": "← Back to all projects",
+    "overview": "Project Overview",
+    "type": "Type",
+    "period": "Period",
+    "team": "Team",
+    "stack": "Stack",
+    "grade": "Outcome",
+    "myRole": "My Role",
+    "sourceCode": "Source"
+  },
+  "comingSoon": {
+    "heading": "Case study in progress",
+    "body": "I'm writing up the full case study for this project right now — from user research and product decisions through to deployment and outcomes. In the meantime, the project summary lives on the home page and I'm happy to walk you through it directly.",
+    "contactCta": "Get in touch",
+    "fallbackTitle": "Project case study",
+    "fallbackDescription": "More details coming soon."
   }
 }

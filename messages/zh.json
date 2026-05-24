@@ -64,48 +64,44 @@
   "projects": {
     "title": "精选作品",
     "subtitle": "0→1 产品 · HCI 毕设 · AI 基建",
+    "details": "案例研究",
+    "code": "代码",
     "items": [
       {
+        "slug": "chemical-trade-dashboard",
         "title": "化工销售区域数据管理系统",
         "description": "独立 PM + 全栈开发（React / Node.js / PostgreSQL）。化工贸易企业，主营纯碱 / 尿素 / 小苏打，覆盖 5 销区 31 省市。7 天从用户调研→架构→上线。给管理层第一次提供全国销售统一可视化视图——热力地图省份下钻 + 客户管理后台 + Excel 批量导入校验。",
-        "tags": ["PM + 全栈", "0→1 / 7 天", "React / Node / PostgreSQL", "已部署"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["PM + 全栈", "0→1 / 7 天", "React / Node / PostgreSQL", "已部署"]
       },
       {
+        "slug": "smart-library-thermal",
         "title": "图书馆智能温度感知系统",
         "description": "UQ DECO7285 毕设，6 人团队 Team Lead，High Distinction 7/7（满分）。React + ESP32 传感器网 + 云后端。关键产品判断：通过半结构化访谈 + Contextual Inquiry 发现图书馆无法调整温度后，把按钮从「控制工具」重新定义为「感受记录」装置——彻底翻转了产品叙事。",
-        "tags": ["团队领导", "HCI", "IoT / ESP32", "HD 7/7"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["团队领导", "HCI", "IoT / ESP32", "HD 7/7"]
       },
       {
+        "slug": "memory-future-simulator",
         "title": "记忆未来模拟器",
         "description": "UQ DECO3801/7381，12 周，6 人团队 Team Lead，Distinction 6/7。React + Vite + Tailwind。把课题方向从「静态教育工具」重新定义为「多人协作叙事模拟器」——扫码加入同一虚拟世界，集体决策实时影响社会属性。Jira 管理 3 个 Sprint，2 轮 Think-Aloud 可用性测试，校内展览全天公开展出。",
-        "tags": ["团队领导", "推测设计", "Jira / 3 Sprints", "校展"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["团队领导", "推测设计", "Jira / 3 Sprints", "校展"]
       },
       {
+        "slug": "openclaw-agent-stack",
         "title": "OpenClaw · 三层 Agent 架构",
         "description": "我每天在用的个人 AI 工作流：自配 104 个 OpenClaw Skills，覆盖数据查询、社媒监控、自动化编排等 7 大场景。Minimax 驱动的秘书 Nova 接发指令、HealthBot 跑健身计划、Claude Code 处理战略和代码。这是「从 AI 工具使用者到工具链构建者」最直接的证据。",
-        "tags": ["104 Skills", "多智能体", "个人 AI", "每日在用"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["104 Skills", "多智能体", "个人 AI", "每日在用"]
       },
       {
+        "slug": "frontier-model-benchmark",
         "title": "五大模型横评 Dashboard",
         "description": "对 Claude / GPT / Gemini / MiniMax / DeepSeek 做编程、中文推理、Agent 调度、长文本、多模态、单次成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。公开 Notion 看板。",
-        "tags": ["模型评测", "决策框架", "LLMOps"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["模型评测", "决策框架", "LLMOps"]
       },
       {
+        "slug": "xpeng-tianjin-douyin",
         "title": "小鹏汽车 · 天津空港店抖音矩阵",
         "description": "小鹏华北二区的获客内容策略。独立完成脚本 + 拍摄 + 剪辑。天津空港小鹏汽车销售服务中心账号 2 个月精准涨粉 1.3W+。同期协作核心品牌 IP 落地：「来了就是鹏友」「日落咖啡馆」「周末有艺思」——全部对准上漏斗获客。",
-        "tags": ["内容运营", "增长 +1.3W/2月", "品牌 IP", "小鹏"],
-        "demoUrl": "#",
-        "repoUrl": "#"
+        "tags": ["内容运营", "增长 +1.3W/2月", "品牌 IP", "小鹏"]
       }
     ]
   },
@@ -174,5 +170,24 @@
   "footer": {
     "tagline": "用 Next.js + Tailwind + Claude Code 搭建。",
     "copyright": "© {year} 刘一开 Yikai Liu · 保留所有权利。"
+  },
+  "caseStudy": {
+    "back": "← 返回作品列表",
+    "backBottom": "← 返回所有作品",
+    "overview": "项目概览",
+    "type": "类型",
+    "period": "周期",
+    "team": "团队",
+    "stack": "技术栈",
+    "grade": "成果",
+    "myRole": "我的角色",
+    "sourceCode": "源码"
+  },
+  "comingSoon": {
+    "heading": "案例研究撰写中",
+    "body": "这个项目的完整案例正在整理中——从用户调研、产品决策一路到上线和效果都会涵盖。在此之前，首页有项目概要，也欢迎直接和我聊。",
+    "contactCta": "联系我",
+    "fallbackTitle": "项目案例研究",
+    "fallbackDescription": "完整内容即将上线。"
   }
 }
