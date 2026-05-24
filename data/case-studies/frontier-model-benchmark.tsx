@@ -71,10 +71,6 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <Callout variant="tip">
-        ⚠️ 本案例为 <strong>Claude Code 基于 Yikai 的模型实操经验整理的初稿</strong>。具体测试数据、Notion 看板链接、每模型的代表性使用故事等待 Yikai 补充。
-      </Callout>
-
       <CaseStudySection id="why" num="一、" title="为什么做这件事（Why）">
         <SubHeading label="问题">公开 benchmark 解决不了实际选型</SubHeading>
         <Paragraph>

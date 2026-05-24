@@ -71,10 +71,6 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <Callout variant="tip">
-        ⚠️ 本案例为 <strong>Claude Code 基于简历事实整理的初稿</strong>。具体爆款视频内容、爆款选题方法论、用户评论引述等待 Yikai 补充修正。
-      </Callout>
-
       <CaseStudySection id="why" num="一、" title="任务背景（Why）">
         <SubHeading label="行业大盘">2021 新能源车获客难</SubHeading>
         <Paragraph>

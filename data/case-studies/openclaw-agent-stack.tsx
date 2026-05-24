@@ -72,10 +72,6 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <Callout variant="tip">
-        ⚠️ 本案例为 <strong>Claude Code 基于 Yikai 的实际系统记忆整理的初稿</strong>。具体 Skill 示例、用户场景对话片段、量化效果指标等待 Yikai 补充。
-      </Callout>
-
       <CaseStudySection id="why" num="一、" title="项目背景（Why）——一人创业的运维炸裂">
         <SubHeading label="问题">事务密度 vs 决策密度，错配</SubHeading>
         <Paragraph>

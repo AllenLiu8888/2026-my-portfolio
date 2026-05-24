@@ -5,7 +5,7 @@ import { setRequestLocale } from "next-intl/server"
 
 import { Button } from "@/components/ui/button"
 import { ProjectsGrid } from "@/components/projects-grid"
-import { SkillBadge } from "@/components/skill-badge"
+import { SkillsGrid } from "@/components/skills-grid"
 import { Timeline } from "@/components/timeline"
 import { ContactForm } from "@/components/contact-form"
 import { CreativeHero } from "@/components/creative-hero"
@@ -187,8 +187,10 @@ function PortfolioContent() {
                 </div>
 
                 <div className="mt-8">
-                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white">
-                    {t("about.downloadResume")}
+                  <Button className="bg-zinc-800 hover:bg-zinc-700 text-white" asChild>
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download="刘一开-Yikai-Liu-Resume.pdf">
+                      {t("about.downloadResume")}
+                    </a>
                   </Button>
                 </div>
               </GlassmorphicCard>
@@ -207,11 +209,12 @@ function PortfolioContent() {
         <div className="container relative z-10">
           <SectionHeading title={t("skills.title")} subtitle={t("skills.subtitle")} />
 
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 mt-16">
-            {skills.map((skill) => (
-              <SkillBadge key={skill.name} name={skill.name} level={skill.level} />
-            ))}
-          </div>
+          <SkillsGrid
+            skills={skills}
+            defaultVisible={12}
+            showMoreLabel={t("skills.showMore")}
+            showLessLabel={t("skills.showLess")}
+          />
         </div>
       </section>
 
