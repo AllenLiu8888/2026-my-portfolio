@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail } from "lucide-react"
+import { ArrowRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 
@@ -108,7 +108,7 @@ function PortfolioContent() {
                   <span className="sr-only">LinkedIn</span>
                 </Button>
               </Link>
-              <Link href="mailto:lyk0434237299@gmail.com">
+              <Link href="mailto:18547172459@163.com">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -278,7 +278,16 @@ function PortfolioContent() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">{t("contact.labels.email")}</div>
-                    <div className="font-medium">lyk0434237299@gmail.com</div>
+                    <div className="font-medium">{t("contact.values.email")}</div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
+                    <MessageCircle className="h-5 w-5 text-purple-400" />
+                  </div>
+                  <div>
+                    <div className="text-sm text-zinc-500">{t("contact.labels.wechat")}</div>
+                    <div className="font-medium">{t("contact.values.wechat")}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -287,7 +296,7 @@ function PortfolioContent() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">{t("contact.labels.linkedin")}</div>
-                    <div className="font-medium">linkedin.com/in/yikailiu</div>
+                    <div className="font-medium">{t("contact.values.linkedin")}</div>
                   </div>
                 </div>
                 <div className="flex items-center gap-4">
@@ -296,7 +305,7 @@ function PortfolioContent() {
                   </div>
                   <div>
                     <div className="text-sm text-zinc-500">{t("contact.labels.github")}</div>
-                    <div className="font-medium">github.com/AllenLiu8888</div>
+                    <div className="font-medium">{t("contact.values.github")}</div>
                   </div>
                 </div>
               </div>
@@ -320,8 +329,8 @@ function PortfolioContent() {
         <div className="container flex flex-col md:flex-row justify-between items-center gap-6">
           <div>
             <Link href="/" className="font-bold text-xl">
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">Allen</span>
-              <span className="text-white">Liu</span>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">{t("nav.brandFirst")}</span>
+              <span className="text-white">{t("nav.brandSecond")}</span>
             </Link>
             <p className="text-sm text-zinc-500 mt-2">
               {t("footer.copyright", { year: new Date().getFullYear() })} {t("footer.tagline")}
@@ -348,7 +357,7 @@ function PortfolioContent() {
                 <span className="sr-only">LinkedIn</span>
               </Button>
             </Link>
-            <Link href="mailto:lyk0434237299@gmail.com">
+            <Link href="mailto:18547172459@163.com">
               <Button
                 variant="ghost"
                 size="icon"
