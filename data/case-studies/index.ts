@@ -1,4 +1,3 @@
-import chemicalTradeDashboard from "./chemical-trade-dashboard"
 import digitalSalesMap from "./digital-sales-map"
 import frontierModelBenchmark from "./frontier-model-benchmark"
 import memoryFutureSimulator from "./memory-future-simulator"
@@ -13,7 +12,6 @@ export const caseStudies: CaseStudyRegistry = {
   [openclawAgentStack.meta.slug]: openclawAgentStack,
   [frontierModelBenchmark.meta.slug]: frontierModelBenchmark,
   [digitalSalesMap.meta.slug]: digitalSalesMap,
-  [chemicalTradeDashboard.meta.slug]: chemicalTradeDashboard,
   [xpengTianjinDouyin.meta.slug]: xpengTianjinDouyin,
 }
 
@@ -23,7 +21,6 @@ export const KNOWN_SLUGS = [
   "openclaw-agent-stack",
   "frontier-model-benchmark",
   "digital-sales-map",
-  "chemical-trade-dashboard",
   "xpeng-tianjin-douyin",
 ] as const
 

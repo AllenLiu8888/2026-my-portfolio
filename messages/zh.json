@@ -90,7 +90,7 @@
       {
         "slug": "frontier-model-benchmark",
         "title": "五大模型横评 Dashboard",
-        "description": "对 Claude / GPT / Gemini / MiniMax / DeepSeek 做编程、中文推理、Agent 调度、长文本、多模态、单次成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。公开 Notion 看板。",
+        "description": "对 Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax 6 大模型做编程、中文推理、Agent 调度、长文本、多模态、单次成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。公开 Notion 看板。",
         "tags": ["模型评测", "决策框架", "LLMOps"]
       },
       {
@@ -98,12 +98,6 @@
         "title": "Digital Sales Map · 化工销售数据管理系统",
         "description": "7 天独立完成需求调研→React/Node 全栈→阿里云部署的化工企业销售管理平台。AI 辅助开发（Vibe Coding）实践——PM 主导业务理解 + 需求定义 + 质量控制，AI 加速编码。覆盖 5 销区 31 省市，客户内部试点中。",
         "tags": ["PM + 全栈", "Vibe Coding", "0→1 / 7 天", "已上线"]
-      },
-      {
-        "slug": "chemical-trade-dashboard",
-        "title": "化工销售区域数据管理系统",
-        "description": "独立 PM + 全栈开发（React / Node.js / PostgreSQL）。化工贸易企业，主营纯碱 / 尿素 / 小苏打，覆盖 5 销区 31 省市。7 天从用户调研→架构→上线。给管理层第一次提供全国销售统一可视化视图——热力地图省份下钻 + 客户管理后台 + Excel 批量导入校验。",
-        "tags": ["PM + 全栈", "0→1 / 7 天", "React / Node / PostgreSQL", "已部署"]
       },
       {
         "slug": "xpeng-tianjin-douyin",

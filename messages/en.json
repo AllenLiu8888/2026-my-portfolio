@@ -90,7 +90,7 @@
       {
         "slug": "frontier-model-benchmark",
         "title": "Frontier-Model Benchmark Dashboard",
-        "description": "Hands-on comparison of Claude / GPT / Gemini / MiniMax / DeepSeek across coding, Chinese reasoning, agent orchestration, long context, multimodal, and cost-per-task. Not a leaderboard — one real usage story per model, mapped back to actual product decisions I've made. Public Notion dashboard.",
+        "description": "Hands-on comparison of Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax across coding, Chinese reasoning, agent orchestration, long context, multimodal, and cost-per-task. Not a leaderboard — one real usage story per model, mapped back to actual product decisions I've made. Public Notion dashboard.",
         "tags": ["Model Eval", "Decision Frameworks", "LLMOps"]
       },
       {
@@ -98,12 +98,6 @@
         "title": "Digital Sales Map · Chemical Sales Platform",
         "description": "7-day solo end-to-end build for a chemical-trading client — research → React/Node full-stack → Aliyun ECS deployment. A Vibe-Coding practice: PM-owned business understanding + spec + QC, AI accelerated the code. National map drill-down, customer CRM, Excel batch import. Live and in pilot use.",
         "tags": ["PM + Full-Stack", "Vibe Coding", "0→1 in 7 days", "Live"]
-      },
-      {
-        "slug": "chemical-trade-dashboard",
-        "title": "Chemical-Trade Sales Dashboard",
-        "description": "Solo PM + full-stack build (React / Node.js / PostgreSQL) for a chemical trading company covering 5 sales zones and 31 provinces. 7-day sprint from user research → architecture → deployment. Gave management its first unified national sales view with heatmap drill-down, customer CRM, and Excel-import data validation.",
-        "tags": ["PM + Full-Stack", "0→1 in 7 days", "React / Node / PostgreSQL", "Deployed"]
       },
       {
         "slug": "xpeng-tianjin-douyin",

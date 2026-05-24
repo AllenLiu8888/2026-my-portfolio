@@ -45,7 +45,7 @@ export function ProjectsGrid({
             title={p.title}
             description={p.description}
             tags={p.tags}
-            image="/placeholder.svg?height=400&width=600"
+            image={`/projects/${p.slug}.png`}
             detailsLabel={detailsLabel}
             codeLabel={codeLabel}
           />

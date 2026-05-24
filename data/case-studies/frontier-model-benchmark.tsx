@@ -18,8 +18,8 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: "五大模型横评 Dashboard",
   },
   tagline: {
-    en: "Hands-on comparison of Claude / GPT / Gemini / MiniMax / DeepSeek across six dimensions, mapped to real product decisions I've made. Not a leaderboard — one usage story per model.",
-    zh: "对 Claude / GPT / Gemini / MiniMax / DeepSeek 做编程 / 中文 / Agent 调度 / 长文本 / 多模态 / 成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。",
+    en: "Hands-on comparison of Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax across six dimensions, mapped to real product decisions I've made. Not a leaderboard — one usage story per model.",
+    zh: "对 Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax 6 大模型做编程 / 中文 / Agent 调度 / 长文本 / 多模态 / 成本 6 维实测对比。不是排行榜——每个模型一个真实使用故事，对应我做过的具体产品决策。",
   },
   highlight: {
     en: "Decision-oriented benchmark, not score-oriented",
@@ -57,7 +57,7 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection title="English summary">
         <ENStub
           slug={SLUG}
-          summary="A decision-oriented benchmark covering Claude (Opus / Sonnet), GPT (5), Gemini (2.5), MiniMax (M2), and DeepSeek (V3). Six dimensions: coding, Chinese reasoning, agent orchestration, long-context, multimodal, cost-per-task. Critically, each model gets one real usage story from my OpenClaw stack — the dashboard is built to answer 'which model should I deploy for this task right now', not 'who's the best overall'."
+          summary="A decision-oriented benchmark covering Claude (Opus / Sonnet), ChatGPT (5), Gemini (2.5), DeepSeek (V3), GLM (4.5), and MiniMax (M2). Six dimensions: coding, Chinese reasoning, agent orchestration, long-context, multimodal, cost-per-task. Critically, each model gets one real usage story from my OpenClaw stack — the dashboard is built to answer 'which model should I deploy for this task right now', not 'who's the best overall'."
           label={{
             badge: "Translation in progress",
             body: "Chinese version below covers the rationale (why most public benchmarks are useless for product decisions), the 6-dimension framework, my evaluation methodology, and key findings from running the same test suite quarterly.",
@@ -110,15 +110,16 @@ function Content({ locale }: { locale: Locale }) {
           ]}
         />
 
-        <SubHeading label="参评模型">5 大主流前沿</SubHeading>
+        <SubHeading label="参评模型">6 大主流前沿</SubHeading>
         <DataTable
           headers={["模型", "我的部署位置", "主要用途"]}
           rows={[
             ["Claude Opus 4.7 / Sonnet", "OpenClaw Tier 3（贵 token）", "战略 + 代码 + 内容"],
-            ["GPT-5", "对照组 + 多模态场景", "图像理解、文案备选"],
+            ["ChatGPT-5", "对照组 + 多模态场景", "图像理解、文案备选"],
             ["Gemini 2.5", "对照组 + 长文本场景", "长文档总结"],
-            ["MiniMax M2", "OpenClaw Tier 1（Nova 秘书）", "事务调度 + 国内 API 友好"],
             ["DeepSeek V3 / R1", "对照组 + 中文推理", "国内场景成本敏感任务"],
+            ["GLM 4.5 / Z1（智谱）", "对照组 + 国内 Agent / Function calling", "国内 Tool-use 任务、中文 Agent 调度"],
+            ["MiniMax M2", "OpenClaw Tier 1（Nova 秘书）", "事务调度 + 国内 API 友好"],
           ]}
         />
       </CaseStudySection>
@@ -132,7 +133,7 @@ function Content({ locale }: { locale: Locale }) {
 
         <SubHeading label="原则 2">同任务跑多模型，盲读结果</SubHeading>
         <Paragraph>
-          每个测试任务交给所有 5 个模型，先不看哪个是哪个，盲读评分（1-5 分），最后揭晓。
+          每个测试任务交给所有 6 个模型，先不看哪个是哪个，盲读评分（1-5 分），最后揭晓。
           这避免品牌偏好（比如对 Claude 的偏爱）影响判断。
         </Paragraph>
 
