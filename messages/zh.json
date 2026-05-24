@@ -166,34 +166,29 @@
   "contact": {
     "title": "联系我",
     "subtitle": "招聘、合作、或者只是好奇——欢迎打招呼",
-    "infoTitle": "联系方式",
+    "directTitle": "直接联系",
+    "onlineTitle": "在线档案",
     "labels": {
       "email": "邮箱",
       "wechat": "微信",
-      "linkedin": "领英",
-      "github": "GitHub"
+      "phoneCN": "国内电话",
+      "phoneAU": "澳洲电话",
+      "linkedin": "领英 LinkedIn",
+      "github": "GitHub",
+      "xiaohongshu": "小红书"
     },
     "values": {
       "email": "18547172459@163.com",
-      "wechat": "Allen61K  ·  +86 185 4717 2459",
-      "linkedin": "linkedin.com/in/yikailiu",
-      "github": "github.com/AllenLiu8888"
+      "wechat": "Allen61K",
+      "wechatNote": "添加后朋友圈可见",
+      "phoneCN": "+86 185 4717 2459",
+      "phoneAU": "TBD（待补充澳洲手机号）",
+      "linkedin": "linkedin.com/in/allen-yikailiu",
+      "github": "github.com/AllenLiu8888",
+      "xiaohongshu": "TBD（待补充小红书账号）"
     },
     "statusTitle": "当前状态",
-    "statusText": "正在面试 2026 届 AI PM / 产品经理岗位",
-    "form": {
-      "name": "姓名",
-      "email": "邮箱",
-      "subject": "主题",
-      "message": "消息",
-      "send": "发送",
-      "sending": "发送中...",
-      "success": "已发送 —— 24 小时内回复。",
-      "namePlaceholder": "你的名字",
-      "emailPlaceholder": "you@example.com",
-      "subjectPlaceholder": "想聊什么？",
-      "messagePlaceholder": "告诉我岗位 / 项目 / 问题..."
-    }
+    "statusText": "正在面试 2026 届 AI PM / 产品经理岗位"
   },
   "footer": {
     "tagline": "用 Next.js + Tailwind + Claude Code 搭建。",

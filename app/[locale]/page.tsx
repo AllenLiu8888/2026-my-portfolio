@@ -1,5 +1,5 @@
 import Link from "next/link"
-import { ArrowRight, Github, Linkedin, Mail, MessageCircle } from "lucide-react"
+import { ArrowRight, Github, Heart, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 
@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button"
 import { ProjectsGrid } from "@/components/projects-grid"
 import { SkillsGrid } from "@/components/skills-grid"
 import { Timeline } from "@/components/timeline"
-import { ContactForm } from "@/components/contact-form"
 import { CreativeHero } from "@/components/creative-hero"
 import { FloatingNav } from "@/components/floating-nav"
 import { MouseFollower } from "@/components/mouse-follower"
@@ -21,6 +20,47 @@ type Project = {
   title: string
   description: string
   tags: string[]
+}
+
+function ContactRow({
+  icon: Icon,
+  label,
+  value,
+  note,
+  href,
+}: {
+  icon: React.ComponentType<{ className?: string }>
+  label: string
+  value: string
+  note?: string
+  href?: string
+}) {
+  const inner = (
+    <div className="flex items-start gap-4">
+      <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center shrink-0">
+        <Icon className="h-5 w-5 text-purple-400" />
+      </div>
+      <div className="min-w-0 flex-1">
+        <div className="text-sm text-zinc-500">{label}</div>
+        <div className="font-medium break-all leading-snug mt-0.5">{value}</div>
+        {note && <div className="text-xs text-zinc-500 mt-1">{note}</div>}
+      </div>
+    </div>
+  )
+  if (href) {
+    const external = href.startsWith("http")
+    return (
+      <a
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        className="block rounded-lg -mx-2 px-2 py-1 hover:bg-zinc-800/40 transition-colors"
+      >
+        {inner}
+      </a>
+    )
+  }
+  return inner
 }
 
 export default async function Portfolio({
@@ -97,7 +137,7 @@ function PortfolioContent() {
                   <span className="sr-only">GitHub</span>
                 </Button>
               </Link>
-              <Link href="https://www.linkedin.com/in/yikailiu/" target="_blank" rel="noopener noreferrer">
+              <Link href="https://www.linkedin.com/in/allen-yikailiu/" target="_blank" rel="noopener noreferrer">
                 <Button
                   variant="ghost"
                   size="icon"
@@ -265,46 +305,58 @@ function PortfolioContent() {
         <div className="container relative z-10">
           <SectionHeading title={t("contact.title")} subtitle={t("contact.subtitle")} />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mt-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch mt-16">
+            {/* Direct Contact card */}
             <GlassmorphicCard>
-              <h3 className="text-2xl font-bold mb-6">{t("contact.infoTitle")}</h3>
-              <div className="space-y-6">
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Mail className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">{t("contact.labels.email")}</div>
-                    <div className="font-medium">{t("contact.values.email")}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <MessageCircle className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">{t("contact.labels.wechat")}</div>
-                    <div className="font-medium">{t("contact.values.wechat")}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Linkedin className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">{t("contact.labels.linkedin")}</div>
-                    <div className="font-medium">{t("contact.values.linkedin")}</div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-4">
-                  <div className="w-12 h-12 rounded-full bg-zinc-800 flex items-center justify-center">
-                    <Github className="h-5 w-5 text-purple-400" />
-                  </div>
-                  <div>
-                    <div className="text-sm text-zinc-500">{t("contact.labels.github")}</div>
-                    <div className="font-medium">{t("contact.values.github")}</div>
-                  </div>
-                </div>
+              <h3 className="text-2xl font-bold mb-6">{t("contact.directTitle")}</h3>
+              <div className="space-y-5">
+                <ContactRow
+                  icon={Mail}
+                  label={t("contact.labels.email")}
+                  value={t("contact.values.email")}
+                  href={`mailto:${t("contact.values.email")}`}
+                />
+                <ContactRow
+                  icon={MessageCircle}
+                  label={t("contact.labels.wechat")}
+                  value={t("contact.values.wechat")}
+                  note={t("contact.values.wechatNote")}
+                />
+                <ContactRow
+                  icon={Phone}
+                  label={t("contact.labels.phoneCN")}
+                  value={t("contact.values.phoneCN")}
+                  href={`tel:${t("contact.values.phoneCN").replace(/\s/g, "")}`}
+                />
+                <ContactRow
+                  icon={Phone}
+                  label={t("contact.labels.phoneAU")}
+                  value={t("contact.values.phoneAU")}
+                />
+              </div>
+            </GlassmorphicCard>
+
+            {/* Online Presence card */}
+            <GlassmorphicCard>
+              <h3 className="text-2xl font-bold mb-6">{t("contact.onlineTitle")}</h3>
+              <div className="space-y-5">
+                <ContactRow
+                  icon={Linkedin}
+                  label={t("contact.labels.linkedin")}
+                  value={t("contact.values.linkedin")}
+                  href={`https://${t("contact.values.linkedin")}`}
+                />
+                <ContactRow
+                  icon={Github}
+                  label={t("contact.labels.github")}
+                  value={t("contact.values.github")}
+                  href={`https://${t("contact.values.github")}`}
+                />
+                <ContactRow
+                  icon={Heart}
+                  label={t("contact.labels.xiaohongshu")}
+                  value={t("contact.values.xiaohongshu")}
+                />
               </div>
 
               <div className="mt-8 pt-8 border-t border-zinc-800">
@@ -315,8 +367,6 @@ function PortfolioContent() {
                 </div>
               </div>
             </GlassmorphicCard>
-
-            <ContactForm />
           </div>
         </div>
       </section>
@@ -344,7 +394,7 @@ function PortfolioContent() {
                 <span className="sr-only">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/yikailiu/" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.linkedin.com/in/allen-yikailiu/" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="ghost"
                 size="icon"

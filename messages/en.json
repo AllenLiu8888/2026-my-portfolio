@@ -166,34 +166,29 @@
   "contact": {
     "title": "Get In Touch",
     "subtitle": "Hiring, collab, or just curious — say hi",
-    "infoTitle": "Contact Information",
+    "directTitle": "Direct Contact",
+    "onlineTitle": "Online Presence",
     "labels": {
       "email": "Email",
       "wechat": "WeChat",
+      "phoneCN": "Phone (CN)",
+      "phoneAU": "Phone (AU)",
       "linkedin": "LinkedIn",
-      "github": "GitHub"
+      "github": "GitHub",
+      "xiaohongshu": "Xiaohongshu"
     },
     "values": {
       "email": "18547172459@163.com",
-      "wechat": "Allen61K  ·  +86 185 4717 2459",
-      "linkedin": "linkedin.com/in/yikailiu",
-      "github": "github.com/AllenLiu8888"
+      "wechat": "Allen61K",
+      "wechatNote": "Moments visible after adding",
+      "phoneCN": "+86 185 4717 2459",
+      "phoneAU": "TBD (Australia mobile pending)",
+      "linkedin": "linkedin.com/in/allen-yikailiu",
+      "github": "github.com/AllenLiu8888",
+      "xiaohongshu": "TBD (handle pending)"
     },
     "statusTitle": "Current Status",
-    "statusText": "Actively interviewing for 2026 AI PM / Product roles",
-    "form": {
-      "name": "Name",
-      "email": "Email",
-      "subject": "Subject",
-      "message": "Message",
-      "send": "Send Message",
-      "sending": "Sending...",
-      "success": "Message sent — I'll get back within 24h.",
-      "namePlaceholder": "Your name",
-      "emailPlaceholder": "you@example.com",
-      "subjectPlaceholder": "What's this about?",
-      "messagePlaceholder": "Tell me about the role / project / question..."
-    }
+    "statusText": "Actively interviewing for 2026 AI PM / Product roles"
   },
   "footer": {
     "tagline": "Built with Next.js, Tailwind & Claude Code.",
