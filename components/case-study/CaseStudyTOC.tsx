@@ -52,7 +52,8 @@ export function CaseStudyTOC({ toc, locale }: Props) {
 
   return (
     <motion.nav
-      className="hidden xl:block fixed left-8 top-1/2 -translate-y-1/2 z-30 max-h-[70vh] overflow-y-auto"
+      className="hidden 2xl:block fixed top-32 z-30 max-h-[calc(100vh-10rem)] overflow-y-auto"
+      style={{ left: "max(1rem, calc(50% - 32rem - 14rem))" }}
       initial={{ opacity: 0, x: -20 }}
       animate={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5, delay: 0.4 }}

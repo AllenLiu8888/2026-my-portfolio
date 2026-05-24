@@ -23,8 +23,14 @@ export function CaseStudySection({ id, num, title, children, className = "" }: P
     >
       <div className="container max-w-5xl">
         <div className="flex items-baseline gap-3 mb-8 pb-4 border-b border-zinc-800">
-          {num && <span className="text-2xl md:text-3xl font-bold text-white">{num}</span>}
-          <h2 className="text-2xl md:text-3xl font-bold text-white">{title}</h2>
+          {num && (
+            <span className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400">
+              {num}
+            </span>
+          )}
+          <h2 className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400">
+            {title}
+          </h2>
         </div>
         <div className="prose-cs">{children}</div>
       </div>
