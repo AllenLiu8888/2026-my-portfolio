@@ -4,6 +4,7 @@ import { useState } from "react"
 import { ArrowUpRight, Github } from "lucide-react"
 import { motion } from "framer-motion"
 
+import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Link } from "@/i18n/navigation"
 
@@ -64,7 +65,7 @@ export function ProjectCard({
                 {title}
               </h3>
             </Link>
-            <ul className="space-y-2 mb-4">
+            <ul className="space-y-2 mb-4 flex-grow">
               {bullets.map((b, i) => (
                 <li key={i} className="flex gap-2 text-sm text-zinc-400 leading-snug">
                   <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></span>
@@ -73,35 +74,41 @@ export function ProjectCard({
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-2 mb-3">
-              {tags.map((tag) => (
-                <Badge key={tag} variant="secondary" className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300">
-                  {tag}
-                </Badge>
-              ))}
-            </div>
+            <div className="flex items-center justify-between gap-3 mt-auto pt-4 border-t border-zinc-700/50">
+              <div className="flex flex-wrap gap-1.5 flex-1 min-w-0">
+                {tags.slice(0, 3).map((tag) => (
+                  <Badge
+                    key={tag}
+                    variant="secondary"
+                    className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300 text-[11px] font-medium px-2 py-0.5 rounded-md"
+                  >
+                    {tag}
+                  </Badge>
+                ))}
+              </div>
 
-            <div className="flex items-center justify-between gap-3">
-              {repoUrl && repoUrl !== "#" ? (
+              {repoUrl && repoUrl !== "#" && (
                 <a
                   href={repoUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-white transition-colors"
+                  className="shrink-0 inline-flex items-center gap-1 text-xs text-zinc-400 hover:text-white transition-colors"
                 >
                   <Github className="h-3.5 w-3.5" />
                   {codeLabel ?? "Code"}
                 </a>
-              ) : (
-                <span />
               )}
-              <Link
-                href={`/projects/${slug}`}
-                className="group/cta inline-flex items-center gap-1.5 text-sm font-medium text-zinc-300 hover:text-purple-300 transition-colors ml-auto"
+
+              <Button
+                size="sm"
+                className="shrink-0 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
+                asChild
               >
-                {detailsLabel}
-                <ArrowUpRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
-              </Link>
+                <Link href={`/projects/${slug}`}>
+                  {detailsLabel}
+                  <ArrowUpRight className="ml-1.5 h-4 w-4" />
+                </Link>
+              </Button>
             </div>
           </div>
 

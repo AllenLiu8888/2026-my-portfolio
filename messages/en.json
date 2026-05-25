@@ -110,7 +110,7 @@
           "Distinction 6/7 · publicly exhibited at UQ campus",
           "3 Sprints + 2 rounds Think-Aloud testing"
         ],
-        "tags": ["Team Lead", "Speculative Design", "LLM + RAG", "Exhibited"]
+        "tags": ["Team Lead", "Speculative Design", "LLM + RAG"]
       },
       {
         "slug": "smart-library-thermal",
@@ -121,7 +121,7 @@
           "High Distinction 7/7 (max grade)",
           "Key call: redefined the button from 'control' to 'perception recorder'"
         ],
-        "tags": ["Team Lead", "HCI", "IoT / ESP32", "HD 7/7"]
+        "tags": ["Team Lead", "IoT / ESP32", "HD 7/7"]
       },
       {
         "slug": "openclaw-agent-stack",
@@ -132,7 +132,7 @@
           "Daily-driven 1yr+, AI tool user → tool-chain builder",
           "Dual-Mac Syncthing + cross-device claude-mem"
         ],
-        "tags": ["104 Skills", "Multi-Agent", "Personal AI", "Daily-Driven"]
+        "tags": ["104 Skills", "Multi-Agent", "Daily-Driven"]
       },
       {
         "slug": "frontier-model-benchmark",
@@ -154,7 +154,7 @@
           "Real chemical-trading client (5 zones / 31 provinces)",
           "Vibe Coding practice · in pilot use"
         ],
-        "tags": ["PM + Full-Stack", "Vibe Coding", "0→1 in 7 days", "Live"]
+        "tags": ["PM + Full-Stack", "Vibe Coding", "Live"]
       },
       {
         "slug": "xpeng-tianjin-douyin",
@@ -165,7 +165,7 @@
           "3 brand IPs co-led (Pengyou Club / Sunset Café / Weekend Arts)",
           "12 cities covered · +30% test-drive conversion"
         ],
-        "tags": ["Content Ops", "Growth +13K/2mo", "Brand IP", "XPENG"]
+        "tags": ["Content Ops", "Growth +13K/2mo", "Brand IP"]
       }
     ]
   },

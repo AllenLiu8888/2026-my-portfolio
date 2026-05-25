@@ -110,7 +110,7 @@
           "Distinction 6/7 · 校园展览全天公开展出",
           "3 个 Sprint + 2 轮 Think-Aloud 测试"
         ],
-        "tags": ["团队领导", "推测设计", "LLM + RAG", "校展"]
+        "tags": ["团队领导", "推测设计", "LLM + RAG"]
       },
       {
         "slug": "smart-library-thermal",
@@ -121,7 +121,7 @@
           "High Distinction 7/7（满分）",
           "关键决策：按钮从「控制」重定义为「感受记录」"
         ],
-        "tags": ["团队领导", "HCI", "IoT / ESP32", "HD 7/7"]
+        "tags": ["团队领导", "IoT / ESP32", "HD 7/7"]
       },
       {
         "slug": "openclaw-agent-stack",
@@ -132,7 +132,7 @@
           "每日在用 1 年+，AI 工具用户 → 工具链构建者",
           "双 Mac Syncthing + 跨设备 claude-mem"
         ],
-        "tags": ["104 Skills", "多智能体", "个人 AI", "每日在用"]
+        "tags": ["104 Skills", "多智能体", "每日在用"]
       },
       {
         "slug": "frontier-model-benchmark",
@@ -154,7 +154,7 @@
           "化工贸易公司真实业务（5 销区 / 31 省市）",
           "Vibe Coding 实践 · 客户内部试点中"
         ],
-        "tags": ["PM + 全栈", "Vibe Coding", "0→1 / 7 天", "已上线"]
+        "tags": ["PM + 全栈", "Vibe Coding", "已上线"]
       },
       {
         "slug": "xpeng-tianjin-douyin",
@@ -165,7 +165,7 @@
           "3 大品牌 IP 协同（鹏友 / 日落 / 周末有艺思）",
           "12 城覆盖 · 试驾转化率 +30%"
         ],
-        "tags": ["内容运营", "增长 +1.3W/2月", "品牌 IP", "小鹏"]
+        "tags": ["内容运营", "增长 +1.3W/2月", "品牌 IP"]
       }
     ]
   },
