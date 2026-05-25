@@ -69,7 +69,7 @@ export function PostCard({
             <div className="mt-auto flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-zinc-500">
               <span className="inline-flex items-center gap-1.5">
                 <Calendar className="h-3.5 w-3.5" />
-                {date}
+                {String(date)}
               </span>
               <span className="inline-flex items-center gap-1.5">
                 <Clock className="h-3.5 w-3.5" />
