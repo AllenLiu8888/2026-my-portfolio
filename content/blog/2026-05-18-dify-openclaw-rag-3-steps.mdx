@@ -1,0 +1,75 @@
+---
+title: Dify + OpenClaw：把 RAG 变成日常工具的 3 步
+date: 2026-05-18
+tags: [AI 工具, RAG, Dify, OpenClaw]
+cover: /blog/covers/dify-openclaw-rag.png
+summary: 把 RAG 从一个 demo 做成每天都在用的工具，关键不在模型，而在「让自己愿意每天去喂它」。
+lang: zh
+---
+
+## 一句话
+
+**RAG 不难，难的是让你自己每天愿意喂数据进去 + 每天愿意去问它。**
+
+下面 3 步是我实际让 RAG 变成"日用工具"而不是"demo 玩具"的过程。
+
+## 步骤 1：选一个真实小痛点
+
+我第一次试 RAG 是用 LangChain 做了个「读完整本《思考，快与慢》然后问问题」的 demo。
+
+**用了 3 次再没碰过。**
+
+后来换了方法：找一个**我每天会重复遇到的小问题**。
+
+我的选择：「我之前做某个决策时是怎么想的？」
+原因：我每天写 vault 日志，但回看的时候要翻 5-10 个文件。如果有个 agent 能直接回答「2026-04 你为什么决定把 HealthBot 拆出来」，省下 30 分钟 / 周。
+
+**真实需求 + 高频 = 一定会用。**
+
+## 步骤 2：Dify 而不是 LangChain
+
+我用过两种：
+
+| | LangChain | Dify |
+|---|---|---|
+| 灵活度 | 极高（写代码自由）| 中（可视化工作流）|
+| 上手 | 1 周 | 1 天 |
+| 迭代 prompt | 改代码 → 测试 → debug | 改 UI → 立刻预览 |
+| 适合 | 工程团队做产品 | 一人 build 内部工具 |
+
+对**我自己用**的工具，Dify 完胜。改 prompt 不用动代码不用 commit 不用 deploy。
+
+## 步骤 3：用 OpenClaw 把 RAG 调用做成 skill
+
+光有 RAG workflow 还不够。如果每次问问题都要打开 Dify UI 复制粘贴回答，**摩擦力还是太大**。
+
+我用 OpenClaw 把 Dify workflow 包装成一个 skill：
+
+```python
+# pseudocode
+@openclaw_skill("ask-yikai-vault")
+def ask_vault(question: str) -> str:
+    return dify.run(
+        workflow_id="vault-rag",
+        inputs={"question": question}
+    )
+```
+
+现在我在 Claude Code 里直接说"翻翻 vault 看看我之前怎么决定的 X"，OpenClaw 自动调 Dify，5 秒拿到带引用的答案。
+
+**摩擦力降到接近 0，使用频率从每周 1 次变成每天 5+ 次。**
+
+## 反直觉的总结
+
+让 RAG "起飞"的不是更好的 embedding 模型、更聪明的 chunking 策略、更长的 context window。
+
+**是「调用方式有多顺手」。**
+
+- 调用 = 3 步（打开 web / 复制问题 / 等回答）→ 一周用 0 次
+- 调用 = 0 步（在你已经在用的工具里一句话触发）→ 一天用 5 次
+
+这一条规律我用过 5 次了，每次都对。下次你做工具，先想 **「我从想用到用上需要几步」**，再做 prompt 优化。
+
+---
+
+下一篇我会拆 RAG 的 chunking 策略实战（为什么我最后没用 LangChain 默认的 1000-token chunk）。

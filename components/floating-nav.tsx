@@ -26,11 +26,12 @@ export function FloatingNav() {
   }, [])
 
   const navItems = [
-    { name: t("about"), href: "#about" },
-    { name: t("skills"), href: "#skills" },
-    { name: t("projects"), href: "#projects" },
-    { name: t("experience"), href: "#experience" },
-    { name: t("contact"), href: "#contact" },
+    { name: t("about"), href: "/#about" },
+    { name: t("skills"), href: "/#skills" },
+    { name: t("projects"), href: "/#projects" },
+    { name: t("experience"), href: "/#experience" },
+    { name: t("blog"), href: "/blog" },
+    { name: t("contact"), href: "/#contact" },
   ]
 
   const handleNavClick = () => {

@@ -10,6 +10,7 @@
     "skills": "技能",
     "projects": "作品",
     "experience": "经历",
+    "blog": "Blog",
     "contact": "联系",
     "resume": "简历",
     "switchLocale": "EN"
@@ -228,6 +229,14 @@
   "footer": {
     "tagline": "用 Next.js + Tailwind + Claude Code 搭建。",
     "copyright": "© {year} 刘一开 Yikai Liu · 保留所有权利。"
+  },
+  "blog": {
+    "title": "Blog · 思考与复盘",
+    "subtitle": "Indie AI Building · PM 转型 · 工具链构建。写给一年后的自己。",
+    "empty": "还在准备稿件中——很快就有。",
+    "minRead": "分钟阅读",
+    "backToList": "返回 Blog 列表",
+    "relatedPosts": "相关文章"
   },
   "caseStudy": {
     "back": "返回作品列表",

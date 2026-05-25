@@ -10,6 +10,7 @@
     "skills": "Skills",
     "projects": "Projects",
     "experience": "Experience",
+    "blog": "Blog",
     "contact": "Contact",
     "resume": "Resume",
     "switchLocale": "中"
@@ -228,6 +229,14 @@
   "footer": {
     "tagline": "Built with Next.js, Tailwind & Claude Code.",
     "copyright": "© {year} Yikai Liu (刘一开). All rights reserved."
+  },
+  "blog": {
+    "title": "Blog · Thoughts & Retros",
+    "subtitle": "Indie AI building · PM transition · toolchain notes. Letters to my future self.",
+    "empty": "Drafts in progress — coming soon.",
+    "minRead": "min read",
+    "backToList": "Back to Blog",
+    "relatedPosts": "Related posts"
   },
   "caseStudy": {
     "back": "Back to projects",

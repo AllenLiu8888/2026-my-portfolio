@@ -1,0 +1,71 @@
+---
+title: Indie AI PM 第一个月：踩过的 5 个坑
+date: 2026-05-22
+tags: [一人公司, AI PM, 复盘]
+cover: /blog/covers/indie-pm-month-one.png
+summary: 从「会用 AI 工具」到「靠 AI 工具吃饭」之间有一道很难的坎。我先把 5 个最痛的坑写下来。
+lang: zh
+---
+
+## TL;DR
+
+| 坑 | 教训 |
+|---|---|
+| Opus 跑所有任务 | 99% 的事 Sonnet 够用，1% 真复杂才上 Opus |
+| 没有 inbox/outbox 文件队列 | Agent 之间没有协议，互相覆盖 |
+| Notion 当数据库 | 不要。Notion 是写作工具，不是数据层 |
+| 一周没写 vault 日志 | 第二个月一回头就忘了为什么做了某个决策 |
+| 一上来就想商业化 | 先把自己的工具链跑顺，再想卖给别人 |
+
+## 坑 1：Opus 跑所有任务
+
+刚开始我贪心 —— **Opus 4.7 最强，就什么都给它**。
+
+结果：
+
+- 简单的「把这段健身打卡塞进 vault」也花 1.5 元 token
+- 月底账单 800+
+- 关键决策的时候反而觉得 Opus 也没那么神
+
+后来我把所有事务下沉到 MiniMax M2，Sonnet 4.5 接中间逻辑，Opus 4.7 只在战略 / 复杂代码时出场。
+**月度成本砍到 1/4，决策质量没掉。**
+
+## 坑 2：Agent 之间没有协议
+
+第一版我让 Nova（秘书）和 Claude Code（CEO）共享同一个 vault 文件夹。
+结果 Nova 在我跑长任务时改了某个文件，Claude Code 那边的 context 直接乱套。
+
+**修复**：建 `inbox/` 和 `outbox/` 两个单向文件队列。Nova 写 inbox，Claude Code 只读；Claude Code 写 outbox，Nova 只读。**单向就没冲突。**
+
+## 坑 3：Notion 当数据库
+
+把训练数据、社媒数据全塞 Notion，想着「反正都在一个地方」。
+
+后来发现：
+
+- Notion API 限流，agent 想批量读慢得要死
+- 想做 dashboard 还得自己解析
+- 真要查数据时还是导出 CSV
+
+**最后**：结构化数据丢 PostgreSQL（即使是个人小工具），Notion 只放需要人读的文档。
+
+## 坑 4：没写 vault 日志
+
+第二个月某天我想「为什么我把 HealthBot 跟 Nova 拆开」，回去翻 git log + memory，花了 40 分钟才拼出当时的 reasoning。
+
+**改成每个重大决策都写一段 vault log**：动机、备选方案、为什么这个、deprecated 想法。**未来的我（和 Claude）都会感谢现在的我。**
+
+## 坑 5：太早想商业化
+
+第一周我就在想「这套 OpenClaw skill 能不能卖给其他 indie hacker」。
+后来发现：
+
+- 我自己的工作流都没顺
+- 我的 skill 强耦合我的 vault 结构
+- 卖给别人意味着我要做支持、文档、defining boundary
+
+**先把自己的工具链跑半年再说。** 工具如果真好用，别人会自己跑过来问；不好用，包装再漂亮也卖不动。
+
+---
+
+第二个月我会写「AI PM 求职的 5 个非常规打法」。订阅 RSS 或者去我[小红书](#)催更。
