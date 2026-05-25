@@ -57,16 +57,18 @@ function BlogContent({
         </div>
 
         <div className="container relative z-10 max-w-4xl">
-          <Link
-            href="/"
-            className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors mb-8"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            {t("backToPortfolio")}
-          </Link>
+          <div className="mb-8">
+            <Link
+              href="/"
+              className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              {t("backToPortfolio")}
+            </Link>
+          </div>
 
-          <div className="inline-block mb-3">
-            <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
+          <div className="mb-3">
+            <div className="relative inline-flex items-center px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
               <span className="relative z-10">Blog</span>
               <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
             </div>
