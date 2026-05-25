@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { useLocale, useTranslations } from "next-intl"
+import { useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { useMobile } from "@/hooks/use-mobile"
@@ -15,7 +15,6 @@ export function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useMobile()
   const t = useTranslations("nav")
-  const locale = useLocale()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,8 +30,7 @@ export function FloatingNav() {
     { name: t("skills"), href: "/#skills" },
     { name: t("projects"), href: "/#projects" },
     { name: t("experience"), href: "/#experience" },
-    // Blog is ZH-only (per Yikai): hide entry from EN nav.
-    ...(locale === "zh" ? [{ name: t("blog"), href: "/blog" }] : []),
+    { name: t("blog"), href: "/blog" },
     { name: t("contact"), href: "/#contact" },
   ]
 

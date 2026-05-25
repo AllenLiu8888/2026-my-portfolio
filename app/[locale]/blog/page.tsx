@@ -1,19 +1,19 @@
-import { ArrowLeft } from "lucide-react"
 import { useTranslations } from "next-intl"
 import { setRequestLocale, getTranslations } from "next-intl/server"
 import type { Metadata } from "next"
 
-import { Link } from "@/i18n/navigation"
 import { FloatingNav } from "@/components/floating-nav"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { PostCard } from "@/components/blog/PostCard"
 import { getAllPosts } from "@/lib/blog"
 
-// Blog is ZH-only — even when accessed via /en/blog the content stays Chinese.
-const BLOG_LOCALE = "zh"
-
-export async function generateMetadata(): Promise<Metadata> {
-  const t = await getTranslations({ locale: BLOG_LOCALE, namespace: "blog" })
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>
+}): Promise<Metadata> {
+  const { locale } = await params
+  const t = await getTranslations({ locale, namespace: "blog" })
   return {
     title: t("title"),
     description: t("subtitle"),
@@ -25,13 +25,12 @@ export default async function BlogIndexPage({
 }: {
   params: Promise<{ locale: string }>
 }) {
-  await params
-  // Force Chinese content regardless of the URL locale prefix.
-  setRequestLocale(BLOG_LOCALE)
+  const { locale } = await params
+  setRequestLocale(locale)
   const posts = getAllPosts()
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black bg-fixed text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-x-hidden">
       <ScrollProgress />
       <FloatingNav />
       <BlogContent posts={posts} />
@@ -48,19 +47,8 @@ function BlogContent({
 
   return (
     <>
-      {/* Back to Portfolio */}
-      <div className="container max-w-4xl pt-28">
-        <Link
-          href="/"
-          className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4 mr-2" />
-          {t("backToPortfolio")}
-        </Link>
-      </div>
-
       {/* Hero */}
-      <section className="relative pt-8 pb-12 overflow-hidden">
+      <section className="relative pt-32 pb-12 overflow-hidden">
         <div className="absolute inset-0 z-0 pointer-events-none">
           <div className="absolute top-10 left-1/4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob"></div>
           <div className="absolute top-40 right-1/4 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-15 animate-blob animation-delay-2000"></div>
@@ -82,12 +70,8 @@ function BlogContent({
       </section>
 
       {/* Post list */}
-      <section className="relative pb-32 overflow-hidden">
-        <div className="absolute inset-0 z-0 pointer-events-none">
-          <div className="absolute top-1/3 right-10 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob"></div>
-          <div className="absolute bottom-20 left-10 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
-        </div>
-        <div className="container relative z-10 max-w-4xl">
+      <section className="pb-32">
+        <div className="container max-w-4xl">
           {posts.length === 0 ? (
             <div className="text-center text-zinc-500 py-20">{t("empty")}</div>
           ) : (

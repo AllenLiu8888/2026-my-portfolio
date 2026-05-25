@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation"
 import { setRequestLocale, getTranslations } from "next-intl/server"
+import { useTranslations } from "next-intl"
 import type { Metadata } from "next"
 
 import { FloatingNav } from "@/components/floating-nav"
@@ -11,9 +12,6 @@ import { getAllPosts, getPostBySlug, getRelatedPosts } from "@/lib/blog"
 import { routing } from "@/i18n/routing"
 
 type Params = { locale: string; slug: string }
-
-// Blog is ZH-only — even when accessed via /en/blog/x the content stays Chinese.
-const BLOG_LOCALE = "zh"
 
 export function generateStaticParams() {
   const posts = getAllPosts()
@@ -52,18 +50,17 @@ export default async function BlogPostPage({
 }: {
   params: Promise<Params>
 }) {
-  const { slug } = await params
-  // Force Chinese content regardless of the URL locale prefix.
-  setRequestLocale(BLOG_LOCALE)
+  const { locale, slug } = await params
+  setRequestLocale(locale)
 
   const post = getPostBySlug(slug)
   if (!post) notFound()
 
   const related = getRelatedPosts(slug, post.frontmatter.tags ?? [], 2)
-  const t = await getTranslations({ locale: BLOG_LOCALE, namespace: "blog" })
+  const t = await getTranslations({ locale, namespace: "blog" })
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black bg-fixed text-white overflow-x-hidden">
+    <div className="min-h-screen bg-gradient-to-b from-zinc-900 via-zinc-900 to-black text-white overflow-x-hidden">
       <ScrollProgress />
       <FloatingNav />
 
