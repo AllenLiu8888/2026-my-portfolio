@@ -18,7 +18,7 @@ type Skill = { name: string; level: number }
 type Project = {
   slug: string
   title: string
-  description: string
+  bullets: string[]
   tags: string[]
 }
 
@@ -191,13 +191,6 @@ function PortfolioContent() {
                   alt="Yikai Liu (Allen) — illustrated portrait"
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-                <div className="absolute bottom-0 left-0 w-full p-6">
-                  <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-green-500 animate-pulse"></div>
-                    <span className="text-sm font-medium">{t("about.status")}</span>
-                  </div>
-                </div>
               </div>
             </div>
 

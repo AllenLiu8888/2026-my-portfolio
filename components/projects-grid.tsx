@@ -10,7 +10,7 @@ import { ProjectCard } from "@/components/project-card"
 interface Project {
   slug: string
   title: string
-  description: string
+  bullets: string[]
   tags: string[]
 }
 
@@ -43,7 +43,7 @@ export function ProjectsGrid({
             key={p.slug}
             slug={p.slug}
             title={p.title}
-            description={p.description}
+            bullets={p.bullets}
             tags={p.tags}
             image={`/projects/${p.slug}.png`}
             detailsLabel={detailsLabel}

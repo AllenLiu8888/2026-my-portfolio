@@ -10,7 +10,7 @@ import { Link } from "@/i18n/navigation"
 
 interface ProjectCardProps {
   title: string
-  description: string
+  bullets: string[]
   tags: string[]
   image: string
   slug: string
@@ -21,7 +21,7 @@ interface ProjectCardProps {
 
 export function ProjectCard({
   title,
-  description,
+  bullets,
   tags,
   image,
   slug,
@@ -65,7 +65,14 @@ export function ProjectCard({
                 {title}
               </h3>
             </Link>
-            <p className="text-zinc-400 mb-4 flex-grow">{description}</p>
+            <ul className="space-y-2 mb-4 flex-grow">
+              {bullets.map((b, i) => (
+                <li key={i} className="flex gap-2 text-sm text-zinc-400 leading-snug">
+                  <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></span>
+                  <span>{b}</span>
+                </li>
+              ))}
+            </ul>
 
             <div className="flex flex-wrap gap-2 mb-6">
               {tags.map((tag) => (

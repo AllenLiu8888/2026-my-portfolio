@@ -125,7 +125,7 @@ function ComingSoonPage({ slug, locale }: { slug: string; locale: Locale }) {
   const projects = t.raw("projects.items") as Array<{
     slug: string
     title: string
-    description: string
+    bullets: string[]
   }>
   const card = projects.find((p) => p.slug === slug)
 
@@ -133,7 +133,7 @@ function ComingSoonPage({ slug, locale }: { slug: string; locale: Locale }) {
     <ComingSoon
       locale={locale}
       title={card?.title ?? t("comingSoon.fallbackTitle")}
-      description={card?.description ?? t("comingSoon.fallbackDescription")}
+      description={card?.bullets?.join(" · ") ?? t("comingSoon.fallbackDescription")}
       labels={{
         back: t("caseStudy.back"),
         heading: t("comingSoon.heading"),
