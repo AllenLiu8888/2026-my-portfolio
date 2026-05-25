@@ -67,12 +67,12 @@ function BlogContent({
             </Link>
           </div>
 
-          <div className="mb-3">
+          {/* <div className="mb-3">
             <div className="relative inline-flex items-center px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
               <span className="relative z-10">Blog</span>
               <span className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500/20 to-pink-500/20 animate-pulse"></span>
             </div>
-          </div>
+          </div> */}
 
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-4 bg-clip-text text-transparent bg-gradient-to-r from-purple-300 via-pink-300 to-purple-400">
             {t("title")}
