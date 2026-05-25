@@ -4,7 +4,6 @@ import { useState } from "react"
 import { ArrowUpRight, Github } from "lucide-react"
 import { motion } from "framer-motion"
 
-import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
 import { Link } from "@/i18n/navigation"
 
@@ -65,7 +64,7 @@ export function ProjectCard({
                 {title}
               </h3>
             </Link>
-            <ul className="space-y-2 mb-4 flex-grow">
+            <ul className="space-y-2 mb-4">
               {bullets.map((b, i) => (
                 <li key={i} className="flex gap-2 text-sm text-zinc-400 leading-snug">
                   <span className="mt-1.5 inline-block h-1 w-1 shrink-0 rounded-full bg-gradient-to-r from-purple-400 to-pink-400"></span>
@@ -74,7 +73,7 @@ export function ProjectCard({
               ))}
             </ul>
 
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-3">
               {tags.map((tag) => (
                 <Badge key={tag} variant="secondary" className="bg-zinc-700/50 hover:bg-zinc-700 text-zinc-300">
                   {tag}
@@ -82,27 +81,27 @@ export function ProjectCard({
               ))}
             </div>
 
-            <div className="flex justify-between mt-auto pt-4 border-t border-zinc-700/50">
+            <div className="flex items-center justify-between gap-3">
               {repoUrl && repoUrl !== "#" ? (
-                <Button variant="ghost" size="sm" className="text-zinc-400 hover:text-white hover:bg-zinc-700/50" asChild>
-                  <a href={repoUrl} target="_blank" rel="noopener noreferrer">
-                    <Github className="mr-2 h-4 w-4" />
-                    {codeLabel ?? "Code"}
-                  </a>
-                </Button>
+                <a
+                  href={repoUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-sm text-zinc-400 hover:text-white transition-colors"
+                >
+                  <Github className="h-3.5 w-3.5" />
+                  {codeLabel ?? "Code"}
+                </a>
               ) : (
                 <span />
               )}
-              <Button
-                size="sm"
-                className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
-                asChild
+              <Link
+                href={`/projects/${slug}`}
+                className="group/cta inline-flex items-center gap-1.5 text-sm font-medium text-zinc-300 hover:text-purple-300 transition-colors ml-auto"
               >
-                <Link href={`/projects/${slug}`}>
-                  {detailsLabel}
-                  <ArrowUpRight className="ml-2 h-4 w-4" />
-                </Link>
-              </Button>
+                {detailsLabel}
+                <ArrowUpRight className="h-4 w-4 transition-transform group-hover/cta:translate-x-0.5 group-hover/cta:-translate-y-0.5" />
+              </Link>
             </div>
           </div>
 
