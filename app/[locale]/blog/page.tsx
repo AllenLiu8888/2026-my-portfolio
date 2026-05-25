@@ -1,10 +1,12 @@
 import { useTranslations } from "next-intl"
 import { setRequestLocale, getTranslations } from "next-intl/server"
 import type { Metadata } from "next"
+import { ArrowLeft } from "lucide-react"
 
 import { FloatingNav } from "@/components/floating-nav"
 import { ScrollProgress } from "@/components/scroll-progress"
 import { PostCard } from "@/components/blog/PostCard"
+import { Link } from "@/i18n/navigation"
 import { getAllPosts } from "@/lib/blog"
 
 export async function generateMetadata({
@@ -55,6 +57,14 @@ function BlogContent({
         </div>
 
         <div className="container relative z-10 max-w-4xl">
+          <Link
+            href="/"
+            className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors mb-8"
+          >
+            <ArrowLeft className="h-4 w-4 mr-2" />
+            {t("backToPortfolio")}
+          </Link>
+
           <div className="inline-block mb-3">
             <div className="relative px-3 py-1 text-sm font-medium rounded-full bg-white/10 backdrop-blur-sm border border-white/20">
               <span className="relative z-10">Blog</span>
@@ -70,8 +80,13 @@ function BlogContent({
       </section>
 
       {/* Post list */}
-      <section className="pb-32">
-        <div className="container max-w-4xl">
+      <section className="relative pb-32 overflow-hidden">
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <div className="absolute top-1/4 right-1/3 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-4000"></div>
+          <div className="absolute bottom-1/3 left-1/4 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-blob animation-delay-2000"></div>
+        </div>
+
+        <div className="container relative z-10 max-w-4xl">
           {posts.length === 0 ? (
             <div className="text-center text-zinc-500 py-20">{t("empty")}</div>
           ) : (

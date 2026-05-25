@@ -72,6 +72,7 @@ export default async function BlogPostPage({
         tags={post.frontmatter.tags ?? []}
         readingMinutes={post.readingMinutes}
         backLabel={t("backToList")}
+        portfolioLabel={t("backToPortfolio")}
         readMinLabel={t("minRead")}
       />
 

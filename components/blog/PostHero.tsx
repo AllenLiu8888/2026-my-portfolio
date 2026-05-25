@@ -14,6 +14,7 @@ interface Props {
   tags: string[]
   readingMinutes: number
   backLabel: string
+  portfolioLabel: string
   readMinLabel: string
 }
 
@@ -25,6 +26,7 @@ export function PostHero({
   tags,
   readingMinutes,
   backLabel,
+  portfolioLabel,
   readMinLabel,
 }: Props) {
   return (
@@ -36,15 +38,20 @@ export function PostHero({
 
       <div className="container relative z-10 max-w-3xl">
         <motion.div
+          className="inline-flex items-center text-sm text-zinc-400 mb-8 gap-2"
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.4 }}
         >
           <Link
-            href="/blog"
-            className="inline-flex items-center text-sm text-zinc-400 hover:text-white transition-colors mb-8"
+            href="/"
+            className="inline-flex items-center hover:text-white transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
+            {portfolioLabel}
+          </Link>
+          <span className="text-zinc-600">/</span>
+          <Link href="/blog" className="hover:text-white transition-colors">
             {backLabel}
           </Link>
         </motion.div>
