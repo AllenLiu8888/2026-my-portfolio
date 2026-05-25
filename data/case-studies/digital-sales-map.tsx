@@ -56,7 +56,7 @@ export const meta: CaseStudyEntry["meta"] = {
     label: "Live Demo · system.kaixingwuliu.com",
     href: "http://system.kaixingwuliu.com/",
   },
-  github: [{ label: "Github Repo", href: "https://github.com/AllenLiu8888/digital-sales-system" }],
+  github: [{ label: "GitHub", href: "https://github.com/AllenLiu8888/digital-sales-system" }],
   toc: [
     { id: "why", num: "一", label: { en: "Why · Background", zh: "Why · 业务背景" } },
     { id: "research", num: "二", label: { en: "Research & Definition", zh: "需求调研 + 产品定义" } },

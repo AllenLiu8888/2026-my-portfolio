@@ -53,9 +53,10 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: ["队长 Team Leader", "产品经理 Product Manager", "项目经理 Project Manager", "前端负责人 Frontend dev", "UX 设计师 UX Designer"],
   },
   github: [
-    { label: "Github Repo", href: "https://github.com/AllenLiu8888/nazala-frontend" },
+    { label: "GitHub", href: "https://github.com/AllenLiu8888/nazala-frontend" },
   ],
   toc: [
+    { id: "demo", num: "▶", label: { en: "Demo Video", zh: "Demo 视频" } },
     { id: "why", num: "一", label: { en: "Why · Background", zh: "Why · 背景与用户" } },
     { id: "what", num: "二", label: { en: "What · Product Design", zh: "What · 产品设计" } },
     { id: "iteration", num: "三", label: { en: "Iteration · 3 Sprints", zh: "迭代过程" } },
@@ -70,13 +71,13 @@ function Content({ locale }: { locale: Locale }) {
   if (locale === "en") {
     return (
       <>
-        <div className="container max-w-5xl pt-4">
+        <CaseStudySection id="demo" title="Demo Video">
           <CaseVideo
             src="/case-studies/memory-future-simulator/demo.mp4"
             poster="/case-studies/memory-future-simulator/03-event-narrative.png"
             caption="Demo video — produced and edited by Yikai"
           />
-        </div>
+        </CaseStudySection>
         <CaseStudySection title="English summary">
           <ENStub
             slug={SLUG}
@@ -95,13 +96,13 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <div className="container max-w-5xl pt-4">
+      <CaseStudySection id="demo" title="Demo 视频">
         <CaseVideo
           src="/case-studies/memory-future-simulator/demo.mp4"
           poster="/case-studies/memory-future-simulator/03-event-narrative.png"
           caption="项目演示视频 · 拍摄 + 剪辑：刘一开"
         />
-      </div>
+      </CaseStudySection>
       <CaseStudySection id="why" num="一、" title="项目背景 & 目标用户（Why）">
         <SubHeading label="问题">真实存在的伦理真空</SubHeading>
         <Paragraph>

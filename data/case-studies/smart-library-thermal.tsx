@@ -48,7 +48,7 @@ export const meta: CaseStudyEntry["meta"] = {
     en: ["Team Leader", "Product Manager", "Project Manager", "Frontend Lead", "Product Design Lead"],
     zh: ["队长 Team Leader", "产品经理 PM", "项目经理 Project Manager", "前端负责人", "产品设计主导"],
   },
-  github: [{ label: "Github Repo", href: "https://github.com/AllenLiu8888/temperature-map-app" }],
+  github: [{ label: "GitHub", href: "https://github.com/AllenLiu8888/temperature-map-app" }],
   toc: [
     { id: "why", num: "一", label: { en: "Why · Problem", zh: "Why · 背景与问题" } },
     { id: "process", num: "二", label: { en: "How · Process", zh: "How · 调研到 3 轮迭代" } },
