@@ -40,8 +40,21 @@ set -euo pipefail
 cd "$REMOTE_DIR"
 
 echo ""
-echo "==> 📥 git pull"
-git pull --ff-only origin main
+echo "==> 📥 git pull (with retries — China <> GitHub is flaky)"
+git_pull_ok=0
+for attempt in 1 2 3 4 5; do
+  if git pull --ff-only origin main; then
+    echo "    ✅ git pull succeeded on attempt $attempt"
+    git_pull_ok=1
+    break
+  fi
+  echo "    ⚠️ attempt $attempt failed, retrying in 5s..."
+  sleep 5
+done
+if [ "$git_pull_ok" != "1" ]; then
+  echo "    ❌ git pull failed 5x — GFW / TLS issue persists"
+  exit 1
+fi
 
 echo ""
 echo "==> 📦 npm install"
