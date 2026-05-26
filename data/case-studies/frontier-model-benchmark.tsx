@@ -15,7 +15,7 @@ export const meta: CaseStudyEntry["meta"] = {
   slug: SLUG,
   title: {
     en: "Frontier-Model Benchmark Dashboard",
-    zh: "五大模型横评 Dashboard",
+    zh: "六大模型横评 Dashboard",
   },
   tagline: {
     en: "Hands-on comparison of Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax across six dimensions, mapped to real product decisions I've made. Not a leaderboard — one usage story per model.",
@@ -26,7 +26,7 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: "亮点：决策导向的横评，不是分数导向",
   },
   overview: {
-    type: { en: "Personal benchmark dashboard", zh: "个人决策框架 + 公开 Notion 看板" },
+    type: { en: "Personal benchmark dashboard", zh: "个人决策框架 + 私人对照表" },
     period: { en: "2026.02 — Present (continuously updated)", zh: "2026.02 — 至今（持续更新）" },
     team: { en: "Solo", zh: "独立完成" },
     stack: {
@@ -34,8 +34,8 @@ export const meta: CaseStudyEntry["meta"] = {
       zh: "Notion 看板 · 自建测试 prompt 集 · 真实任务实测",
     },
     grade: {
-      en: "Public dashboard, used for daily model selection",
-      zh: "公开看板，作为日常模型选型依据",
+      en: "Living dashboard, drives daily model selection",
+      zh: "持续维护的对照表，作为日常模型选型依据",
     },
   },
   roles: {
@@ -57,7 +57,7 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection title="English summary">
         <ENStub
           slug={SLUG}
-          summary="A decision-oriented benchmark covering Claude (Opus / Sonnet), ChatGPT (5), Gemini (2.5), DeepSeek (V3), GLM (4.5), and MiniMax (M2). Six dimensions: coding, Chinese reasoning, agent orchestration, long-context, multimodal, cost-per-task. Critically, each model gets one real usage story from my OpenClaw stack — the dashboard is built to answer 'which model should I deploy for this task right now', not 'who's the best overall'."
+          summary="A decision-oriented benchmark covering Claude (Opus / Sonnet), ChatGPT-5, Gemini 2.5, DeepSeek V3, GLM 4.5, and MiniMax M2. Six dimensions: coding, Chinese reasoning, agent orchestration, long-context, multimodal, cost-per-task. Critically, each model gets one real usage story from my OpenClaw stack — the dashboard is built to answer 'which model should I deploy for this task right now', not 'who's the best overall'."
           label={{
             badge: "Translation in progress",
             body: "Chinese version below covers the rationale (why most public benchmarks are useless for product decisions), the 6-dimension framework, my evaluation methodology, and key findings from running the same test suite quarterly.",
@@ -74,7 +74,7 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection id="why" num="一、" title="为什么做这件事（Why）">
         <SubHeading label="问题">公开 benchmark 解决不了实际选型</SubHeading>
         <Paragraph>
-          作为 AI 重度使用者，我每天面对的问题不是「哪个模型最聪明」，而是<strong>「我现在要做这件具体的事，该用哪个模型」</strong>。
+          作为 AI 重度使用者，我每天真正要回答的问题是：<strong>「我现在要做这件具体的事，该用哪个模型」</strong>。
           公开的 MMLU、HumanEval、Chatbot Arena 等 benchmark 解答不了这个问题，原因有三：
         </Paragraph>
         <BulletList
@@ -87,7 +87,7 @@ function Content({ locale }: { locale: Locale }) {
 
         <SubHeading label="目标">建立一套个人决策框架</SubHeading>
         <Callout variant="insight">
-          目标不是出一个排行榜，而是<strong>「下一次我要做 X 类任务时，我能在 30 秒内决定用哪个模型」</strong>。
+          目标不是出一个排行榜，而是<strong>下一次我要做 X 类任务时，能凭一份自己信得过的对照表快速决定用哪个模型</strong>。
           所以这个 dashboard 是<strong>决策导向</strong>的——每一个模型在每一维度旁边都对应一个我亲身经历的具体使用故事。
         </Callout>
       </CaseStudySection>
@@ -138,20 +138,20 @@ function Content({ locale }: { locale: Locale }) {
           每次测试记录 input token + output token，按官方定价折算单次任务成本。然后看「质量分 / 成本」性价比。
         </Paragraph>
 
-        <SubHeading label="原则 4">季度复测</SubHeading>
+        <SubHeading label="原则 4">持续记录 + 定期复测</SubHeading>
         <Paragraph>
-          模型版本更新频繁（Opus 4.5 → 4.7 短短几个月），所以每季度跑一次同样的任务集，看相对位次变化。
+          模型版本更新频繁（Opus 4.5 → 4.7 短短几个月），所以每次有新模型 / 大版本发布，我就把同一组任务再跑一遍，记下位次变化，避免半年前的结论一直拿着用。
         </Paragraph>
       </CaseStudySection>
 
       <CaseStudySection id="findings" num="四、" title="关键发现（部分）">
         <Callout variant="tip">
-          以下结论基于我 2026 年 Q1-Q2 的实测。具体数据 + 完整使用故事在公开 Notion 看板。这里只摘选 5 条最有决策价值的结论。
+          以下结论基于我自 2026 年 2 月起的实测。具体数据 + 完整使用故事在我的私人对照表里维护，下面摘选 5 条最有决策价值的结论。
         </Callout>
 
         <SubHeading label="01">编程任务：Opus 是天花板，但 Sonnet 的性价比是甜点</SubHeading>
         <Paragraph>
-          复杂多文件重构 Opus 明显胜出，但日常 80% 的代码任务 Sonnet 完成度足够，成本是 Opus 的 1/5。我现在的策略：默认 Sonnet，遇到「这个我自己都没把握的难题」才切 Opus。
+          复杂多文件重构 Opus 明显胜出，但日常大多数的代码任务 Sonnet 完成度足够，单次成本约为 Opus 的几分之一（按 Anthropic 公开定价折算）。我现在的策略：默认 Sonnet，遇到「这个我自己都没把握的难题」才切 Opus。
         </Paragraph>
 
         <SubHeading label="02">中文推理：DeepSeek + Claude 双甜点</SubHeading>
@@ -193,8 +193,8 @@ function Content({ locale }: { locale: Locale }) {
 
         <SubHeading>对 AI PM 思维的塑造</SubHeading>
         <Callout variant="insight">
-          做这件事让我对「AI PM 该懂什么」有了一个具体的标准：<strong>不是知道每个模型的参数和 benchmark 排名，而是面对一个具体任务能在 30 秒内给出「用什么模型、估算多少成本、为什么是它」的决策。</strong>
-          这才是真正能在团队里加价值的能力——而不是看公开排行榜复读。
+          做这件事让我对「AI PM 该懂什么」有了一个具体的标准：<strong>面对一个具体任务，能凭手上的对照表快速给出「用什么模型、大致成本量级、为什么是它」的决策依据。</strong>
+          这才是真正能在团队里加价值的能力——而不是只复读公开排行榜。
         </Callout>
       </CaseStudySection>
     </>

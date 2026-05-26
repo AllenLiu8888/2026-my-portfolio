@@ -18,8 +18,8 @@ const SLUG = "memory-future-simulator"
 export const meta: CaseStudyEntry["meta"] = {
   slug: SLUG,
   title: {
-    en: "Navigating the Future of Memory",
-    zh: "Navigating the Future of Memory · 记忆未来模拟器",
+    en: "Memory Future Simulator",
+    zh: "记忆未来模拟器",
   },
   tagline: {
     en: "An LLM + RAG-powered multiplayer collaborative narrative installation. Players join a shared virtual world, make collective decisions, and explore the ethical edges of memory technology.",
@@ -32,7 +32,7 @@ export const meta: CaseStudyEntry["meta"] = {
   overview: {
     type: {
       en: "Capstone (UQ DECO3801/7381) · TO C product",
-      zh: "有固定方的 TO C 项目开发（UQ DECO3801/7381）",
+      zh: "课程毕设 · TO C 产品（UQ DECO3801/7381，有真实客户方）",
     },
     period: {
       en: "Aug 2025 — Oct 2025 (~12 weeks)",

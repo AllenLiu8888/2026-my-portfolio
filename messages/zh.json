@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "刘一开 Yikai Liu · 产品经理 · 全栈 · AI Builder",
-    "description": "懂技术的 PM + 有产品思维的设计师。昆士兰大学交互设计硕士 · 前小鹏汽车华北二区市场主管 · 0→1 产品全闭环 · 长期活跃在 AI 工具链 / 模型评测 / Agent 设计最前线 · OpenClaw 104 Skills 日常运转。"
+    "description": "懂技术的 PM + 有产品思维的设计师。昆士兰大学交互设计硕士 · 前小鹏汽车华北二区市场实习主管（1.5 年全职职责） · 0→1 产品全闭环 · 日均使用 Claude / ChatGPT / Gemini / DeepSeek 做模型选型 · OpenClaw 多智能体每日运转。"
   },
   "nav": {
     "brandFirst": "Yikai",
@@ -19,7 +19,7 @@
     "eyebrow": "0→1 产品经理 · 全栈 · 昆士兰大学交互设计硕士",
     "greeting": "你好，我是",
     "name": "刘一开",
-    "tagline": "懂技术的 PM × 有产品思维的设计师。独立交付 0→1 产品全闭环——从需求调研、架构设计到 React / Node / Python 落地，长期活跃在 AI 工具链、模型评测、Agent 设计最前线。",
+    "tagline": "懂技术的 PM × 有产品思维的设计师。独立交付 0→1 产品全闭环——从需求调研、架构设计到 React / Node / Python 落地。日常使用 OpenClaw 多智能体、横评主流大模型、自己写代码做 demo。",
     "viewProjects": "查看作品",
     "contactMe": "联系我"
   },
@@ -27,9 +27,9 @@
     "title": "关于我",
     "subtitle": "懂技术的 PM × 有产品思维的设计师",
     "status": "开放 AI PM / 产品经理机会 · 2026 届",
-    "bio1": "25 岁，目前居住呼和浩特，工作地点不限。昆士兰大学（QS 世界 Top 50、澳洲八校联盟）计算机科学院交互设计硕士、南开大学（滨海）市场营销学士——一条刻意 T 字型的路径，把技术、设计、业务三边打通。",
+    "bio1": "25 岁，目前居住呼和浩特，工作地点不限。昆士兰大学（QS 世界 Top 50、澳洲八校联盟）计算机科学院交互设计硕士、南开大学（滨海）市场营销学士——一条刻意 T 字型的路径，让我同时能跟工程师、设计师、销售对话不掉链子。",
     "bio2": "我真正擅长的是：独立把产品从 0 跑到 1。下面那个化工贸易销售看板，就是 7 天内独立完成需求调研→架构设计→React / Node / PostgreSQL 全栈→上线试点的真实交付。我定义需求、写代码、跑用户访谈，一个人闭环——这是我最强的能力回路。",
-    "bio3": "现在我长期活跃在 AI 工具最前线——日常使用 Claude Code、Cursor、Antigravity、OpenClaw（自配 104 个 Skills，覆盖 7 大场景），把 Claude / GPT / Gemini / MiniMax / DeepSeek 横评成实际生产决策，亲历 AI 产品从聊天→编码→Agent→生态平台的完整演进。我相信：最好的 AI PM 也是 AI builder。",
+    "bio3": "现在每天大量时间花在 AI 工具上——Claude Code、Cursor、Antigravity 是主力，OpenClaw 自配多个 Skill 覆盖内容 / 健康 / 求职等场景，把 Claude / GPT / Gemini / MiniMax / DeepSeek 横评成实际生产决策。我相信：最好的 AI PM 也是 AI builder。",
     "labels": {
       "name": "姓名",
       "email": "邮箱",
@@ -130,7 +130,7 @@
         "bullets": [
           "104 个自配 Skills · 7 大场景",
           "三层架构：Nova（事务）/ HealthBot（健身）/ Claude Code（战略）",
-          "每日在用 1 年+，AI 工具用户 → 工具链构建者",
+          "每日在用 · 持续迭代中，AI 工具用户 → 工具链构建者",
           "双 Mac Syncthing + 跨设备 claude-mem"
         ],
         "tags": ["104 Skills", "多智能体", "每日在用"]
@@ -178,7 +178,7 @@
         "title": "独立 AI Builder · 个人持续实践",
         "company": "一人工作室 · 呼和浩特",
         "period": "2026.02 — 至今",
-        "description": "日常使用 Claude Code / Cursor / Antigravity / OpenClaw（104 Skills）/ Loveable / Stitch / Google AI Studio。搭建生产级多智能体系统，深度评测前沿大模型，亲历 AI 产品从聊天→编码→Agent→生态平台的完整演进。"
+        "description": "日常使用 Claude Code / Cursor / Antigravity / OpenClaw / Lovable / Stitch / Google AI Studio。搭建多智能体系统、深度评测前沿大模型、独立交付化工销售管理系统等真实业务（Vibe Coding 模式上线）。"
       },
       {
         "title": "交互设计硕士 · 计算机科学院",
@@ -187,10 +187,10 @@
         "description": "QS 世界 Top 50、澳洲八校联盟。核心课：Web 全栈开发（React / Django）、实体交互计算（Physical Computing）、HCI。两个 Team Lead 毕设都以 Distinction 级别交付——图书馆智能温度感知系统 HD 7/7、记忆未来模拟器 D 6/7，均在校园展览中全天公开展出。"
       },
       {
-        "title": "华北二区市场主管",
+        "title": "华北二区市场实习主管（1.5 年全职职责）",
         "company": "小鹏汽车 · 天津",
         "period": "2021.06 — 2022.12",
-        "description": "Base 天津，覆盖津 / 鲁 / 冀 / 辽四地。独立搭建天津空港店抖音矩阵——2 个月精准涨粉 1.3W+。深度参与「来了就是鹏友」「日落咖啡馆」「周末有艺思」品牌 IP 全链路落地。核心对接天津车展（A级）、沈阳车展（B级）。月均产出：4 场销售促转 + 4 场保客维系 + 1 场异业合作。"
+        "description": "Base 天津，覆盖津 / 鲁 / 冀 / 辽四地。总部按实习生身份签约，实际承担华北二区市场主管全职职责 1.5 年。独立搭建天津空港店抖音矩阵——2 个月精准涨粉 1.3W+。深度参与「来了就是鹏友」「日落咖啡馆」「周末有艺思」品牌 IP 全链路落地。核心对接天津车展（A 级）、沈阳车展（B 级）。"
       },
       {
         "title": "市场营销学士",

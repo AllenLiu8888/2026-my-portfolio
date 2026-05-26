@@ -18,7 +18,7 @@ export const meta: CaseStudyEntry["meta"] = {
   slug: SLUG,
   title: {
     en: "Smart Library Thermal-Perception System",
-    zh: "Temperature · 图书馆智能温度感知系统",
+    zh: "图书馆智能温度感知系统",
   },
   tagline: {
     en: "A software × hardware IoT system that turns invisible thermal microclimates into visible information, letting library users find their most comfortable seat — built with ESP32 sensor mesh, dual-screen React frontend, AWS-hosted Python backend.",

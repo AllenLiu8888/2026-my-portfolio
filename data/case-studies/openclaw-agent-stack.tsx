@@ -18,8 +18,8 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: "OpenClaw · 三层 Agent 架构",
   },
   tagline: {
-    en: "My personal AI operating system — 104 self-configured Skills across 7 domains, with Minimax-powered Nova triaging daily ops, HealthBot running my training plan, and Claude Code handling strategy and code. The clearest proof of moving from AI tool user to tool-chain builder.",
-    zh: "我每天在用的个人 AI 操作系统——104 个自配 Skills 覆盖 7 大场景，Minimax 驱动的 Nova 处理日常事务，HealthBot 跑健身计划，Claude Code 处理战略与代码。「从 AI 工具使用者到工具链构建者」最直接的证据。",
+    en: "My personal AI operating system — self-configured Skills across 7 domains, with Minimax-powered Nova triaging daily ops, HealthBot running my training plan, and Claude Code handling strategy and code. Built and run by me, every day.",
+    zh: "我每天在用的个人 AI 操作系统——自配 Skills 覆盖 7 大场景，Minimax 驱动的 Nova 处理日常事务，HealthBot 跑健身计划，Claude Code 处理战略与代码。从 AI 工具使用者到工具链构建者的实际工程实践。",
   },
   highlight: {
     en: "104 Skills · 7 domains · daily-driven multi-agent system",
@@ -34,8 +34,8 @@ export const meta: CaseStudyEntry["meta"] = {
       zh: "OpenClaw + Claude Code + MiniMax M2 + Cron / Webhook / 微信推送",
     },
     grade: {
-      en: "Daily-driven, 1 yr+ continuous operation",
-      zh: "每日在用，连续运转 1 年以上",
+      en: "Daily-driven · continuously evolving since 2026.04",
+      zh: "每日在用 · 自 2026.04 起持续迭代",
     },
   },
   roles: {
@@ -198,13 +198,13 @@ Claude Code（定时扫描 inbox/）
       </CaseStudySection>
 
       <CaseStudySection id="impact" num="五、" title="实际效果">
-        <SubHeading>每日运转的指标</SubHeading>
+        <SubHeading>每日运转的实际效果</SubHeading>
         <BulletList
           items={[
-            "Nova 每天接发 20+ 条消息，处理 80% 的事务无需我介入",
-            "Claude Code 每天处理 3-5 个复杂决策任务，从「想到」到「做完」的延迟降到分钟级",
-            "健康提醒达成率 95%+（HealthBot 推送 → 我执行 → Nova 记录）",
-            "求职投递自动化：JD 进来到定制 Cover Letter 草稿出去，平均 8 分钟",
+            "Nova 承担大部分日常事务的接发与归档，让我可以专注于决策性工作",
+            "Claude Code 每天处理战略 / 复杂代码任务，从「想到」到「做完」的延迟显著缩短",
+            "HealthBot 接管健身打卡 + 饮食 / 训练提醒，达成率明显高于此前手动记录的阶段",
+            "求职投递自动化：JD → 定制 Cover Letter 草稿的产出时间，从原先手写 30+ 分钟降到分钟级",
           ]}
         />
 
@@ -221,8 +221,8 @@ Claude Code（定时扫描 inbox/）
       <CaseStudySection id="reflection" num="六、" title="反思与收获">
         <SubHeading>核心收获</SubHeading>
         <Callout variant="insight">
-          运维这套系统一年，我对 AI Agent 的认知从「调 prompt 让它干活」彻底变成<strong>「设计层级、设计数据流、设计失败恢复」</strong>。
-          Agent 系统的难点 90% 不在模型本身，而在<strong>「不同模型怎么协同、人在哪里介入、错了怎么恢复、贵 token 什么时候出场」</strong>这些工程问题。
+          每天运维这套系统，让我对 AI Agent 的认知从「调 prompt 让它干活」转向<strong>「设计层级、设计数据流、设计失败恢复」</strong>。
+          Agent 系统真正的难点很少在模型本身，而是在<strong>不同模型怎么协同、人在哪里介入、错了怎么恢复、贵 token 什么时候出场</strong>这些工程问题。
           这是「AI 工具使用者」和「AI 工具链构建者」之间最大的差距。
         </Callout>
 
@@ -230,13 +230,13 @@ Claude Code（定时扫描 inbox/）
         <BulletList
           items={[
             <span key="1">
-              <strong>不是用 AI 的人，是设计 AI 系统的人：</strong>这个项目是我在面试时最能展示「AI PM 思维」的作品——分层、调度、Trade-off
+              <strong>从「用 AI」到「设计 AI 系统」：</strong>这个项目让我能在面试中具体展示 AI PM 思维——分层、调度、Trade-off，而不是空谈
             </span>,
             <span key="2">
               <strong>真实场景驱动：</strong>每一个 Skill 都来自我自己每天的痛点，不是想象出来的 demo
             </span>,
             <span key="3">
-              <strong>多模型协同的实战：</strong>横评 5 大模型不是写文章，而是真的把不同模型部署在不同 Tier 上做活
+              <strong>多模型协同的实战：</strong>横评 6 大主流模型并把它们真的部署到不同 Tier 上跑活，而不是只在 benchmark 上对比
             </span>,
           ]}
         />

@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Yikai Liu (Allen) — Product Manager · Full-Stack · AI Builder",
-    "description": "Full-stack PM with a designer's eye. UQ MSc Interaction Design. Ex-XPENG North China. 0→1 product deliveries end-to-end, daily-driven AI tool-chain, 104-Skill OpenClaw stack, frontier-model benchmarking."
+    "description": "Full-stack PM with a designer's eye. UQ MSc Interaction Design. Ex-XPENG North China (intern role with full-time regional-lead scope, 1.5 years). 0→1 product deliveries end-to-end, daily-driven AI tool-chain, OpenClaw multi-agent stack, frontier-model benchmarking."
   },
   "nav": {
     "brandFirst": "Yikai",
@@ -19,7 +19,7 @@
     "eyebrow": "0→1 Product Manager · Full-Stack · UQ Interaction Design",
     "greeting": "Hi, I'm",
     "name": "Yikai Liu",
-    "tagline": "Full-stack PM × designer's eye. I ship 0→1 products end-to-end — research, architecture, React/Node/Python — and live at the frontier of AI tooling, model evaluation, and agent design.",
+    "tagline": "Full-stack PM × designer's eye. I ship 0→1 products end-to-end — research, architecture, React/Node/Python. Daily-driven OpenClaw multi-agent stack, hands-on benchmarking of frontier models, my own demos.",
     "viewProjects": "View Projects",
     "contactMe": "Contact Me"
   },
@@ -29,7 +29,7 @@
     "status": "Open to AI PM / Product roles · 2026 Cohort",
     "bio1": "I'm 25, based in Hohhot, open to relocation. UQ MSc Interaction Design under the School of Computer Science (Group of Eight, QS Top 50), Nankai BA Marketing — a deliberately T-shaped path through the technical, design, and business sides of shipping product.",
     "bio2": "What I actually do well: take a product from 0 to 1, solo. The chemical-trade sales dashboard you'll see below is the cleanest proof — a 7-day sprint from user research → architecture → React/Node/PostgreSQL full-stack → live in production. I define the spec, write the code, talk to the users. That's the loop I'm best at.",
-    "bio3": "Today I live at the frontier of AI tooling — daily-driving Claude Code, Cursor, Antigravity, and OpenClaw (self-configured with 104 Skills across 7 domains). I benchmark Claude / GPT / Gemini / MiniMax / DeepSeek into real production decisions, and I've watched the AI product arc go from chat → coding → agent → ecosystem firsthand. My belief: the best AI PMs are also AI builders.",
+    "bio3": "Most of my days now go into AI tooling — Claude Code, Cursor, and Antigravity as the workhorses, with OpenClaw running self-configured Skills across content, health, career and ops. I benchmark Claude / GPT / Gemini / MiniMax / DeepSeek as production decisions, not Twitter takes. My belief: the best AI PMs are also AI builders.",
     "labels": {
       "name": "Name",
       "email": "Email",
@@ -130,7 +130,7 @@
         "bullets": [
           "104 self-configured Skills · 7 domains",
           "Three tiers: Nova (ops) / HealthBot (fitness) / Claude Code (strategy)",
-          "Daily-driven 1yr+, AI tool user → tool-chain builder",
+          "Daily-driven · continuously evolving, AI tool user → tool-chain builder",
           "Dual-Mac Syncthing + cross-device claude-mem"
         ],
         "tags": ["104 Skills", "Multi-Agent", "Daily-Driven"]
@@ -178,7 +178,7 @@
         "title": "Indie AI Builder · Personal Practice",
         "company": "Solo Studio · Hohhot",
         "period": "2026.02 — Present",
-        "description": "Daily-driving Claude Code / Cursor / Antigravity / OpenClaw (104 Skills) / Loveable / Stitch / Google AI Studio. Building production multi-agent systems, benchmarking frontier models, and witnessing the AI product arc go from chat → coding → agent → ecosystem firsthand."
+        "description": "Daily-driving Claude Code / Cursor / Antigravity / OpenClaw / Lovable / Stitch / Google AI Studio. Building multi-agent systems, benchmarking frontier models, and shipping real client work end-to-end (e.g. the chemical-trade sales dashboard, Vibe-Coded and live in production)."
       },
       {
         "title": "MSc Interaction Design · School of Computer Science",
@@ -187,10 +187,10 @@
         "description": "QS Top 50, Group of Eight. Core: web full-stack (React / Django), physical computing, HCI. Two team-lead capstones delivered as Distinction-grade products: HD 7/7 (Smart Library) and D 6/7 (Memory Future Simulator), both publicly exhibited at the UQ campus showcase."
       },
       {
-        "title": "Regional Marketing Lead · North China Zone 2",
+        "title": "Regional Marketing Lead, North China Zone 2 (intern role, 1.5-year full-time scope)",
         "company": "XPENG Motors · Tianjin",
         "period": "2021.06 — 2022.12",
-        "description": "Tianjin-based, covering Tianjin / Shandong / Hebei / Liaoning. Built the Tianjin Airport showroom's Douyin matrix solo — +13,000 precision followers in 2 months. Co-led core brand IPs ('Pengyou Club', 'Sunset Café', 'Weekend Arts'). Lead contact for Tianjin Auto Show (A-tier) and Shenyang Auto Show (B-tier). Monthly cadence: ~4 sales-promo + 4 customer-retention + 1 cross-industry event."
+        "description": "Tianjin-based, covering Tianjin / Shandong / Hebei / Liaoning. Signed as intern by HQ but carried full regional-marketing-lead scope for 1.5 years. Built the Tianjin Airport showroom's Douyin matrix solo — +13,000 precision followers in 2 months. Co-led core brand IPs ('Pengyou Club', 'Sunset Café', 'Weekend Arts'). Lead contact for Tianjin Auto Show (A-tier) and Shenyang Auto Show (B-tier)."
       },
       {
         "title": "BA Marketing",
@@ -222,7 +222,7 @@
       "github": "github.com/AllenLiu8888"
     },
     "statusTitle": "Current Status",
-    "statusText": "Open to AI PM / Product roles · 2026 cohort",
+    "statusText": "Open to AI PM / Product roles · 2026 Cohort",
     "responseTitle": "Response Time",
     "responseText": "Within 24h, weekdays and weekends"
   },
