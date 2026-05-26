@@ -1,0 +1,73 @@
+name: Deploy to Tencent Cloud
+
+# Runs on every push to main (auto-deploy)
+# Also exposes a manual trigger via GitHub UI → Actions → Deploy → Run workflow
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Cancel any in-flight deploy when a new commit lands
+concurrency:
+  group: production-deploy
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    name: SSH deploy → liuyikai.com
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 🔑 Set up SSH key
+        env:
+          SSH_KEY: ${{ secrets.TENCENT_SSH_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s' "$SSH_KEY" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          # Pre-trust the host so the SSH command doesn't hang on prompt
+          ssh-keyscan -H "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts 2>/dev/null || true
+
+      - name: 🚀 Deploy via SSH
+        env:
+          SERVER_HOST: ${{ secrets.SERVER_HOST }}
+          SERVER_USER: ${{ secrets.SERVER_USER }}
+          REMOTE_DIR: ${{ secrets.REMOTE_DIR || '/var/www/portfolio' }}
+        run: |
+          ssh -o StrictHostKeyChecking=accept-new \
+              -i ~/.ssh/id_rsa \
+              "${SERVER_USER}@${SERVER_HOST}" \
+              REMOTE_DIR="$REMOTE_DIR" bash -s <<'REMOTE_SCRIPT'
+          set -euo pipefail
+          cd "$REMOTE_DIR"
+
+          echo "==> 📥 git pull"
+          git pull --ff-only origin main
+
+          echo "==> 📦 npm install"
+          npm install --no-audit --no-fund --silent
+
+          echo "==> 🔨 npm run build"
+          npm run build
+
+          echo "==> ♻️  pm2 restart"
+          pm2 restart portfolio --update-env
+
+          echo "==> 🩺 health check"
+          sleep 2
+          curl -fsSL http://localhost:3000 -o /dev/null && echo "    ✅ localhost:3000 → 200"
+
+          echo "==> 📊 PM2"
+          pm2 list --no-color
+          REMOTE_SCRIPT
+
+      - name: 🌐 Verify production
+        run: |
+          sleep 3
+          if curl -fsSL -o /dev/null https://liuyikai.com; then
+            echo "✅ https://liuyikai.com → 200"
+          else
+            echo "⚠️ Public URL not responding; check server"
+            exit 1
+          fi
