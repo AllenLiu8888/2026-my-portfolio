@@ -25,3 +25,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# OS
+.DS_Store
+
+# local blog drafts (raw 朋友圈 content + source images, processed into content/blog & public/blog)
+blog-drafts/

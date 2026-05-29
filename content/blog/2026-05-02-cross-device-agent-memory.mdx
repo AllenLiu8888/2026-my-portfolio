@@ -1,0 +1,42 @@
+---
+title: 今日搞机进度：双 Mac 的 P2P 共享大脑
+date: 2026-05-02
+tags: [Agent, 工作流, OpenClaw, 折腾]
+summary: 给两台 Mac 拉一条 Syncthing P2P 直连，让 Claude Code、OpenClaw、Codex 三个 AI 共用同一份本地记忆——以及由此想到的「AI 时代，个人计算正在重新本地化」。
+cover: /blog/cross-device-agent-memory/cover.png
+lang: zh
+---
+
+OpenClaw 刚出那阵子，我入了台 Mac mini 专门跑 Agent。核心工作越来越多依赖 Mac mini 上的 Claude Code，但 Mac mini 又不方便携带，出门一趟就跟自己的工作进度断了联系。
+
+刚好上个月 GPT-5.5 出来很强，于是我在 MBP 上装了 Codex 当移动作战单元。新问题随之而来：Mac mini 上有一整套给所有 AI 共享的记忆和知识库，全是本地 `.md` 文件——MBP 上的 Codex 看不到，每次出门都得重新跟它讲一遍背景，就很麻烦。
+
+![出门就和工作进度断联](/blog/cross-device-agent-memory/1.jpg)
+
+## 解法：Syncthing P2P 双向直连
+
+于是今天折腾了下，给两台 Mac 拉了条 Syncthing P2P 双向直连——加密、数据走家里 LAN，不经过任何第三方云。
+
+![Syncthing 配置](/blog/cross-device-agent-memory/3.jpg)
+
+现在 Mac mini 的 Claude Code、🦞（OpenClaw）、MBP 的 Codex，三个 AI 共用同一份记忆。Codex 路上记的灵感，回家 Claude Code 也立刻看见。再没那种「换了设备就像换了个失忆症患者」的感觉。
+
+![三个 AI 共用一份记忆](/blog/cross-device-agent-memory/2.jpg)
+
+## 配完突然意识到一件事
+
+AI Agent 时代的「个人电脑」，定义已经悄悄变了。
+
+过去十年我们都被推着上云：Dropbox、iCloud、Notion。云的逻辑是「数十亿人协同共用一份基建」，所以我们都成了云的房客。
+
+但 AI Agent 时代的同步需求其实变了：
+
+1. 越来越多事情是「指使 AI 做」，AI 在读你的产品方向、求职策略、半成品决策、跟教练的对话——这些数据走任何一家云都意味着风控、合规、商业风险。该上云的可以继续上，不该上的就别上，让 AI 在本地之间共享反而最干净。
+
+2. 同步的对象不再是「我跨设备访问自己的文件」，而是「我的 AI 高管们互相交接工作」——读对方笔记、接对方任务、互相补位。每个项目不用再向不同的 AI 重复讲三遍背景。
+
+把这个观察放大一点：Web 2.0 时代的方向是「一切向云中央化」；AI 时代会出现「部分去中央化」——本地 + P2P 反而重新合理了。现在 Apple 在力推本地推理的 Apple Intelligence；各家都在卷端侧模型（Apple Foundation Model、端侧 Llama、端侧 Qwen、Gemma）；xAI 在强调「你的数据属于你」。
+
+大方向是一致的：AI 时代，「个人计算」里「个人」这两个字，重新变重了。
+
+> 深夜搞机，叠甲：以上观察基于我当下的工作流，不一定普适，也不一定是最新最优的方案，以后演化又把这些场景吞回去也未可知 🤔

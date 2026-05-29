@@ -27,9 +27,9 @@
     "title": "About Me",
     "subtitle": "Full-stack PM × designer's eye",
     "status": "Open to AI PM / Product roles · 2026 Cohort",
-    "bio1": "I'm 25, based in Hohhot, open to relocation. UQ MSc Interaction Design under the School of Computer Science (Group of Eight, QS Top 50), Nankai BA Marketing — a deliberately T-shaped path through the technical, design, and business sides of shipping product.",
-    "bio2": "What I actually do well: take a product from 0 to 1, solo. The chemical-trade sales dashboard you'll see below is the cleanest proof — a 7-day sprint from user research → architecture → React/Node/PostgreSQL full-stack → live in production. I define the spec, write the code, talk to the users. That's the loop I'm best at.",
-    "bio3": "Most of my days now go into AI tooling — Claude Code, Cursor, and Antigravity as the workhorses, with OpenClaw running self-configured Skills across content, health, career and ops. I benchmark Claude / GPT / Gemini / MiniMax / DeepSeek as production decisions, not Twitter takes. My belief: the best AI PMs are also AI builders.",
+    "bio1": "I'm 25, based in Hohhot, open to relocation. UQ MSc Interaction Design under the School of Computer Science (Group of Eight, QS Top 50), BA Marketing at Binhai College of Nankai University — a deliberately T-shaped path through the technical, design, and business sides of shipping product.",
+    "bio2": "What I actually do well: take a product from 0 to 1, solo — from user research and architecture all the way to full-stack implementation. I've shipped real 0→1 business products and built LLM / multi-agent projects. I define the spec, write the code, talk to the users. That's the loop I'm best at.",
+    "bio3": "Most of my days now go into AI tooling — benchmarking different frontier models into real production decisions and wiring up multi-agent workflows to run my day-to-day. My belief: the best AI PMs are also AI builders.",
     "labels": {
       "name": "Name",
       "email": "Email",
@@ -46,57 +46,66 @@
   },
   "skills": {
     "title": "Skills & Tools",
-    "subtitle": "Honestly tiered — no padding",
+    "subtitle": "Agent · Models · Full-stack · Design — tiered by real proficiency",
     "showMore": "Show all",
     "showLess": "Show less",
+    "legendCategory": "Category",
+    "legendTier": "Proficiency",
     "tiers": {
       "expert": { "label": "Expert", "range": "85+" },
       "proficient": { "label": "Proficient", "range": "70-84" },
       "working": { "label": "Working", "range": "55-69" },
       "learning": { "label": "Learning", "range": "<55" }
     },
+    "categories": {
+      "agent": "Agent",
+      "model": "Model",
+      "capability": "Capability",
+      "stack": "Stack",
+      "tool": "Tool"
+    },
     "items": [
-      { "name": "Claude Code", "level": 95 },
-      { "name": "OpenClaw (104 Skills)", "level": 92 },
-      { "name": "Prompt Engineering", "level": 92 },
-      { "name": "Notion", "level": 92 },
-      { "name": "Claude (Opus / Sonnet)", "level": 90 },
-      { "name": "Cursor", "level": 88 },
-      { "name": "UX Research (HCI)", "level": 88 },
-      { "name": "Multi-Agent Design", "level": 88 },
-      { "name": "ChatGPT (GPT-5)", "level": 87 },
-      { "name": "Figma", "level": 87 },
-      { "name": "Affinity Diagram + Think-Aloud", "level": 85 },
-      { "name": "Product Strategy", "level": 85 },
-      { "name": "Jira / Sprint Mgmt", "level": 85 },
-      { "name": "Final Cut Pro X", "level": 85 },
-      { "name": "Commercial Photography", "level": 85 },
-      { "name": "DaVinci Resolve", "level": 80 },
-      { "name": "Gemini 2.5", "level": 78 },
-      { "name": "MiniMax M2", "level": 78 },
-      { "name": "Coze", "level": 78 },
-      { "name": "LLMOps / Model Eval", "level": 75 },
-      { "name": "React", "level": 75 },
-      { "name": "Tailwind CSS", "level": 75 },
-      { "name": "TypeScript", "level": 72 },
-      { "name": "DeepSeek V3", "level": 72 },
-      { "name": "Dify", "level": 72 },
-      { "name": "Python", "level": 72 },
-      { "name": "Vite", "level": 70 },
-      { "name": "GLM 4.5", "level": 65 },
-      { "name": "Django", "level": 60 },
-      { "name": "Next.js", "level": 55 },
-      { "name": "Node.js / Express", "level": 55 },
-      { "name": "GitHub Actions CI/CD", "level": 55 },
-      { "name": "PostgreSQL", "level": 50 },
-      { "name": "Prisma ORM", "level": 48 },
-      { "name": "Aliyun ECS / AWS", "level": 45 },
-      { "name": "ESP32 / IoT Sensors", "level": 45 }
+      { "name": "Claude Code", "level": 95, "cat": "agent" },
+      { "name": "OpenClaw", "level": 92, "cat": "agent" },
+      { "name": "Prompt Engineering", "level": 92, "cat": "capability" },
+      { "name": "Notion", "level": 92, "cat": "tool" },
+      { "name": "Claude (Opus / Sonnet)", "level": 90, "cat": "model" },
+      { "name": "Cursor", "level": 88, "cat": "agent" },
+      { "name": "UX Research (HCI)", "level": 88, "cat": "capability" },
+      { "name": "Multi-Agent Design", "level": 88, "cat": "capability" },
+      { "name": "ChatGPT (GPT-5)", "level": 87, "cat": "model" },
+      { "name": "Figma", "level": 87, "cat": "tool" },
+      { "name": "Affinity Diagram + Think-Aloud", "level": 85, "cat": "capability" },
+      { "name": "Product Strategy", "level": 85, "cat": "capability" },
+      { "name": "Jira / Sprint Mgmt", "level": 85, "cat": "tool" },
+      { "name": "Final Cut Pro X", "level": 85, "cat": "tool" },
+      { "name": "Commercial Photography", "level": 85, "cat": "capability" },
+      { "name": "DaVinci Resolve", "level": 80, "cat": "tool" },
+      { "name": "Gemini 2.5", "level": 78, "cat": "model" },
+      { "name": "MiniMax M2", "level": 78, "cat": "model" },
+      { "name": "Coze", "level": 78, "cat": "agent" },
+      { "name": "LLMOps / Model Eval", "level": 75, "cat": "capability" },
+      { "name": "React", "level": 75, "cat": "stack" },
+      { "name": "Tailwind CSS", "level": 75, "cat": "stack" },
+      { "name": "TypeScript", "level": 72, "cat": "stack" },
+      { "name": "DeepSeek V3", "level": 72, "cat": "model" },
+      { "name": "Dify", "level": 72, "cat": "agent" },
+      { "name": "Python", "level": 72, "cat": "stack" },
+      { "name": "Vite", "level": 70, "cat": "stack" },
+      { "name": "GLM 4.5", "level": 65, "cat": "model" },
+      { "name": "Django", "level": 60, "cat": "stack" },
+      { "name": "Next.js", "level": 55, "cat": "stack" },
+      { "name": "Node.js / Express", "level": 55, "cat": "stack" },
+      { "name": "GitHub Actions CI/CD", "level": 55, "cat": "stack" },
+      { "name": "PostgreSQL", "level": 50, "cat": "stack" },
+      { "name": "Prisma ORM", "level": 48, "cat": "stack" },
+      { "name": "Aliyun ECS / AWS", "level": 45, "cat": "stack" },
+      { "name": "ESP32 / IoT Sensors", "level": 45, "cat": "stack" }
     ]
   },
   "projects": {
     "title": "Featured Projects",
-    "subtitle": "0→1 product builds · HCI capstones · AI infrastructure",
+    "subtitle": "AI · Full-stack · Marketing — real 0→1 deliveries",
     "details": "Case Study",
     "code": "Code",
     "showMore": "Show more",
@@ -126,53 +135,53 @@
       },
       {
         "slug": "openclaw-agent-stack",
-        "title": "OpenClaw · Three-Tier Agent Stack",
+        "title": "From Jarvis to Routing · How I Use Agents",
         "bullets": [
-          "104 self-configured Skills · 7 domains",
-          "Three tiers: Nova (ops) / HealthBot (fitness) / Claude Code (strategy)",
-          "Daily-driven · continuously evolving, AI tool user → tool-chain builder",
-          "Dual-Mac Syncthing + cross-device claude-mem"
+          "Started from real needs: weight, health, job hunt, learning",
+          "Wanted a Jarvis → tried every model → agents are scenario-bound routers",
+          "Three tiers: Nova (mobile entry) / shared vault / Claude Code scans Inbox",
+          "Daily-driven · still being refined"
         ],
-        "tags": ["104 Skills", "Multi-Agent", "Daily-Driven"]
+        "tags": ["Agent Design", "Multi-Agent", "Daily-Driven"]
       },
       {
         "slug": "frontier-model-benchmark",
-        "title": "Frontier-Model Benchmark Dashboard",
+        "title": "Frontier-Model Notes · Picking a Brain for My Agent",
         "bullets": [
-          "6 frontier models: Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax",
-          "6-axis eval: code / Chinese / agent / long-context / multimodal / cost",
-          "Decision-oriented (not leaderboard) — pick a model in 30s",
-          "Real tasks + blind scoring + quarterly retest + public Notion dashboard"
+          "Claude / GPT / Gemini / DeepSeek / MiniMax / GLM — six vendors",
+          "Axes: context / multimodal / cost / hard tasks / speed / generation",
+          "Real motive: pick the right brain for Nova (my agent)",
+          "A living usage log, not a one-time leaderboard"
         ],
-        "tags": ["Model Eval", "Decision Frameworks", "LLMOps"]
+        "tags": ["Model Selection", "Living Doc", "LLMOps"]
       },
       {
         "slug": "digital-sales-map",
         "title": "Digital Sales Map · Chemical Sales Platform",
         "bullets": [
-          "7-day solo PM + full-stack + deployment",
+          "Solo PM + full-stack + deployment",
           "React + Node + PostgreSQL + Aliyun ECS",
-          "Real chemical-trading client (5 zones / 31 provinces)",
-          "Vibe Coding practice · in pilot use"
+          "Live: visual customer-management system",
+          "In progress: internal data matching → as a Skill / Agent"
         ],
-        "tags": ["PM + Full-Stack", "Vibe Coding", "Live"]
+        "tags": ["PM + Full-Stack", "Vibe Coding", "CRM"]
       },
       {
         "slug": "xpeng-tianjin-douyin",
         "title": "XPENG · Tianjin Airport Store Douyin Matrix",
         "bullets": [
-          "+13K precision followers in 2 months",
-          "Solo script + shoot + edit",
-          "3 brand IPs co-led (Pengyou Club / Sunset Café / Weekend Arts)",
-          "12 cities covered · +30% test-drive conversion"
+          "Marketing project lead (intern role · ~1.5 years)",
+          "Coordinated HQ's agency team + store staff for livestreams / shoots + scheduling",
+          "Tianjin Airport store: +13K precision followers in 2 months",
+          "Extended to private groups / WeChat Channels"
         ],
-        "tags": ["Content Ops", "Growth +13K/2mo", "Brand IP"]
+        "tags": ["Ops & Coordination", "Growth +13K", "Multi-Channel"]
       }
     ]
   },
   "experience": {
     "title": "Experience",
-    "subtitle": "Marketing-first · engineered-design · ships AI",
+    "subtitle": "Started in marketing · turned technical · now building AI products",
     "items": [
       {
         "title": "Indie AI Builder · Personal Practice",
@@ -194,7 +203,7 @@
       },
       {
         "title": "BA Marketing",
-        "company": "Nankai University (Binhai Campus) · Tianjin",
+        "company": "Binhai College of Nankai University · Tianjin",
         "period": "2018.09 — 2022.07",
         "description": "Market research, consumer psychology, management, organisational behaviour. University scholarship, Honour student, Class learning officer, founding president of the 'Mirror' campus photography society. Concurrent internships at Vans-co Studio (videographer) and Hui'en Trading (sales / market research)."
       }
@@ -223,8 +232,8 @@
     },
     "statusTitle": "Current Status",
     "statusText": "Open to AI PM / Product roles · 2026 Cohort",
-    "responseTitle": "Response Time",
-    "responseText": "Within 24h, weekdays and weekends"
+    "responseTitle": "Availability",
+    "responseText": "Always on — in battle mode ⚡"
   },
   "footer": {
     "tagline": "Built with Next.js, Tailwind & Claude Code.",

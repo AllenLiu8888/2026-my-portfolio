@@ -14,41 +14,40 @@ const SLUG = "openclaw-agent-stack"
 export const meta: CaseStudyEntry["meta"] = {
   slug: SLUG,
   title: {
-    en: "OpenClaw · Three-Tier Agent Stack",
-    zh: "OpenClaw · 三层 Agent 架构",
+    en: "From Jarvis to Routing — How I Actually Use Agents",
+    zh: "从 Jarvis 到「路由」——我对 Agent 的理解",
   },
   tagline: {
-    en: "My personal AI operating system — self-configured Skills across 7 domains, with Minimax-powered Nova triaging daily ops, HealthBot running my training plan, and Claude Code handling strategy and code. Built and run by me, every day.",
-    zh: "我每天在用的个人 AI 操作系统——自配 Skills 覆盖 7 大场景，Minimax 驱动的 Nova 处理日常事务，HealthBot 跑健身计划，Claude Code 处理战略与代码。从 AI 工具使用者到工具链构建者的实际工程实践。",
+    en: "I wanted a Jarvis-style butler to run my life. After trying nearly every model as its 'brain,' I realized today's agents aren't omniscient assistants — they're routers that solve specific problems in specific scenarios. This is the three-tier setup I actually run, and what it taught me.",
+    zh: "我本想做一个像 Jarvis 一样的全能管家。试遍了市面上几乎所有模型当「脑子」之后，我想明白了：现阶段的 Agent 不是全知全能的助理，而是一个在具体场景里解决具体问题的「路由」。这是我每天真实在跑的三层架构，以及它教会我的事。",
   },
   highlight: {
-    en: "104 Skills · 7 domains · daily-driven multi-agent system",
-    zh: "亮点：104 Skills · 7 大场景 · 每日运转的多智能体系统",
+    en: "Agents work best as scenario-bound routers, not omniscient butlers",
+    zh: "核心结论：现阶段的 Agent 是场景化的「路由」，不是全能管家",
   },
   overview: {
-    type: { en: "Personal AI Infrastructure", zh: "个人 AI 基建" },
-    period: { en: "2026.04 — Present (continuously evolving)", zh: "2026.04 — 至今（持续迭代）" },
-    team: { en: "Solo (PM + Prompt Engineer + Architect)", zh: "独立设计与运维" },
+    type: { en: "Personal AI Practice & Reflection", zh: "个人 AI 实践与思考" },
+    period: { en: "2026 — ongoing exploration", zh: "2026 — 持续探索中" },
+    team: { en: "Solo exploration", zh: "个人探索" },
     stack: {
-      en: "OpenClaw + Claude Code + MiniMax M2 + Cron / Webhook / WeChat Push",
-      zh: "OpenClaw + Claude Code + MiniMax M2 + Cron / Webhook / 微信推送",
+      en: "OpenClaw (mobile entry) + shared local vault + Claude Code (Codex as assist)",
+      zh: "OpenClaw（移动端入口）+ 共享本地 vault + Claude Code（Codex 辅助）",
     },
     grade: {
-      en: "Daily-driven · continuously evolving since 2026.04",
-      zh: "每日在用 · 自 2026.04 起持续迭代",
+      en: "Daily-driven · still being refined",
+      zh: "每日在用 · 仍在打磨",
     },
   },
   roles: {
-    en: ["Architect", "Prompt Engineer", "Operator", "Daily User"],
-    zh: ["架构师", "Prompt 工程师", "运维", "重度用户"],
+    en: ["Explorer", "Builder", "Daily User"],
+    zh: ["探索者", "搭建者", "重度用户"],
   },
   toc: [
-    { id: "why", num: "一", label: { en: "Why · The Pain", zh: "Why · 一人创业的痛" } },
-    { id: "what", num: "二", label: { en: "What · Three Tiers", zh: "What · 三层架构" } },
-    { id: "how", num: "三", label: { en: "How · 7 Domains", zh: "How · 7 大场景演化" } },
-    { id: "tech", num: "四", label: { en: "Tech · 104 Skills", zh: "Tech · 104 Skills 工程" } },
-    { id: "impact", num: "五", label: { en: "Impact", zh: "实际效果" } },
-    { id: "reflection", num: "六", label: { en: "Reflection", zh: "反思与收获" } },
+    { id: "why", num: "一", label: { en: "Why · The Manual Workflow", zh: "Why · 手动工作流的痛" } },
+    { id: "jarvis", num: "二", label: { en: "Trying to Build a Jarvis", zh: "想做一个 Jarvis（然后碰壁）" } },
+    { id: "insight", num: "三", label: { en: "What an Agent Really Is", zh: "Agent 到底是什么" } },
+    { id: "stack", num: "四", label: { en: "How I Run It Now", zh: "我现在怎么用" } },
+    { id: "next", num: "五", label: { en: "What's Next", zh: "接下来在做的" } },
   ],
 }
 
@@ -58,10 +57,10 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection title="English summary">
         <ENStub
           slug={SLUG}
-          summary="A three-tier personal AI ops stack: Nova (Minimax-powered secretary) triages daily tasks for cheap tokens, HealthBot runs my training plan via WeChat push, and Claude Code (Opus 4.7) handles strategic decisions and code. 104 self-configured OpenClaw Skills across 7 domains: content, health, career, finance, learning, automation, monitoring. Designed as a 'one-person company command center' — the clearest evidence of moving from AI tool user to tool-chain builder."
+          summary="I came back to China and spent a stretch studying AI, with a pile of real personal needs I wanted to solve with it: weight control, health, job applications, learning, resume work. My old workflow — Notion as the main system, TickTick for todos, Flomo for fragments — was all manual upkeep. When agents arrived I tried to build a Jarvis-style butler with OpenClaw, tried nearly every model as its brain, and learned that today's agents can't be omniscient. The real lesson: an agent is best understood as a router that solves a specific problem inside a specific scenario, given a brain, a scenario-specific knowledge base, and an SOP. This is the three-tier setup I actually run today."
           label={{
             badge: "Translation in progress",
-            body: "Chinese version below — covers the architectural rationale (cheap-tokens-for-ops + expensive-tokens-for-decisions), the seven operational domains, key skill examples, and what running it for a year taught me about agent design.",
+            body: "The Chinese version below walks through my original manual workflow, the attempt to build a Jarvis (and why it hit a wall), what I now think an agent really is — a scenario-bound router — the three-tier setup I run today, and what I'm building next.",
             cta: "Read the full Chinese version",
             back: "Back to projects",
           }}
@@ -72,174 +71,148 @@ function Content({ locale }: { locale: Locale }) {
 
   return (
     <>
-      <CaseStudySection id="why" num="一、" title="项目背景（Why）——一人创业的运维炸裂">
-        <SubHeading label="问题">事务密度 vs 决策密度，错配</SubHeading>
+      <CaseStudySection id="why" num="一、" title="背景（Why）——一套全靠手动维护的工作流">
         <Paragraph>
-          作为一人公司运营者，我每天面临两类完全不同的工作：
+          这不是一个创业故事。背景很简单：我回国之后有一段时间在专门研究 AI，手里攒了一批真实的个人需求，想看看能不能用 AI 把它们接管下来——体重控制、健康管理、简历投递、AI 学习、做简历，都是我每天真在做的事。
         </Paragraph>
-        <BulletList
-          items={[
-            <span key="1">
-              <strong>高密度低复杂度事务：</strong>记健身数据、跟进社媒数据、整理待办、推送提醒——量大但单条都不需要 Opus 级别的推理
-            </span>,
-            <span key="2">
-              <strong>低密度高复杂度决策：</strong>战略判断、内容创作、求职策略、复杂代码——量少但每一次都需要最强模型
-            </span>,
+
+        <SubHeading label="Agent 之前">三个工具，全靠手动</SubHeading>
+        <Paragraph>在 Agent 时代之前，我的工作流是三件套各管一摊：</Paragraph>
+        <DataTable
+          headers={["工具", "角色", "我手动做的事"]}
+          rows={[
+            ["Notion", "主系统 · 规划管理", "每天手动维护那张大板"],
+            ["滴答清单", "To-Do List", "每天手动维护待办"],
+            ["Flomo", "碎片知识收集", "随手把想法、知识一条条录进去"],
           ]}
         />
         <Callout variant="insight">
-          用同一个 Opus 跑两边代价巨大：成本爆炸 + 响应延迟。<strong>需要分层架构，让贵 token 只处理真正贵的决策。</strong>
+          这套东西本身没问题，问题在于<strong>全是手工活</strong>：板要自己维护、碎片要自己录、todo 要自己排。维护成本一上来，系统就会慢慢荒掉。
         </Callout>
-
-        <SubHeading label="目标">一套日常自动运转的 AI 操作系统</SubHeading>
-        <Paragraph>
-          设计原则：<strong>便宜 token 跑事务、贵 token 做决策、它们之间靠文件队列串联。</strong>
-        </Paragraph>
       </CaseStudySection>
 
-      <CaseStudySection id="what" num="二、" title="系统架构（What）——三层 Agent">
-        <SubHeading label="Tier 1">Nova（秘书 / 前台）— 便宜 token</SubHeading>
+      <CaseStudySection id="jarvis" num="二、" title="第一次尝试：想做一个 Jarvis">
+        <Paragraph>
+          Agent 时代来的时候，我是那种愿意试、想跟上、想拿新工具提效的人。一个很自然的念头是：能不能用 Agent 把上面那套手动工作流整个接管掉，做一个像钢铁侠那个 Jarvis 一样的全能管家——我说一句，后面的事它全办了。
+        </Paragraph>
+        <Paragraph>
+          2026 年初 OpenClaw 上市了——因为它的 logo 长得像只龙虾，国内大家都叫它「龙虾」🦞。我在它上面配了一个属于自己的 Agent，取名 <strong>Nova</strong>，就拿 Nova 来试这个想法。那段时间我几乎每天都在研究新的 Skill 装到 Nova 上、每天用，目标很明确：把它做成我的全职助理。
+        </Paragraph>
+
+        <SubHeading label="碰壁">先以为是脑子不行，于是试遍了模型</SubHeading>
+        <Paragraph>
+          现实是，它干得并不好。一开始我以为是脑子不够强，于是几乎把能当「脑子」的模型试了个遍：国内从 DeepSeek、智谱 GLM 换到 MiniMax，国外再到 Gemini、Claude。
+        </Paragraph>
+        <Paragraph>
+          换下来有两个结论。第一，<strong>模型确实影响很大</strong>，好脑子和差脑子的差距是真实的；第二，<strong>好模型也真贵</strong>，不是堆最贵的就一定划算。（光是「给 Nova 挑脑子」这件事，后来单独长成了另一个项目——我的<strong>前沿模型横评</strong>。）
+        </Paragraph>
+        <Callout variant="insight">
+          但最关键的发现不在模型本身：<strong>至少现阶段，Agent 做不到全知全能的 Jarvis。</strong>这不是换个更强的脑子就能解决的——是方向问题，不是马力问题。想通这一点，我才真正开始重新理解 Agent。
+        </Callout>
+      </CaseStudySection>
+
+      <CaseStudySection id="insight" num="三、" title="那 Agent 到底是什么（我现在的理解）">
+        <Paragraph>这一段是我整个折腾下来最想说的部分。</Paragraph>
+
+        <SubHeading label="结论一">别把 Agent 当 Jarvis</SubHeading>
+        <Paragraph>
+          现阶段的 Agent 不是全知全能的 Jarvis。你越想让一个 Agent「什么都会」，它越容易出错、越容易幻觉。正确的用法是反过来：<strong>把 Agent 放进一个「具体场景」，让它解决这个场景里的「具体问题」。</strong>道理也不玄——模型的幻觉在开放、宽泛的问题上最严重，把问题收进一个有知识库、有 SOP 的窄场景里，等于提前给它划好了护栏。
+        </Paragraph>
+
+        <SubHeading label="结论二">一个能干活的 Agent 怎么搭</SubHeading>
+        <Paragraph>我现在搭一个 Agent 的配方是三样东西：</Paragraph>
         <DataTable
-          headers={["维度", "配置"]}
+          headers={["要素", "作用"]}
           rows={[
-            ["底层模型", "MiniMax M2.7"],
-            ["角色定位", "秘书、前台、调度员"],
-            ["职责范围", "记录健身数据、日程提醒、简单查询、收集复杂指令"],
-            ["升级机制", "遇到复杂任务时，写入 inbox/ 文件夹交给上层"],
-            ["触发方式", "定时 cron + 微信推送 + 主动查询"],
+            ["底层模型（脑子）", "决定推理和表达的下限，影响很大但不是全部"],
+            ["这个场景的知识库", "把它需要知道的事实喂给它，减少幻觉"],
+            ["从场景提炼的 SOP / 需求", "把「该怎么做」固定下来，降低出错率"],
           ]}
         />
+        <Callout variant="decision">
+          脑子 + 场景知识库 + SOP，三样配齐，Agent 就能在<strong>这一个具体场景里</strong>，以更低的出错率和更少的幻觉，把具体问题办好。范围越收得住，它越靠谱。
+        </Callout>
 
-        <SubHeading label="Tier 2">HealthBot（垂直域 Agent）</SubHeading>
-        <BulletList
-          items={[
-            "专门跑健身计划：训练日清单、饮食提醒、补剂时间",
-            "每天定时通过 WeChat Channel 推送提醒到我手机",
-            "数据写回 vault/Health/，由 Nova 汇总周报",
-          ]}
-        />
-
-        <SubHeading label="Tier 3">Claude Code（CEO / COO）— 贵 token</SubHeading>
-        <DataTable
-          headers={["维度", "配置"]}
-          rows={[
-            ["底层模型", "Claude Opus 4.7（1M 上下文）"],
-            ["角色定位", "战略决策、内容创作、复杂任务"],
-            ["职责范围", "求职策略、产品决策、代码开发、数据分析"],
-            ["调度方式", "定时扫描 inbox/、处理后结果写入 outbox/，下发任务到 agent-tasks/"],
-            ["重要文件", "CLAUDE.md（系统全局指令）、IDENTITY.md（人设）、TOOLS.md（工具清单）"],
-          ]}
-        />
-
-        <SubHeading>三层数据流</SubHeading>
+        <SubHeading label="结论三">合格的 Agent 更像一个「路由」</SubHeading>
+        <Paragraph>
+          再往上抽象一层：现在一个合格的 Agent，更像一个<strong>路由</strong>。它真正解决的，是「传统 workflow 没法用自然语言交互」这个问题。
+        </Paragraph>
         <Callout variant="insight">
           <code className="block text-sm font-mono text-zinc-200 whitespace-pre">
-{`Nova（事件触发）
-  ↓ 简单事务自处理 / 复杂任务写 inbox/
-Claude Code（定时扫描 inbox/）
-  ↓ 决策 / 创作 / 写 outbox/ + 分配 agent-tasks/
-执行 Agent（小红书 / 抖音 / 视频）
-  ↓ 跑完写 logs/`}
+{`你用自然语言对 Agent 说话
+  ↓
+Agent 做路由判断（这事该交给谁）
+  ↓
+调用某个具体 Skill / 执行某个具体 Workflow
+  ↓
+拿到结果，返还给 Agent
+  ↓
+Agent 像人一样，把结果讲给你听`}
           </code>
         </Callout>
-      </CaseStudySection>
-
-      <CaseStudySection id="how" num="三、" title="7 大场景演化（How）">
-        <Paragraph>系统的 104 个 Skill 服务于 7 大场景，由日常使用倒推迭代：</Paragraph>
-        <DataTable
-          headers={["场景", "代表 Skill 类型", "举例"]}
-          rows={[
-            ["1. 内容运营", "小红书 / 抖音 / 朋友圈写作", "选题灵感、文案润色、封面设计指令"],
-            ["2. 健康管理", "训练 / 饮食 / 体重", "训练日提醒、饮食偏差自动干预"],
-            ["3. 求职助攻", "简历 / JD 分析 / 投递追踪", "JD 关键词提取、定制 Cover Letter 草稿"],
-            ["4. 财务自动化", "记账 / 报销 / 月报", "支付截图自动归档"],
-            ["5. 学习路径", "AI 工具评测 / 课程消化", "深度学习记录、AI 工具新版本评测"],
-            ["6. 自动化编排", "Cron / Webhook / n8n", "定时数据采集、跨平台 webhook 串联"],
-            ["7. 监控告警", "社媒数据 / 系统监控", "数据异常推送、关键指标日报"],
-          ]}
-        />
-
-        <SubHeading label="设计原则">为什么是 OpenClaw 而不是 LangChain</SubHeading>
         <Paragraph>
-          OpenClaw 的优势是<strong>面向个人重度使用者的轻量级 Skill 系统</strong>——单文件即一个 Skill、可热更新、跨场景互通。
-          相比 LangChain 适合开发者构建 SaaS 产品，OpenClaw 更适合「自己用、自己改、每天迭代」的个人 ops 场景。
+          说白了，这跟业界讲的 function calling / tool use 是一回事，只是我更习惯把它想成「路由」：以前的 workflow 能干活但不会说话，你得按它的规矩点按钮；现在 Agent 补上了「用自然语言进、用自然语言出」这一层。中间真正干活的，还是那些被定义好的具体 Skill 和 Workflow。
         </Paragraph>
       </CaseStudySection>
 
-      <CaseStudySection id="tech" num="四、" title="Tech · 104 Skills 工程化">
-        <SubHeading label="架构亮点">
-          双 Mac Syncthing 同步 + 跨设备 Memory
-        </SubHeading>
+      <CaseStudySection id="stack" num="四、" title="我现在怎么用（真实在跑的三层架构）">
+        <Paragraph>
+          想明白「别让一个 Agent 什么都干」之后，我就改了打法：把主力工作重心切回 <strong>Claude Code</strong>（复杂任务和代码），<strong>Codex</strong> 在旁边打辅助；Nova 不再硬撑全能助理，退回它真正擅长的位置——一个从手机端下达指令、记录信息的入口。
+        </Paragraph>
+        <Paragraph>
+          整套系统拆成三层，关键是<strong>三层共用同一份底层 vault</strong>——这是它们能协同的前提。
+        </Paragraph>
+
+        <SubHeading label="第一层 · 入口">Nova（我跑在 OpenClaw / 龙虾 上的 Agent）</SubHeading>
         <BulletList
           items={[
-            <span key="1">
-              <strong>双 Mac 同步：</strong>Mac Mini（主开发）+ MBP（移动），通过 Syncthing 双向同步 4 个核心文件夹（vault/、mem/、inbox/、outbox/），无论在哪台机器都能继续工作
-            </span>,
-            <span key="2">
-              <strong>跨设备 Memory：</strong>claude-mem 插件 + Gemini provider，让 Claude Code 在两台机器上共享长期记忆
-            </span>,
-            <span key="3">
-              <strong>Vault as Source of Truth：</strong>所有项目知识 / 计划 / 偏好都写到 Obsidian vault，Agent 系统消费 vault 内容，单一信息源避免冲突
-            </span>,
+            "主要在手机端，让我随时随地下达指令、记录信息",
+            "做的是记录类的活：每日事项提醒、提醒哪件还没做、记录今天要做的事、记录想法、记录知识、记录身体数据",
+            "遇到它办不了的复杂任务，就把任务丢进 Inbox 文件夹，交给上层",
           ]}
         />
 
-        <SubHeading label="工程细节">Skill 设计模式</SubHeading>
-        <DataTable
-          headers={["维度", "实践"]}
-          rows={[
-            ["命名", "动词起手（如 generate-xhs-post、analyze-jd-match）"],
-            ["参数", "用 Markdown 写自然语言契约，避免 schema 锁死"],
-            ["复用", "把通用工具（如「写朋友圈」）封装成可被多场景调用的 Skill"],
-            ["权限", "每个 Skill 声明所需的文件读写范围，避免越权"],
-            ["热更新", "改完保存即生效，不需要重启 Agent"],
-          ]}
-        />
-      </CaseStudySection>
-
-      <CaseStudySection id="impact" num="五、" title="实际效果">
-        <SubHeading>每日运转的实际效果</SubHeading>
+        <SubHeading label="第二层 · 共享底座">所有 Agent 共用的同一份本地知识库 / 记忆（vault）</SubHeading>
         <BulletList
           items={[
-            "Nova 承担大部分日常事务的接发与归档，让我可以专注于决策性工作",
-            "Claude Code 每天处理战略 / 复杂代码任务，从「想到」到「做完」的延迟显著缩短",
-            "HealthBot 接管健身打卡 + 饮食 / 训练提醒，达成率明显高于此前手动记录的阶段",
-            "求职投递自动化：JD → 定制 Cover Letter 草稿的产出时间，从原先手写 30+ 分钟降到分钟级",
+            "手机端记录的信息和指令，都进入这份共享记忆",
+            "它是唯一信息源，谁要用就从这里读，谁有更新就往这里写",
+            "正因为底座是同一个，上下两层才能对得上、接得住",
           ]}
         />
 
-        <SubHeading>关键里程碑</SubHeading>
+        <SubHeading label="第三层 · 复杂任务处理">Claude Code</SubHeading>
         <BulletList
           items={[
-            "2026-04-14 · Agent V2 部署完成（Nova + HealthBot + Claude Code）",
-            "2026-05-02 · 双 Mac Syncthing 同步上线，跨设备连贯工作流跑通",
-            "2026-05-21 · 健身教练脱离后，GPT 副驾 + Nova + CC 三层接管，铁馆现场识别工作流上线",
+            "每天扫描 Inbox 文件夹，发现该它处理的复杂任务就执行",
+            "复杂任务 / 代码 / 决策性的活归它，Codex 在旁边打辅助",
+            "处理完写回 vault，闭环回到共享底座",
           ]}
         />
-      </CaseStudySection>
 
-      <CaseStudySection id="reflection" num="六、" title="反思与收获">
-        <SubHeading>核心收获</SubHeading>
         <Callout variant="insight">
-          每天运维这套系统，让我对 AI Agent 的认知从「调 prompt 让它干活」转向<strong>「设计层级、设计数据流、设计失败恢复」</strong>。
-          Agent 系统真正的难点很少在模型本身，而是在<strong>不同模型怎么协同、人在哪里介入、错了怎么恢复、贵 token 什么时候出场</strong>这些工程问题。
-          这是「AI 工具使用者」和「AI 工具链构建者」之间最大的差距。
+          <code className="block text-sm font-mono text-zinc-200 whitespace-pre">
+{`Nova（手机入口）
+  ↓ 记录类直接处理 / 复杂任务写进 Inbox
+共享 vault（同一份底层记忆）
+  ↓ 信息与指令的唯一信息源
+Claude Code（每天扫描 Inbox）
+  ↓ 处理复杂任务，结果写回 vault`}
+          </code>
         </Callout>
+        <Paragraph>
+          这套东西没有一个「全能脑」，每一层只做自己擅长的事，靠同一个 vault 串起来。它不漂亮，但每天真在用——这恰恰是前面那个结论的落地：不追求一个 Jarvis，而是让每一层都待在自己能干好的那个窄场景里。
+        </Paragraph>
+      </CaseStudySection>
 
-        <SubHeading>对 AI PM 求职的意义</SubHeading>
-        <BulletList
-          items={[
-            <span key="1">
-              <strong>从「用 AI」到「设计 AI 系统」：</strong>这个项目让我能在面试中具体展示 AI PM 思维——分层、调度、Trade-off，而不是空谈
-            </span>,
-            <span key="2">
-              <strong>真实场景驱动：</strong>每一个 Skill 都来自我自己每天的痛点，不是想象出来的 demo
-            </span>,
-            <span key="3">
-              <strong>多模型协同的实战：</strong>横评 6 大主流模型并把它们真的部署到不同 Tier 上跑活，而不是只在 benchmark 上对比
-            </span>,
-          ]}
-        />
+      <CaseStudySection id="next" num="五、" title="接下来在做的">
+        <Paragraph>
+          最近我在研究 Dify 和扣子（Coze），想顺着「场景化」这个思路，做几个真正放进具体场景里的 Agent。
+        </Paragraph>
+        <Paragraph>
+          比如，我正在给这个作品集网站做一个 Chatbot——一个了解我全部信息的「数字分身」，访客想了解我的时候，可以直接和它对话，而不用一页页翻。它就是上面那套理解的一次小实践：一个具体场景、一份关于我的知识库、一组该怎么答的规则。
+        </Paragraph>
+        <Callout variant="tip">还在做，敬请期待。</Callout>
       </CaseStudySection>
     </>
   )

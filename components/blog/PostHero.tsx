@@ -14,7 +14,6 @@ interface Props {
   tags: string[]
   readingMinutes: number
   backLabel: string
-  portfolioLabel: string
   readMinLabel: string
 }
 
@@ -26,7 +25,6 @@ export function PostHero({
   tags,
   readingMinutes,
   backLabel,
-  portfolioLabel,
   readMinLabel,
 }: Props) {
   return (
@@ -44,14 +42,10 @@ export function PostHero({
           transition={{ duration: 0.4 }}
         >
           <Link
-            href="/"
+            href="/blog"
             className="inline-flex items-center hover:text-white transition-colors"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
-            {portfolioLabel}
-          </Link>
-          <span className="text-zinc-600">/</span>
-          <Link href="/blog" className="hover:text-white transition-colors">
             {backLabel}
           </Link>
         </motion.div>

@@ -27,9 +27,9 @@
     "title": "关于我",
     "subtitle": "懂技术的 PM × 有产品思维的设计师",
     "status": "开放 AI PM / 产品经理机会 · 2026 届",
-    "bio1": "25 岁，目前居住呼和浩特，工作地点不限。昆士兰大学（QS 世界 Top 50、澳洲八校联盟）计算机科学院交互设计硕士、南开大学（滨海）市场营销学士——一条刻意 T 字型的路径，让我同时能跟工程师、设计师、销售对话不掉链子。",
-    "bio2": "我真正擅长的是：独立把产品从 0 跑到 1。下面那个化工贸易销售看板，就是 7 天内独立完成需求调研→架构设计→React / Node / PostgreSQL 全栈→上线试点的真实交付。我定义需求、写代码、跑用户访谈，一个人闭环——这是我最强的能力回路。",
-    "bio3": "现在每天大量时间花在 AI 工具上——Claude Code、Cursor、Antigravity 是主力，OpenClaw 自配多个 Skill 覆盖内容 / 健康 / 求职等场景，把 Claude / GPT / Gemini / MiniMax / DeepSeek 横评成实际生产决策。我相信：最好的 AI PM 也是 AI builder。",
+    "bio1": "25 岁，目前居住呼和浩特，工作地点不限。昆士兰大学（QS 世界 Top 50、澳洲八校联盟）计算机科学院交互设计硕士、南开大学滨海学院市场营销学士——一条刻意 T 字型的路径，让我同时能跟工程师、设计师、销售对话不掉链子。",
+    "bio2": "我真正擅长的是：独立把产品从 0 跑到 1——从需求调研、架构设计到全栈实现，一个人就能闭环。我做过一些 0→1 的真实业务产品，也做过大模型 / 多智能体相关的项目。我定义需求、写代码、跑用户访谈，这是我最强的能力回路。",
+    "bio3": "现在我每天大量时间都泡在 AI 工具里——把不同的前沿大模型横评成实际的生产决策，自己搭多智能体工作流来处理日常的方方面面。我始终相信：最好的 AI PM，本身也是 AI builder。",
     "labels": {
       "name": "姓名",
       "email": "邮箱",
@@ -46,57 +46,66 @@
   },
   "skills": {
     "title": "技能与工具",
-    "subtitle": "诚实分级 · 不掺水",
+    "subtitle": "Agent · 模型 · 全栈 · 设计 —— 按真实熟练度诚实分级",
     "showMore": "展开全部",
     "showLess": "收起",
+    "legendCategory": "分类",
+    "legendTier": "熟练度",
     "tiers": {
       "expert": { "label": "精通", "range": "85+" },
       "proficient": { "label": "熟练", "range": "70-84" },
       "working": { "label": "能用", "range": "55-69" },
       "learning": { "label": "了解", "range": "<55" }
     },
+    "categories": {
+      "agent": "Agent",
+      "model": "模型",
+      "capability": "能力",
+      "stack": "技术栈",
+      "tool": "工具"
+    },
     "items": [
-      { "name": "Claude Code", "level": 95 },
-      { "name": "OpenClaw（104 Skills）", "level": 92 },
-      { "name": "Prompt 工程", "level": 92 },
-      { "name": "Notion", "level": 92 },
-      { "name": "Claude (Opus / Sonnet)", "level": 90 },
-      { "name": "Cursor", "level": 88 },
-      { "name": "用户研究（HCI）", "level": 88 },
-      { "name": "多智能体架构", "level": 88 },
-      { "name": "ChatGPT (GPT-5)", "level": 87 },
-      { "name": "Figma", "level": 87 },
-      { "name": "亲和图 + Think-Aloud", "level": 85 },
-      { "name": "产品策略", "level": 85 },
-      { "name": "Jira / Sprint 管理", "level": 85 },
-      { "name": "Final Cut Pro X", "level": 85 },
-      { "name": "商业摄影", "level": 85 },
-      { "name": "DaVinci Resolve", "level": 80 },
-      { "name": "Gemini 2.5", "level": 78 },
-      { "name": "MiniMax M2", "level": 78 },
-      { "name": "Coze 扣子", "level": 78 },
-      { "name": "LLMOps / 模型评测", "level": 75 },
-      { "name": "React", "level": 75 },
-      { "name": "Tailwind CSS", "level": 75 },
-      { "name": "TypeScript", "level": 72 },
-      { "name": "DeepSeek V3", "level": 72 },
-      { "name": "Dify", "level": 72 },
-      { "name": "Python", "level": 72 },
-      { "name": "Vite", "level": 70 },
-      { "name": "GLM 4.5", "level": 65 },
-      { "name": "Django", "level": 60 },
-      { "name": "Next.js", "level": 55 },
-      { "name": "Node.js / Express", "level": 55 },
-      { "name": "GitHub Actions CI/CD", "level": 55 },
-      { "name": "PostgreSQL", "level": 50 },
-      { "name": "Prisma ORM", "level": 48 },
-      { "name": "阿里云 ECS / AWS", "level": 45 },
-      { "name": "ESP32 / IoT 传感器", "level": 45 }
+      { "name": "Claude Code", "level": 95, "cat": "agent" },
+      { "name": "OpenClaw", "level": 92, "cat": "agent" },
+      { "name": "Prompt 工程", "level": 92, "cat": "capability" },
+      { "name": "Notion", "level": 92, "cat": "tool" },
+      { "name": "Claude (Opus / Sonnet)", "level": 90, "cat": "model" },
+      { "name": "Cursor", "level": 88, "cat": "agent" },
+      { "name": "用户研究（HCI）", "level": 88, "cat": "capability" },
+      { "name": "多智能体架构", "level": 88, "cat": "capability" },
+      { "name": "ChatGPT (GPT-5)", "level": 87, "cat": "model" },
+      { "name": "Figma", "level": 87, "cat": "tool" },
+      { "name": "亲和图 + Think-Aloud", "level": 85, "cat": "capability" },
+      { "name": "产品策略", "level": 85, "cat": "capability" },
+      { "name": "Jira / Sprint 管理", "level": 85, "cat": "tool" },
+      { "name": "Final Cut Pro X", "level": 85, "cat": "tool" },
+      { "name": "商业摄影", "level": 85, "cat": "capability" },
+      { "name": "DaVinci Resolve", "level": 80, "cat": "tool" },
+      { "name": "Gemini 2.5", "level": 78, "cat": "model" },
+      { "name": "MiniMax M2", "level": 78, "cat": "model" },
+      { "name": "Coze 扣子", "level": 78, "cat": "agent" },
+      { "name": "LLMOps / 模型评测", "level": 75, "cat": "capability" },
+      { "name": "React", "level": 75, "cat": "stack" },
+      { "name": "Tailwind CSS", "level": 75, "cat": "stack" },
+      { "name": "TypeScript", "level": 72, "cat": "stack" },
+      { "name": "DeepSeek V3", "level": 72, "cat": "model" },
+      { "name": "Dify", "level": 72, "cat": "agent" },
+      { "name": "Python", "level": 72, "cat": "stack" },
+      { "name": "Vite", "level": 70, "cat": "stack" },
+      { "name": "GLM 4.5", "level": 65, "cat": "model" },
+      { "name": "Django", "level": 60, "cat": "stack" },
+      { "name": "Next.js", "level": 55, "cat": "stack" },
+      { "name": "Node.js / Express", "level": 55, "cat": "stack" },
+      { "name": "GitHub Actions CI/CD", "level": 55, "cat": "stack" },
+      { "name": "PostgreSQL", "level": 50, "cat": "stack" },
+      { "name": "Prisma ORM", "level": 48, "cat": "stack" },
+      { "name": "阿里云 ECS / AWS", "level": 45, "cat": "stack" },
+      { "name": "ESP32 / IoT 传感器", "level": 45, "cat": "stack" }
     ]
   },
   "projects": {
     "title": "精选作品",
-    "subtitle": "0→1 产品 · HCI 毕设 · AI 基建",
+    "subtitle": "AI · 全栈 · 市场 —— 从 0 到 1 的真实交付",
     "details": "案例研究",
     "code": "代码",
     "showMore": "显示更多",
@@ -126,53 +135,53 @@
       },
       {
         "slug": "openclaw-agent-stack",
-        "title": "OpenClaw · 三层 Agent 架构",
+        "title": "从 Jarvis 到「路由」· 我对 Agent 的理解",
         "bullets": [
-          "104 个自配 Skills · 7 大场景",
-          "三层架构：Nova（事务）/ HealthBot（健身）/ Claude Code（战略）",
-          "每日在用 · 持续迭代中，AI 工具用户 → 工具链构建者",
-          "双 Mac Syncthing + 跨设备 claude-mem"
+          "真实需求出发：减重 / 健康 / 求职 / AI 学习",
+          "想做 Jarvis → 试遍模型 → 醒悟 Agent 是「场景化路由」",
+          "三层架构：Nova（手机入口）/ 共享 vault / Claude Code 扫 Inbox",
+          "每日在用 · 仍在打磨"
         ],
-        "tags": ["104 Skills", "多智能体", "每日在用"]
+        "tags": ["Agent 架构", "多智能体", "每日在用"]
       },
       {
         "slug": "frontier-model-benchmark",
-        "title": "六大模型横评 Dashboard",
+        "title": "前沿模型横评 · 给我的 Agent 挑脑子",
         "bullets": [
-          "Claude / ChatGPT / Gemini / DeepSeek / GLM / MiniMax 6 模型",
-          "6 维评测（编程 / 中文 / Agent / 长文本 / 多模态 / 成本）",
-          "决策导向：30 秒定模型选型，不是排行榜",
-          "真实任务 + 盲测 + 季度复测 + 公开 Notion 看板"
+          "Claude / GPT / Gemini / DeepSeek / MiniMax / GLM 六家",
+          "维度：上下文 / 多模态 / 成本 / 复杂任务 / 速度 / 生成能力",
+          "真实动机：给我的 Agent Nova 选「脑子」",
+          "持续更新的活文档，不是一次性排行榜"
         ],
-        "tags": ["模型评测", "决策框架", "LLMOps"]
+        "tags": ["模型选型", "活文档", "LLMOps"]
       },
       {
         "slug": "digital-sales-map",
         "title": "Digital Sales Map · 化工销售数据管理系统",
         "bullets": [
-          "7 天独立 PM + 全栈 + 部署上线",
+          "独立 PM + 全栈 + 部署上线",
           "React + Node + PostgreSQL + 阿里云 ECS",
-          "化工贸易公司真实业务（5 销区 / 31 省市）",
-          "Vibe Coding 实践 · 客户内部试点中"
+          "已上线：可视化客户管理系统",
+          "进行中：内部数据匹配 → 做成 Skill / Agent"
         ],
-        "tags": ["PM + 全栈", "Vibe Coding", "已上线"]
+        "tags": ["PM + 全栈", "Vibe Coding", "客户管理"]
       },
       {
         "slug": "xpeng-tianjin-douyin",
         "title": "小鹏汽车 · 天津空港店抖音矩阵",
         "bullets": [
-          "2 个月精准涨粉 +1.3W",
-          "独立完成脚本 + 拍摄 + 剪辑",
-          "3 大品牌 IP 协同（鹏友 / 日落 / 周末有艺思）",
-          "12 城覆盖 · 试驾转化率 +30%"
+          "市场部项目负责人（实习身份 · 约 1.5 年）",
+          "统筹总部代运营 + 协调门店直播 / 拍摄 + 排期",
+          "天津空港店抖音 2 个月精准涨粉 +1.3W",
+          "延伸客户群 / 视频号等多渠道"
         ],
-        "tags": ["内容运营", "增长 +1.3W/2月", "品牌 IP"]
+        "tags": ["统筹运营", "增长 +1.3W", "多渠道"]
       }
     ]
   },
   "experience": {
     "title": "经历",
-    "subtitle": "市场起家 · 工程化设计 · 现在做 AI",
+    "subtitle": "市场起家 · 技术傍身 · 现在做 AI 产品",
     "items": [
       {
         "title": "独立 AI Builder · 个人持续实践",
@@ -194,7 +203,7 @@
       },
       {
         "title": "市场营销学士",
-        "company": "南开大学（滨海校区）· 天津",
+        "company": "南开大学滨海学院 · 天津",
         "period": "2018.09 — 2022.07",
         "description": "核心课：市场调研、消费者心理学、管理学、组织行为学。校级奖学金、三好学生、优秀学生干部。任「镜·摄影」社团社长 + 班级学习委员。穿插实习：梵司柯影像工作室（摄影 / 视频）、惠恩商贸（市场 / 销售助理）。"
       }
@@ -223,8 +232,8 @@
     },
     "statusTitle": "当前状态",
     "statusText": "正在寻找 AI PM / 产品经理 2026 届岗位机会",
-    "responseTitle": "回复时间",
-    "responseText": "工作日 / 周末通常 24h 内回复"
+    "responseTitle": "随时响应",
+    "responseText": "时刻处于战斗状态 ⚡"
   },
   "footer": {
     "tagline": "用 Next.js + Tailwind + Claude Code 搭建。",

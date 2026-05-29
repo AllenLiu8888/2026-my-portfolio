@@ -19,8 +19,8 @@ export const meta: CaseStudyEntry["meta"] = {
     zh: "Digital Sales Map · 化工销售数据管理系统",
   },
   tagline: {
-    en: "Solo, 7-day end-to-end build for a chemical-trading company — research → React/Node full-stack → Aliyun ECS deployment. A Vibe-Coding practice in which I owned business understanding, spec, and QC; AI accelerated the code. National map drill-down, customer CRM, Excel batch import. Now in pilot use.",
-    zh: "7 天内独立完成从需求调研到部署上线的全栈数据管理平台，利用 AI 辅助开发（Vibe Coding）为传统化工企业构建可视化销售管理工具，现已在内部试点团队使用。",
+    en: "Solo, 7-day end-to-end build for a chemical-trading company — research → React/Node full-stack → Aliyun ECS deployment. A Vibe-Coding practice in which I owned business understanding, spec, and QC; AI accelerated the code. The visualization-based customer management system (national map drill-down, customer CRM, Excel batch import) is live and in pilot use. A second part — internal data classification & matching — is in progress: I've turned its SOP into a workflow and a Skill, and aim to ship it as an Agent.",
+    zh: "为化工贸易企业独立完成的销售数据项目。第一部分「可视化客户管理系统」（全国地图下钻、客户管理、Excel 批量导入）已上线并在内部试点使用；第二部分「客户内部数据分类与匹配」正在进行中——我已把整套 SOP 做成工作流和 Skill，目标是落地成一个 Agent。整体用 AI 辅助开发（Vibe Coding），我负责需求、产品定义与质量把关。",
   },
   highlight: {
     en: "Solo end-to-end · research to production",
@@ -44,8 +44,8 @@ export const meta: CaseStudyEntry["meta"] = {
       zh: "React + TypeScript + TailwindCSS + ECharts（前端）/ Node.js + Express + Prisma + PostgreSQL（后端）/ Nginx + PM2 + 阿里云 ECS（部署）",
     },
     grade: {
-      en: "Live · in pilot use by client's internal team",
-      zh: "已上线 · 客户内部试点团队使用中",
+      en: "Part 1 (visualization CRM) live & in pilot use · Part 2 (data matching) in progress",
+      zh: "可视化客户管理系统已上线试点 · 内部数据匹配进行中",
     },
   },
   roles: {
@@ -64,7 +64,8 @@ export const meta: CaseStudyEntry["meta"] = {
     { id: "what", num: "四", label: { en: "What · Product Design", zh: "What · 产品设计" } },
     { id: "timeline", num: "五", label: { en: "Timeline", zh: "项目时间线" } },
     { id: "tech", num: "六", label: { en: "Tech Highlights", zh: "技术亮点" } },
-    { id: "reflection", num: "七", label: { en: "Reflection", zh: "反思与收获" } },
+    { id: "next", num: "七", label: { en: "In Progress · Data Matching", zh: "进行中 · 内部数据匹配" } },
+    { id: "reflection", num: "八", label: { en: "Reflection", zh: "反思与收获" } },
   ],
 }
 
@@ -74,10 +75,10 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection title="English summary">
         <ENStub
           slug={SLUG}
-          summary="7-day solo end-to-end build for an anonymous chemical-trading client — covering 3 product lines (soda ash, urea, sodium bicarbonate) across 5 sales zones and 31 provinces. A Vibe-Coding practice: I owned the business interviews, the spec, the QC; AI accelerated the React + Node + Prisma + PostgreSQL build; I drove the Aliyun ECS deployment with Nginx + PM2 + GitHub Actions CI/CD. Live at system.kaixingwuliu.com, currently in pilot use."
+          summary="Solo end-to-end build for an anonymous chemical-trading client — covering 3 product lines (soda ash, urea, sodium bicarbonate) across 5 sales zones and 31 provinces. The project has two parts. Part 1, the visualization-based customer management system, was built in ~7 days as a Vibe-Coding practice (I owned the business interviews, the spec, the QC; AI accelerated the React + Node + Prisma + PostgreSQL build; I drove the Aliyun ECS deployment with Nginx + PM2 + GitHub Actions). It is live at system.kaixingwuliu.com and in pilot use. Part 2, internal data classification & matching, is in progress: I've turned the SOP into a workflow and a Skill, and the goal is to ship it as an Agent. Because that part carries client-specific details, it has no public UI here."
           label={{
             badge: "Translation in progress",
-            body: "Chinese version below — covers the business interviews, what Vibe Coding looks like when PM-driven, the system architecture, the 7-day timeline, the data-model decision that mattered most (1:N customer-region), and reflections on PM + AI collaboration.",
+            body: "Chinese version below — covers the business interviews, what Vibe Coding looks like when PM-driven, the system architecture, the 7-day timeline, the data-model decision that mattered most (1:N customer-region), the in-progress data-matching workflow/Skill/Agent, and reflections on PM + AI collaboration.",
             cta: "Read the full Chinese version",
             back: "Back to projects",
           }}
@@ -93,7 +94,12 @@ function Content({ locale }: { locale: Locale }) {
 
         <SubHeading label="业务场景">化工贸易企业，3 品类 / 5 销区 / 31 省市</SubHeading>
         <Paragraph>
-          xx 化工企业（客户要求保密）是一家化工产品贸易公司，主营<strong>纯碱、尿素、小苏打</strong>三类产品，全国设有 5 个销售区域，覆盖 31 个省市，销售团队分布在不同大区。本次受邀协助制作可视化销区管理系统。
+          xx 化工企业（客户要求保密）是一家化工产品贸易公司，主营<strong>纯碱、尿素、小苏打</strong>三类产品，全国设有 5 个销售区域，覆盖 31 个省市，销售团队分布在不同大区。本次受邀协助他们把销售数据管理这件事做顺。
+        </Paragraph>
+
+        <SubHeading label="整体范围">这个项目其实分两部分</SubHeading>
+        <Paragraph>
+          先说清楚边界，因为这个案例只展示了其中一部分。客户的真实需求拆下来是两块：一块是<strong>把散落的销售数据集中管起来、看得见</strong>（客户管理 + 可视化），另一块是<strong>客户内部那份数据的分类和匹配</strong>。第一块我已经做完并上线了，也就是下面网页里展示的这套「可视化客户管理系统」；第二块还在做，因为涉及客户的具体业务细节，没有做成可以公开演示的界面，我把它的进展放在文末的「进行中」一节里如实说明。
         </Paragraph>
 
         <SubHeading label="问题">Excel 表格管理的三大痛点</SubHeading>
@@ -114,9 +120,9 @@ function Content({ locale }: { locale: Locale }) {
           ]}
         />
 
-        <SubHeading label="核心判断">简单 &gt; 功能多，能用 &gt; 好看</SubHeading>
+        <SubHeading label="核心判断">第一部分：简单 &gt; 功能多，能用 &gt; 好看</SubHeading>
         <Callout variant="insight">
-          这不是一个需要复杂功能的系统——业务方需要的是一个<strong>简单、直观、能快速上手</strong>的工具，把散落在 Excel 里的数据变成一张「看得见」的全国销售地图，同时保留他们熟悉的 Excel 导入方式作为数据录入通道。
+          就客户管理这一块而言，这不是一个需要复杂功能的系统——业务方需要的是一个<strong>简单、直观、能快速上手</strong>的工具，把散落在 Excel 里的数据变成一张「看得见」的全国销售地图，同时保留他们熟悉的 Excel 导入方式作为数据录入通道。下面的需求调研、产品设计、技术实现，讲的都是这一部分。
         </Callout>
       </CaseStudySection>
 
@@ -225,7 +231,7 @@ function Content({ locale }: { locale: Locale }) {
         />
       </CaseStudySection>
 
-      <CaseStudySection id="what" num="四、" title="产品设计（What）">
+      <CaseStudySection id="what" num="四、" title="产品设计（What · 已上线部分）">
         <SubHeading>系统架构</SubHeading>
         <Callout variant="insight">
           <code className="block text-sm font-mono text-zinc-200 whitespace-pre">
@@ -297,7 +303,41 @@ PostgreSQL 数据库`}
         />
       </CaseStudySection>
 
-      <CaseStudySection id="reflection" num="七、" title="反思与收获">
+      <CaseStudySection id="next" num="七、" title="进行中：客户内部数据匹配（Next）">
+        <SubHeading label="第二部分">网页之外，还没展示的那块</SubHeading>
+        <Paragraph>
+          前面的网页解决的是「客户管理 + 可视化」。但项目里还有一块没在网页上呈现，也是我现在正在做的——<strong>客户内部那份数据的分类与匹配</strong>。这部分不像地图那样适合做成一个面向所有人的界面，它更像一套需要严格按步骤跑的处理流程，而且每一步都和客户自己的业务口径绑得很死。
+        </Paragraph>
+
+        <SubHeading label="现状">先把流程固化成 SOP，再固化成工作流</SubHeading>
+        <Paragraph>
+          我的做法是先把这件事「怎么做」彻底想清楚：和业务方一起把整个数据匹配的判断步骤拆出来，写成一份完整的 SOP，再把这份 SOP 落成一个可重复执行的<strong>工作流（workflow）</strong>。它本身就是这个项目的一部分，只是因为里面是客户的具体业务细节，没有做成可以对外演示的 UI。
+        </Paragraph>
+        <Paragraph>
+          目前我已经进一步把这套工作流封装成了一个完整的 <strong>Skill</strong>。但这个 Skill 里直接带了客户的具体信息（业务规则、分类口径这些），所以暂时不能公开放出来——这也是它没有出现在上面网页里的原因。
+        </Paragraph>
+        <Callout variant="decision">
+          为什么不做成网页界面，而是做成工作流 / Skill：客户管理的诉求是「让所有人都能看、都能改」，适合可视化界面；而数据匹配的诉求是「每次都按同一套规则跑出同样的结论」，更适合做成一套能被稳定执行、可以复用的流程，而不是一堆让人手动点的按钮。
+        </Callout>
+
+        <SubHeading label="下一步">把它做成一个 Agent</SubHeading>
+        <Paragraph>
+          我最终想把这套流程做成一个 <strong>Agent</strong>，让它在日常里真正跑起来。设想的用法是这样：
+        </Paragraph>
+        <BulletList
+          items={[
+            "客户的内勤把一份待处理的数据丢给 Agent",
+            "Agent 跑这套已经固化好的工作流（也就是现在的 Skill）",
+            "完成数据的分类与匹配，得出结论",
+            "再把结论返回给内勤，直接拿去用",
+          ]}
+        />
+        <Paragraph>
+          这样内勤不需要懂背后的规则，也不用一步步手动操作——他们要的是结论，中间那套判断交给 Agent 按固定流程跑。这部分还在推进中，等它成熟、且能在不暴露客户信息的前提下展示时，我会再补到这个案例里。
+        </Paragraph>
+      </CaseStudySection>
+
+      <CaseStudySection id="reflection" num="八、" title="反思与收获">
         <SubHeading>做得好的地方</SubHeading>
         <BulletList
           items={[

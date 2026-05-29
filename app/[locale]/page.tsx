@@ -14,7 +14,7 @@ import { ScrollProgress } from "@/components/scroll-progress"
 import { SectionHeading } from "@/components/section-heading"
 import { GlassmorphicCard } from "@/components/glassmorphic-card"
 
-type Skill = { name: string; level: number }
+type Skill = { name: string; level: number; cat?: string }
 type Project = {
   slug: string
   title: string
@@ -253,6 +253,9 @@ function PortfolioContent() {
               working: { label: string; range: string }
               learning: { label: string; range: string }
             }}
+            categories={t.raw("skills.categories") as Record<string, string>}
+            categoryLabel={t("skills.legendCategory")}
+            tierLabel={t("skills.legendTier")}
           />
         </div>
       </section>
@@ -308,7 +311,7 @@ function PortfolioContent() {
             {/* Direct Contact card */}
             <GlassmorphicCard>
               <h3 className="text-2xl font-bold mb-6">{t("contact.directTitle")}</h3>
-              <div className="space-y-5">
+              <div className="space-y-5 mb-8">
                 <ContactRow
                   icon={Mail}
                   label={t("contact.labels.email")}

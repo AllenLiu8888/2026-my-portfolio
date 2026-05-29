@@ -2,12 +2,15 @@
 
 import { motion } from "framer-motion"
 
+export type SkillTier = "expert" | "proficient" | "working" | "learning"
+export type SkillCat = "agent" | "model" | "capability" | "stack" | "tool"
+
 interface SkillBadgeProps {
   name: string
   level: number
+  cat?: string
+  catLabel?: string
 }
-
-export type SkillTier = "expert" | "proficient" | "working" | "learning"
 
 export function getSkillTier(level: number): SkillTier {
   if (level >= 85) return "expert"
@@ -46,9 +49,22 @@ const TIER_STYLES: Record<
   },
 }
 
-export function SkillBadge({ name, level }: SkillBadgeProps) {
+// Category styling — distinct hue per kind so "能力 / 技术栈 / 模型 / 工具 / Agent"
+// read at a glance. Kept low-saturation so it doesn't fight the tier bar.
+export const CATEGORY_META: Record<SkillCat, { chip: string; dot: string }> = {
+  agent: { chip: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/30", dot: "bg-fuchsia-400" },
+  model: { chip: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30", dot: "bg-cyan-400" },
+  capability: { chip: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30", dot: "bg-emerald-400" },
+  stack: { chip: "bg-amber-500/15 text-amber-300 border-amber-500/30", dot: "bg-amber-400" },
+  tool: { chip: "bg-slate-400/15 text-slate-300 border-slate-400/40", dot: "bg-slate-400" },
+}
+
+export const CATEGORY_ORDER: SkillCat[] = ["agent", "model", "capability", "stack", "tool"]
+
+export function SkillBadge({ name, level, cat, catLabel }: SkillBadgeProps) {
   const tier = getSkillTier(level)
   const styles = TIER_STYLES[tier]
+  const catStyle = cat && cat in CATEGORY_META ? CATEGORY_META[cat as SkillCat] : null
 
   return (
     <motion.div
@@ -57,18 +73,19 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
       transition={{ duration: 0.3 }}
       viewport={{ once: true }}
       whileHover={{ y: -5 }}
+      className="h-full"
     >
       <div
-        className={`relative overflow-hidden rounded-xl bg-zinc-800/50 backdrop-blur-sm border border-zinc-700/50 p-6 h-full transition-all duration-300 ${styles.border}`}
+        className={`relative flex h-full flex-col overflow-hidden rounded-xl border border-zinc-700/50 bg-zinc-800/50 p-6 backdrop-blur-sm transition-all duration-300 ${styles.border}`}
       >
-        <div className="absolute -inset-1 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-xl blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+        {/* Skill name (back to the larger size) */}
+        <div className="mb-4 text-center text-lg font-medium leading-snug">{name}</div>
 
-        <div className="relative">
-          <div className="text-center mb-4 font-medium text-lg">{name}</div>
-
-          <div className="relative h-2.5 w-full bg-zinc-700 rounded-full overflow-hidden">
+        {/* Progress bar + (tag · %) on the row below it — no extra header row */}
+        <div className="mt-auto">
+          <div className="relative h-2.5 w-full overflow-hidden rounded-full bg-zinc-700">
             <motion.div
-              className={`absolute top-0 left-0 h-full ${styles.bar} rounded-full`}
+              className={`absolute left-0 top-0 h-full ${styles.bar} rounded-full`}
               initial={{ width: 0 }}
               whileInView={{ width: `${level}%` }}
               transition={{ duration: 1, delay: 0.2 }}
@@ -76,7 +93,20 @@ export function SkillBadge({ name, level }: SkillBadgeProps) {
             />
           </div>
 
-          <div className={`mt-2 text-right text-sm font-medium ${styles.pct}`}>{level}%</div>
+          <div className="mt-2 flex items-center justify-between gap-2">
+            {/* category tag — left, under the bar */}
+            {catStyle && catLabel ? (
+              <span
+                className={`inline-flex items-center rounded-full border px-2 py-0.5 text-[10px] font-medium ${catStyle.chip}`}
+              >
+                {catLabel}
+              </span>
+            ) : (
+              <span />
+            )}
+            {/* proficiency % — right */}
+            <span className={`text-sm font-medium ${styles.pct}`}>{level}%</span>
+          </div>
         </div>
       </div>
     </motion.div>

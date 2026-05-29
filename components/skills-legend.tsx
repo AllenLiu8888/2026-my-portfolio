@@ -1,7 +1,3 @@
-"use client"
-
-import { motion } from "framer-motion"
-
 interface TierMeta {
   label: string
   range: string
@@ -14,39 +10,32 @@ interface Props {
     working: TierMeta
     learning: TierMeta
   }
+  label?: string
 }
 
+// Left → right = high → low proficiency (精通 on the left, 了解 on the right),
+// shown as one continuous gradient axis.
 const ORDER: Array<keyof Props["tiers"]> = ["expert", "proficient", "working", "learning"]
 
-const DOTS: Record<keyof Props["tiers"], string> = {
-  expert: "bg-gradient-to-r from-purple-500 to-pink-500",
-  proficient: "bg-purple-500",
-  working: "bg-indigo-500",
-  learning: "bg-zinc-600",
-}
-
-export function SkillsLegend({ tiers }: Props) {
+export function SkillsLegend({ tiers, label }: Props) {
   return (
-    <motion.div
-      className="mt-8 flex flex-wrap justify-center gap-3"
-      initial={{ opacity: 0, y: 10 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4 }}
-      viewport={{ once: true }}
-    >
-      {ORDER.map((key) => {
-        const t = tiers[key]
-        return (
-          <div
-            key={key}
-            className="inline-flex items-center gap-2 rounded-full bg-zinc-900/60 border border-zinc-800 px-3 py-1.5 text-xs"
-          >
-            <span className={`h-2 w-2 rounded-full ${DOTS[key]}`}></span>
-            <span className="font-medium text-zinc-200">{t.label}</span>
-            <span className="text-zinc-500">{t.range}</span>
-          </div>
-        )
-      })}
-    </motion.div>
+    <div className="flex w-full flex-col items-center gap-2">
+      {label && (
+        <span className="text-[11px] uppercase tracking-wider text-zinc-500">{label}</span>
+      )}
+      <div className="w-full max-w-md">
+        {/* gradient axis: expert (purple-pink) → learning (grey) */}
+        <div className="h-2 rounded-full bg-gradient-to-r from-pink-500 via-purple-500 to-zinc-600"></div>
+        {/* tick labels under the axis */}
+        <div className="mt-1.5 flex justify-between">
+          {ORDER.map((key) => (
+            <div key={key} className="flex flex-col items-center leading-tight">
+              <span className="text-xs font-medium text-zinc-200">{tiers[key].label}</span>
+              <span className="text-[10px] text-zinc-500">{tiers[key].range}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
   )
 }

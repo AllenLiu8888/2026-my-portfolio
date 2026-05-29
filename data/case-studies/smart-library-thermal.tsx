@@ -7,7 +7,6 @@ import {
   Paragraph,
   Quote,
   SubHeading,
-  TwoCol,
 } from "@/components/case-study/CaseStudySection"
 import { ENStub } from "@/components/case-study/ENStub"
 import type { CaseStudyEntry, Locale } from "@/lib/case-studies"
@@ -222,11 +221,23 @@ function Content({ locale }: { locale: Locale }) {
             </span>,
           ]}
         />
-        <TwoCol>
-          <CaseImage src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png" caption="Prototype 3 硬件部分" />
-          <CaseImage src="/case-studies/smart-library-thermal/09-prototype3-final.png" caption="Prototype 3 大屏界面" />
-        </TwoCol>
-        <CaseImage src="/case-studies/smart-library-thermal/08-prototype3-detail-b.png" caption="Prototype 3 移动端界面" size="phone" />
+        {/* 09 是宽幅大屏截图（2560×1352），单独占满整行做主图 */}
+        <CaseImage src="/case-studies/smart-library-thermal/09-prototype3-final.png" caption="Prototype 3 大屏界面" />
+        {/* 07 近正方形硬件照（240×231，低分辨率）单独居中展示（移动端界面图已按反馈移除） */}
+        <div className="my-6 flex justify-center">
+          <figure className="my-0 w-full max-w-[320px]">
+            <div className="relative aspect-square rounded-xl border border-zinc-800 overflow-hidden bg-zinc-950/60">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/case-studies/smart-library-thermal/07-prototype3-detail-a.png"
+                alt="Prototype 3 硬件部分"
+                loading="lazy"
+                className="w-full h-full object-contain"
+              />
+            </div>
+            <figcaption className="mt-2 text-xs text-zinc-500 text-center">Prototype 3 硬件部分</figcaption>
+          </figure>
+        </div>
       </CaseStudySection>
 
       <CaseStudySection id="what" num="三、" title="产品设计（What）">
