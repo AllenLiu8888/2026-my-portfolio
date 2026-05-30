@@ -16,7 +16,7 @@ jobs:
   deploy:
     name: SSH deploy → liuyikai.com
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 15
 
     steps:
       - name: 🚀 Deploy via SSH
@@ -27,7 +27,7 @@ jobs:
           key: ${{ secrets.TENCENT_SSH_KEY }}
           port: 22
           timeout: 30s
-          command_timeout: 8m
+          command_timeout: 12m
           script_stop: true
           script: |
             set -euo pipefail
@@ -35,17 +35,17 @@ jobs:
 
             echo "==> 📥 git pull (with retries — China <> GitHub is flaky)"
             git_pull_ok=0
-            for attempt in 1 2 3 4 5; do
+            for attempt in $(seq 1 15); do
               if git pull --ff-only origin main; then
                 echo "    ✅ git pull succeeded on attempt $attempt"
                 git_pull_ok=1
                 break
               fi
-              echo "    ⚠️ attempt $attempt failed, retrying in 5s..."
-              sleep 5
+              echo "    ⚠️ attempt $attempt/15 failed, retrying in 10s..."
+              sleep 10
             done
             if [ "$git_pull_ok" != "1" ]; then
-              echo "    ❌ git pull failed 5x — GFW / TLS issue persists"
+              echo "    ❌ git pull failed 15x — GFW / TLS issue persists"
               exit 1
             fi
 
