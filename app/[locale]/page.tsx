@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { ArrowRight, Github, Linkedin, Mail, MessageCircle, Phone } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { setRequestLocale } from "next-intl/server"
 
 import { Button } from "@/components/ui/button"
@@ -75,6 +75,7 @@ export default async function Portfolio({
 
 function PortfolioContent() {
   const t = useTranslations()
+  const locale = useLocale()
   const skills = t.raw("skills.items") as Skill[]
   const projects = t.raw("projects.items") as Project[]
 
@@ -221,7 +222,7 @@ function PortfolioContent() {
 
                 <div className="mt-8">
                   <Button className="bg-zinc-800 hover:bg-zinc-700 text-white" asChild>
-                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download="刘一开-Yikai-Liu-Resume.pdf">
+                    <a href={locale === "en" ? "/resume-en.pdf" : "/resume.pdf"} target="_blank" rel="noopener noreferrer" download={locale === "en" ? "Yikai-Liu-Resume.pdf" : "刘一开-Yikai-Liu-Resume.pdf"}>
                       {t("about.downloadResume")}
                     </a>
                   </Button>

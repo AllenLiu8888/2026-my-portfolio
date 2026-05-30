@@ -4,7 +4,7 @@ import { useState, useEffect } from "react"
 import Link from "next/link"
 import { motion } from "framer-motion"
 import { Menu, X } from "lucide-react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 import { Button } from "@/components/ui/button"
 import { useMobile } from "@/hooks/use-mobile"
@@ -15,6 +15,9 @@ export function FloatingNav() {
   const [isOpen, setIsOpen] = useState(false)
   const isMobile = useMobile()
   const t = useTranslations("nav")
+  const locale = useLocale()
+  const resumeHref = locale === "en" ? "/resume-en.pdf" : "/resume.pdf"
+  const resumeName = locale === "en" ? "Yikai-Liu-Resume.pdf" : "刘一开-Yikai-Liu-Resume.pdf"
 
   useEffect(() => {
     const handleScroll = () => {
@@ -85,10 +88,13 @@ export function FloatingNav() {
               ))}
               <LocaleSwitcher />
               <Button
+                asChild
                 size="sm"
                 className="ml-2 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0"
               >
-                {t("resume")}
+                <a href={resumeHref} target="_blank" rel="noopener noreferrer" download={resumeName}>
+                  {t("resume")}
+                </a>
               </Button>
             </div>
           )}
@@ -114,8 +120,10 @@ export function FloatingNav() {
                 {item.name}
               </Link>
             ))}
-            <Button className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
-              {t("resume")}
+            <Button asChild className="mt-6 bg-gradient-to-r from-purple-500 to-pink-500 hover:from-pink-500 hover:to-purple-500 border-0">
+              <a href={resumeHref} target="_blank" rel="noopener noreferrer" download={resumeName} onClick={handleNavClick}>
+                {t("resume")}
+              </a>
             </Button>
           </div>
         </motion.div>
