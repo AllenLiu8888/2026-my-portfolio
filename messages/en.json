@@ -29,7 +29,7 @@
     "status": "Open to AI PM / Product roles · 2026 Cohort",
     "bio1": "I'm 25, based in Hohhot, open to relocation. UQ MSc Interaction Design under the School of Computer Science (Group of Eight, QS Top 50), BA Marketing at Binhai College of Nankai University — a deliberately T-shaped path through the technical, design, and business sides of shipping product.",
     "bio2": "What I actually do well: take a product from 0 to 1, solo — from user research and architecture all the way to full-stack implementation. I've shipped real 0→1 business products and built LLM / multi-agent projects. I define the spec, write the code, talk to the users. That's the loop I'm best at.",
-    "bio3": "Most of my days now go into AI tooling — benchmarking different frontier models into real production decisions and wiring up multi-agent workflows to run my day-to-day. My belief: the best AI PMs are also AI builders.",
+    "bio3": "Most of my days now go into AI tooling — benchmarking different frontier models into real production decisions and wiring up multi-agent workflows to run my day-to-day. My view: AI makes \"building it\" cheap, so PM value concentrates at both ends — defining the real problem, and judging whether it's good. My belief: the best AI PMs are also AI builders.",
     "labels": {
       "name": "Name",
       "email": "Email",
@@ -60,6 +60,7 @@
     "categories": {
       "agent": "Agent",
       "model": "Model",
+      "research": "User Research",
       "capability": "Capability",
       "stack": "Stack",
       "tool": "Tool"
@@ -71,15 +72,25 @@
       { "name": "Notion", "level": 92, "cat": "tool" },
       { "name": "Claude (Opus / Sonnet)", "level": 90, "cat": "model" },
       { "name": "Cursor", "level": 88, "cat": "agent" },
-      { "name": "UX Research (HCI)", "level": 88, "cat": "capability" },
+      { "name": "UX Research (HCI)", "level": 88, "cat": "research" },
       { "name": "Multi-Agent Design", "level": 88, "cat": "capability" },
       { "name": "ChatGPT (GPT-5)", "level": 87, "cat": "model" },
       { "name": "Figma", "level": 87, "cat": "tool" },
-      { "name": "Affinity Diagram + Think-Aloud", "level": 85, "cat": "capability" },
+      { "name": "Affinity Diagram + Think-Aloud", "level": 85, "cat": "research" },
       { "name": "Product Strategy", "level": 85, "cat": "capability" },
       { "name": "Jira / Sprint Mgmt", "level": 85, "cat": "tool" },
       { "name": "Final Cut Pro X", "level": 85, "cat": "tool" },
       { "name": "Commercial Photography", "level": 85, "cat": "capability" },
+      { "name": "Semi-structured Interviews", "level": 85, "cat": "research" },
+      { "name": "Contextual Inquiry", "level": 82, "cat": "research" },
+      { "name": "User Personas", "level": 80, "cat": "research" },
+      { "name": "Journey Mapping", "level": 80, "cat": "research" },
+      { "name": "Surveys", "level": 78, "cat": "research" },
+      { "name": "PRD / User Stories", "level": 78, "cat": "capability" },
+      { "name": "Competitive Analysis", "level": 76, "cat": "capability" },
+      { "name": "Heuristic Evaluation", "level": 75, "cat": "research" },
+      { "name": "LLM API Integration", "level": 72, "cat": "capability" },
+      { "name": "Lark (Base dashboards)", "level": 78, "cat": "tool" },
       { "name": "DaVinci Resolve", "level": 80, "cat": "tool" },
       { "name": "Gemini 2.5", "level": 78, "cat": "model" },
       { "name": "MiniMax M2", "level": 78, "cat": "model" },
@@ -187,7 +198,7 @@
         "title": "Indie AI Builder · Personal Practice",
         "company": "Solo Studio · Hohhot",
         "period": "2026.02 — Present",
-        "description": "Daily-driving Claude Code / Cursor / Antigravity / OpenClaw / Lovable / Stitch / Google AI Studio. Building multi-agent systems, benchmarking frontier models, and shipping real client work end-to-end (e.g. the chemical-trade sales dashboard, Vibe-Coded and live in production)."
+        "description": "Built a customized multi-agent system on top of Claude Code — multiple agents with custom permissions and independent memory, wired into the Feishu (Lark) ecosystem via cc-connect. Continuously benchmark frontier models into a selection methodology; shipped multiple 0→1 deliveries solo: this portfolio, corporate landing pages, a chemical-sales visualization system, and a data-assistant agent."
       },
       {
         "title": "MSc Interaction Design · School of Computer Science",

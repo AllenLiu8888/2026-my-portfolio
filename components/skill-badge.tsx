@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 
 export type SkillTier = "expert" | "proficient" | "working" | "learning"
-export type SkillCat = "agent" | "model" | "capability" | "stack" | "tool"
+export type SkillCat = "agent" | "model" | "research" | "capability" | "stack" | "tool"
 
 interface SkillBadgeProps {
   name: string
@@ -54,12 +54,13 @@ const TIER_STYLES: Record<
 export const CATEGORY_META: Record<SkillCat, { chip: string; dot: string }> = {
   agent: { chip: "bg-fuchsia-500/15 text-fuchsia-300 border-fuchsia-500/30", dot: "bg-fuchsia-400" },
   model: { chip: "bg-cyan-500/15 text-cyan-300 border-cyan-500/30", dot: "bg-cyan-400" },
+  research: { chip: "bg-rose-500/15 text-rose-300 border-rose-500/30", dot: "bg-rose-400" },
   capability: { chip: "bg-emerald-500/15 text-emerald-300 border-emerald-500/30", dot: "bg-emerald-400" },
   stack: { chip: "bg-amber-500/15 text-amber-300 border-amber-500/30", dot: "bg-amber-400" },
   tool: { chip: "bg-slate-400/15 text-slate-300 border-slate-400/40", dot: "bg-slate-400" },
 }
 
-export const CATEGORY_ORDER: SkillCat[] = ["agent", "model", "capability", "stack", "tool"]
+export const CATEGORY_ORDER: SkillCat[] = ["agent", "model", "research", "capability", "stack", "tool"]
 
 export function SkillBadge({ name, level, cat, catLabel }: SkillBadgeProps) {
   const tier = getSkillTier(level)

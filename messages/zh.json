@@ -29,7 +29,7 @@
     "status": "开放 AI PM / 产品经理机会 · 2026 届",
     "bio1": "25 岁，目前居住呼和浩特，工作地点不限。昆士兰大学（QS 世界 Top 50、澳洲八校联盟）计算机科学院交互设计硕士、南开大学滨海学院市场营销学士——一条刻意 T 字型的路径，让我同时能跟工程师、设计师、销售对话不掉链子。",
     "bio2": "我真正擅长的是：独立把产品从 0 跑到 1——从需求调研、架构设计到全栈实现，一个人就能闭环。我做过一些 0→1 的真实业务产品，也做过大模型 / 多智能体相关的项目。我定义需求、写代码、跑用户访谈，这是我最强的能力回路。",
-    "bio3": "现在我每天大量时间都泡在 AI 工具里——把不同的前沿大模型横评成实际的生产决策，自己搭多智能体工作流来处理日常的方方面面。我始终相信：最好的 AI PM，本身也是 AI builder。",
+    "bio3": "现在我每天大量时间都泡在 AI 工具里——把不同的前沿大模型横评成实际的生产决策，自己搭多智能体工作流来处理日常的方方面面。我的判断：AI 让「做出来」变便宜，PM 的价值正向两头集中——定义真问题，以及判断做得好不好。我始终相信：最好的 AI PM，本身也是 AI builder。",
     "labels": {
       "name": "姓名",
       "email": "邮箱",
@@ -60,6 +60,7 @@
     "categories": {
       "agent": "Agent",
       "model": "模型",
+      "research": "用户研究",
       "capability": "能力",
       "stack": "技术栈",
       "tool": "工具"
@@ -71,15 +72,25 @@
       { "name": "Notion", "level": 92, "cat": "tool" },
       { "name": "Claude (Opus / Sonnet)", "level": 90, "cat": "model" },
       { "name": "Cursor", "level": 88, "cat": "agent" },
-      { "name": "用户研究（HCI）", "level": 88, "cat": "capability" },
+      { "name": "用户研究（HCI）", "level": 88, "cat": "research" },
       { "name": "多智能体架构", "level": 88, "cat": "capability" },
       { "name": "ChatGPT (GPT-5)", "level": 87, "cat": "model" },
       { "name": "Figma", "level": 87, "cat": "tool" },
-      { "name": "亲和图 + Think-Aloud", "level": 85, "cat": "capability" },
+      { "name": "亲和图 + Think-Aloud", "level": 85, "cat": "research" },
       { "name": "产品策略", "level": 85, "cat": "capability" },
       { "name": "Jira / Sprint 管理", "level": 85, "cat": "tool" },
       { "name": "Final Cut Pro X", "level": 85, "cat": "tool" },
       { "name": "商业摄影", "level": 85, "cat": "capability" },
+      { "name": "半结构化访谈", "level": 85, "cat": "research" },
+      { "name": "Contextual Inquiry", "level": 82, "cat": "research" },
+      { "name": "用户画像 Persona", "level": 80, "cat": "research" },
+      { "name": "用户旅程地图", "level": 80, "cat": "research" },
+      { "name": "问卷调研", "level": 78, "cat": "research" },
+      { "name": "PRD / User Story", "level": 78, "cat": "capability" },
+      { "name": "竞品分析", "level": 76, "cat": "capability" },
+      { "name": "启发式评估", "level": 75, "cat": "research" },
+      { "name": "大模型 API 集成", "level": 72, "cat": "capability" },
+      { "name": "飞书（多维表格）", "level": 78, "cat": "tool" },
       { "name": "DaVinci Resolve", "level": 80, "cat": "tool" },
       { "name": "Gemini 2.5", "level": 78, "cat": "model" },
       { "name": "MiniMax M2", "level": 78, "cat": "model" },
@@ -187,7 +198,7 @@
         "title": "独立 AI Builder · 个人持续实践",
         "company": "一人工作室 · 呼和浩特",
         "period": "2026.02 — 至今",
-        "description": "日常使用 Claude Code / Cursor / Antigravity / OpenClaw / Lovable / Stitch / Google AI Studio。搭建多智能体系统、深度评测前沿大模型、独立交付化工销售管理系统等真实业务（Vibe Coding 模式上线）。"
+        "description": "以 Claude Code 为底座自建定制化多 Agent 系统：通过 cc-connect 接入飞书生态，多个具备定制权限与独立记忆的 Agent 分别承接不同场景。持续横评主流大模型沉淀选型方法论；独立完成多个 0→1 交付：本作品集、企业官网 Landing Page、化工销售可视化系统与数据助手 Agent。"
       },
       {
         "title": "交互设计硕士 · 计算机科学院",
