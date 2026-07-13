@@ -85,3 +85,20 @@
 .animate-blob {
   animation: blob 7s infinite;
 }
+
+/* ===== Dify digital-twin chatbot — brand overrides ===== */
+#dify-chatbot-bubble-button {
+  background: linear-gradient(135deg, #a855f7, #ec4899) !important;
+  box-shadow: 0 4px 20px rgba(168, 85, 247, 0.45) !important;
+}
+#dify-chatbot-bubble-window {
+  width: 24rem !important;
+  height: 40rem !important;
+  max-height: calc(100vh - 6rem) !important;
+}
+@media (max-width: 640px) {
+  #dify-chatbot-bubble-window {
+    width: calc(100vw - 2rem) !important;
+    height: 70vh !important;
+  }
+}

@@ -47,7 +47,7 @@ export const meta: CaseStudyEntry["meta"] = {
     { id: "jarvis", num: "二", label: { en: "Trying to Build a Jarvis", zh: "想做一个 Jarvis（然后碰壁）" } },
     { id: "insight", num: "三", label: { en: "What an Agent Really Is", zh: "Agent 到底是什么" } },
     { id: "stack", num: "四", label: { en: "How I Run It Now", zh: "我现在怎么用" } },
-    { id: "next", num: "五", label: { en: "What's Next", zh: "接下来在做的" } },
+    { id: "next", num: "五", label: { en: "Landed: Digital-Twin Chatbot", zh: "落地：数字分身 Chatbot" } },
   ],
 }
 
@@ -205,14 +205,16 @@ Claude Code（每天扫描 Inbox）
         </Paragraph>
       </CaseStudySection>
 
-      <CaseStudySection id="next" num="五、" title="接下来在做的">
+      <CaseStudySection id="next" num="五、" title="从理解到落地：数字分身 Chatbot">
         <Paragraph>
-          最近我在研究 Dify 和扣子（Coze），想顺着「场景化」这个思路，做几个真正放进具体场景里的 Agent。
+          顺着「场景化」这个思路，我用 Dify 给这个作品集网站做了一个 Chatbot——一个以我的简历和项目为知识库的「数字分身」，访客想了解我的时候，可以直接和它对话，而不用一页页翻。
         </Paragraph>
         <Paragraph>
-          比如，我正在给这个作品集网站做一个 Chatbot——一个了解我全部信息的「数字分身」，访客想了解我的时候，可以直接和它对话，而不用一页页翻。它就是上面那套理解的一次小实践：一个具体场景、一份关于我的知识库、一组该怎么答的规则。
+          它就是上面那套理解的直接落地：一个具体场景（回答关于我的问题）、一份场景知识库（简历 + 项目经历）、一组 SOP（该怎么答、什么不该答）——脑子 + 场景知识库 + SOP，缺一不可。
         </Paragraph>
-        <Callout variant="tip">还在做，敬请期待。</Callout>
+        <Callout variant="tip">
+          👉 它已经上线了——点击页面<strong>右下角的聊天气泡</strong>，直接和「AI 版的我」聊聊。
+        </Callout>
       </CaseStudySection>
     </>
   )

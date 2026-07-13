@@ -4,6 +4,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
 import { routing } from '@/i18n/routing'
+import { DifyChatbot } from '@/components/dify-chatbot'
 import '../globals.css'
 
 export function generateStaticParams() {
@@ -85,6 +86,7 @@ export default async function LocaleLayout({
     <html lang={locale} suppressHydrationWarning>
       <body className="antialiased">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <DifyChatbot />
       </body>
     </html>
   )
