@@ -6,7 +6,7 @@ export function DifyChatbot() {
   return (
     <>
       <Script id="dify-chatbot-config" strategy="afterInteractive">
-        {`window.difyChatbotConfig = { token: 'xMJz6VYTmZvuYcjS' };`}
+        {`window.difyChatbotConfig = { token: 'xMJz6VYTmZvuYcjS', dynamicScript: true };`}
       </Script>
       <Script
         src="https://udify.app/embed.min.js"
