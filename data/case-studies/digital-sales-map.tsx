@@ -52,10 +52,6 @@ export const meta: CaseStudyEntry["meta"] = {
     en: ["Product Manager", "Full-Stack Developer", "DevOps", "Vibe Coding Operator"],
     zh: ["产品经理", "全栈开发", "部署运维", "AI 辅助开发（Vibe Coding）"],
   },
-  liveDemo: {
-    label: "Live Demo · system.kaixingwuliu.com",
-    href: "http://system.kaixingwuliu.com/",
-  },
   github: [{ label: "GitHub", href: "https://github.com/AllenLiu8888/digital-sales-system" }],
   toc: [
     { id: "why", num: "一", label: { en: "Why · Background", zh: "Why · 业务背景" } },
@@ -75,7 +71,7 @@ function Content({ locale }: { locale: Locale }) {
       <CaseStudySection title="English summary">
         <ENStub
           slug={SLUG}
-          summary="Solo end-to-end build for an anonymous chemical-trading client — covering 3 product lines (soda ash, urea, sodium bicarbonate) across 5 sales zones and 31 provinces. The project has two parts. Part 1, the visualization-based customer management system, was built in ~7 days as a Vibe-Coding practice (I owned the business interviews, the spec, the QC; AI accelerated the React + Node + Prisma + PostgreSQL build; I drove the Aliyun ECS deployment with Nginx + PM2 + GitHub Actions). It is live at system.kaixingwuliu.com and in pilot use. Part 2, internal data classification & matching, is in progress: I've turned the SOP into a workflow and a Skill, and the goal is to ship it as an Agent. Because that part carries client-specific details, it has no public UI here."
+          summary="Solo end-to-end build for an anonymous chemical-trading client — covering 3 product lines (soda ash, urea, sodium bicarbonate) across 5 sales zones and 31 provinces. The project has two parts. Part 1, the visualization-based customer management system, was built in ~7 days as a Vibe-Coding practice (I owned the business interviews, the spec, the QC; AI accelerated the React + Node + Prisma + PostgreSQL build; I drove the Aliyun ECS deployment with Nginx + PM2 + GitHub Actions). It went live and into pilot use. Part 2, internal data classification & matching, is in progress: I've turned the SOP into a workflow and a Skill, and the goal is to ship it as an Agent. Because that part carries client-specific details, it has no public UI here."
           label={{
             badge: "Translation in progress",
             body: "Chinese version below — covers the business interviews, what Vibe Coding looks like when PM-driven, the system architecture, the 7-day timeline, the data-model decision that mattered most (1:N customer-region), the in-progress data-matching workflow/Skill/Agent, and reflections on PM + AI collaboration.",
